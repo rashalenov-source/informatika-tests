@@ -1,0 +1,44 @@
+.student-form { background: var(--card-background); border-radius: 15px; padding: 30px; margin: 20px auto; max-width: 600px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); animation: fadeInUp 0.5s ease; }
+.student-form h2 { color: var(--primary-color); margin-bottom: 20px; text-align: center; }
+.form-group { margin-bottom: 20px; }
+.form-group label { display: block; margin-bottom: 8px; color: var(--text-dark); font-weight: 600; }
+.form-group input { width: 100%; padding: 12px; border: 2px solid var(--light-teal); border-radius: 8px; font-size: 1rem; transition: all 0.3s ease; }
+.form-group input:focus { outline: none; border-color: var(--accent-color); box-shadow: 0 0 10px rgba(2, 168, 150, 0.3); }
+.test-container { background: var(--card-background); border-radius: 15px; padding: 30px; margin: 20px auto; max-width: 800px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); display: none; }
+.test-container.active { display: block; animation: fadeInUp 0.5s ease; }
+.test-header { text-align: center; margin-bottom: 30px; padding-bottom: 20px; border-bottom: 2px solid var(--light-teal); }
+.test-title { color: var(--primary-color); font-size: 1.8rem; margin-bottom: 10px; }
+.test-info { color: var(--text-dark); opacity: 0.8; }
+.progress-bar { background: #e0e0e0; height: 8px; border-radius: 10px; margin: 20px 0; overflow: hidden; }
+.progress-fill { height: 100%; background: linear-gradient(90deg, var(--light-teal), var(--accent-color)); transition: width 0.3s ease; border-radius: 10px; }
+.question { margin-bottom: 30px; padding: 25px; background: white; border-radius: 12px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); transition: all 0.3s ease; }
+.question:hover { box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12); }
+.question-number { display: inline-block; background: linear-gradient(135deg, var(--light-teal), var(--accent-color)); color: white; padding: 5px 15px; border-radius: 20px; font-weight: bold; margin-bottom: 15px; }
+.question-text { font-size: 1.1rem; color: var(--text-dark); margin-bottom: 20px; line-height: 1.6; }
+.options { display: flex; flex-direction: column; gap: 12px; }
+.option { display: flex; align-items: center; padding: 15px; background: #f8f9fa; border: 2px solid transparent; border-radius: 10px; cursor: pointer; transition: all 0.3s ease; }
+.option:hover { background: #e9ecef; border-color: var(--light-teal); transform: translateX(5px); }
+.option input[type="radio"], .option input[type="checkbox"] { margin-right: 12px; width: 20px; height: 20px; cursor: pointer; accent-color: var(--primary-color); }
+.option label { cursor: pointer; flex: 1; user-select: none; }
+.option.selected { background: rgba(2, 195, 154, 0.1); border-color: var(--light-teal); }
+.btn { padding: 15px 40px; font-size: 1.1rem; font-weight: 600; border: none; border-radius: 10px; cursor: pointer; transition: all 0.3s ease; text-decoration: none; display: inline-block; text-align: center; }
+.btn-primary { background: linear-gradient(135deg, var(--light-teal), var(--accent-color)); color: white; box-shadow: 0 4px 15px rgba(2, 168, 150, 0.3); }
+.btn-primary:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(2, 168, 150, 0.4); }
+.btn-secondary { background: #6c757d; color: white; }
+.btn-secondary:hover { background: #5a6268; }
+.button-group { display: flex; gap: 15px; justify-content: center; margin-top: 30px; }
+.result-container { background: var(--card-background); border-radius: 15px; padding: 40px; margin: 20px auto; max-width: 600px; box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); text-align: center; display: none; }
+.result-container.active { display: block; animation: fadeInUp 0.5s ease; }
+.result-score { font-size: 2.5rem; font-weight: bold; color: var(--primary-color); margin: 20px 0; }
+.result-grade { font-size: 3rem; font-weight: bold; margin: 20px 0; }
+.grade-5 { color: var(--success); }
+.grade-4 { color: #2ecc71; }
+.grade-3 { color: var(--warning); }
+.grade-2 { color: var(--error); }
+@media (max-width: 768px) {
+    .student-form, .test-container, .result-container { padding: 20px; margin: 10px; }
+    .test-title { font-size: 1.5rem; }
+    .question { padding: 20px; }
+    .btn { padding: 12px 30px; font-size: 1rem; }
+    .button-group { flex-direction: column; }
+}
