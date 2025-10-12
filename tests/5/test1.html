@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информация вокруг нас - 5 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/github-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Информация вокруг нас",
+            questions: [
+                {
+                    question: "Что такое информация?",
+                    type: "single",
+                    options: [
+                        "Сведения об окружающем мире и процессах в нём",
+                        "Только числа и вычисления",
+                        "Программное обеспечение компьютера",
+                        "Устройства для хранения данных"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Какие действия можно совершать с информацией? (выберите несколько)",
+                    type: "multiple",
+                    options: [
+                        "Хранить",
+                        "Передавать",
+                        "Обрабатывать",
+                        "Игнорировать"
+                    ],
+                    correct: [0, 1, 2]
+                },
+                {
+                    question: "Какой из перечисленных видов информации воспринимается с помощью зрения?",
+                    type: "single",
+                    options: [
+                        "Звуковая",
+                        "Зрительная",
+                        "Обонятельная",
+                        "Вкусовая"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Что является носителем информации?",
+                    type: "single",
+                    options: [
+                        "Книга",
+                        "Мысль",
+                        "Воздух",
+                        "Время"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Выберите примеры текстовой информации:",
+                    type: "multiple",
+                    options: [
+                        "Книга",
+                        "Фотография",
+                        "Письмо",
+                        "Музыка",
+                        "Сообщение в мессенджере"
+                    ],
+                    correct: [0, 2, 4]
+                },
+                {
+                    question: "Что НЕ является информационным процессом?",
+                    type: "single",
+                    options: [
+                        "Чтение книги",
+                        "Разговор по телефону",
+                        "Сон",
+                        "Просмотр фильма"
+                    ],
+                    correct: 2
+                },
+                {
+                    question: "Какое устройство используется для ввода текстовой информации в компьютер?",
+                    type: "single",
+                    options: [
+                        "Монитор",
+                        "Клавиатура",
+                        "Принтер",
+                        "Колонки"
+                    ],
+                    correct: 1
+                },
+                {
+                    question: "Выберите устройства вывода информации:",
+                    type: "multiple",
+                    options: [
+                        "Монитор",
+                        "Мышь",
+                        "Принтер",
+                        "Сканер",
+                        "Колонки"
+                    ],
+                    correct: [0, 2, 4]
+                },
+                {
+                    question: "Что означает «обработка информации»?",
+                    type: "single",
+                    options: [
+                        "Получение новой информации из имеющейся",
+                        "Копирование файлов",
+                        "Удаление данных",
+                        "Выключение компьютера"
+                    ],
+                    correct: 0
+                },
+                {
+                    question: "Как называется информация, представленная в форме, пригодной для обработки компьютером?",
+                    type: "single",
+                    options: [
+                        "Аналоговая",
+                        "Цифровая",
+                        "Текстовая",
+                        "Графическая"
+                    ],
+                    correct: 1
+                }
+            ]
+        };
+
+        const github = new GitHubAPI(GITHUB_CONFIG);
+        const test = new TestEngine(testData, github);
+        test.init();
+    </script>
+</body>
+</html>
