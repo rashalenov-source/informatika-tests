@@ -7,7 +7,7 @@ class TestEngine {
     }
     
     init() {
-        const formHtml = \`
+        const formHtml = `
             <div class="student-form">
                 <h2>Перед началом теста</h2>
                 <form id="studentForm">
@@ -24,7 +24,7 @@ class TestEngine {
                     </div>
                 </form>
             </div>
-        \`;
+        `;
         document.getElementById('app').innerHTML = formHtml;
         document.getElementById('studentForm').addEventListener('submit', (e) => {
             e.preventDefault();
@@ -42,11 +42,11 @@ class TestEngine {
     }
     
     renderTest() {
-        const testHtml = \`
+        const testHtml = `
             <div class="test-container active">
                 <div class="test-header">
-                    <h1 class="test-title">\${this.testData.title}</h1>
-                    <p class="test-info">Ученик: \${this.studentInfo.name} | Класс: \${this.studentInfo.class}</p>
+                    <h1 class="test-title">${this.testData.title}</h1>
+                    <p class="test-info">Ученик: ${this.studentInfo.name} | Класс: ${this.studentInfo.class}</p>
                 </div>
                 <div class="progress-bar">
                     <div class="progress-fill" id="progressFill" style="width: 0%"></div>
@@ -56,7 +56,7 @@ class TestEngine {
                     <button id="submitTest" class="btn btn-primary">Завершить тест</button>
                 </div>
             </div>
-        \`;
+        `;
         document.getElementById('app').innerHTML = testHtml;
         this.renderAllQuestions();
         document.getElementById('submitTest').addEventListener('click', () => this.submitTest());
@@ -66,21 +66,21 @@ class TestEngine {
         const container = document.getElementById('questionsContainer');
         this.testData.questions.forEach((q, i) => {
             const inputType = q.type === 'multiple' ? 'checkbox' : 'radio';
-            const inputName = \`question-\${i}\`;
-            const optionsHtml = q.options.map((opt, j) => \`
-                <div class="option" data-question="\${i}" data-option="\${j}">
-                    <input type="\${inputType}" id="\${inputName}-\${j}" name="\${inputName}" value="\${j}">
-                    <label for="\${inputName}-\${j}">\${opt}</label>
+            const inputName = `question-${i}`;
+            const optionsHtml = q.options.map((opt, j) => `
+                <div class="option" data-question="${i}" data-option="${j}">
+                    <input type="${inputType}" id="${inputName}-${j}" name="${inputName}" value="${j}">
+                    <label for="${inputName}-${j}">${opt}</label>
                 </div>
-            \`).join('');
-            container.insertAdjacentHTML('beforeend', \`
+            `).join('');
+            container.insertAdjacentHTML('beforeend', `
                 <div class="question">
-                    <div class="question-number">Вопрос \${i + 1} из \${this.testData.questions.length}</div>
-                    <div class="question-text">\${q.question}</div>
-                    \${q.type === 'multiple' ? '<p style="color: #666; font-size: 0.9rem;">Можно выбрать несколько вариантов</p>' : ''}
-                    <div class="options">\${optionsHtml}</div>
+                    <div class="question-number">Вопрос ${i + 1} из ${this.testData.questions.length}</div>
+                    <div class="question-text">${q.question}</div>
+                    ${q.type === 'multiple' ? '<p style="color: #666; font-size: 0.9rem;">Можно выбрать несколько вариантов</p>' : ''}
+                    <div class="options">${optionsHtml}</div>
                 </div>
-            \`);
+            `);
         });
         document.querySelectorAll('.option').forEach(opt => {
             opt.addEventListener('click', (e) => {
@@ -115,12 +115,12 @@ class TestEngine {
     updateProgress() {
         const answered = this.answers.filter(a => a !== null).length;
         const progress = (answered / this.testData.questions.length) * 100;
-        document.getElementById('progressFill').style.width = \`\${progress}%\`;
+        document.getElementById('progressFill').style.width = `${progress}%`;
     }
     
     async submitTest() {
         const unanswered = this.answers.filter(a => a === null).length;
-        if (unanswered > 0 && !confirm(\`У вас \${unanswered} неотвеченных вопросов. Завершить тест?\`)) return;
+        if (unanswered > 0 && !confirm(`У вас ${unanswered} неотвеченных вопросов. Завершить тест?`)) return;
         const result = this.calculateResults();
         if (this.githubAPI) await this.githubAPI.sendTestResult(result);
         this.showResults(result);
@@ -141,7 +141,17 @@ class TestEngine {
         });
         const total = this.testData.questions.length;
         const pct = Math.round((correct / total) * 100);
-        const grade = pct >= 85 ? '5' : pct >= 70 ? '4' : pct >= 50 ? '3' : '2';
+        let grade;
+        if (pct >= 95) grade = '10';
+        else if (pct >= 85) grade = '9';
+        else if (pct >= 75) grade = '8';
+        else if (pct >= 65) grade = '7';
+        else if (pct >= 55) grade = '6';
+        else if (pct >= 45) grade = '5';
+        else if (pct >= 35) grade = '4';
+        else if (pct >= 25) grade = '3';
+        else if (pct >= 15) grade = '2';
+        else grade = '1';
         return {
             studentName: this.studentInfo.name,
             studentClass: this.studentInfo.class,
@@ -154,25 +164,32 @@ class TestEngine {
     }
     
     showResults(r) {
-        const emoji = {'5': '🌟', '4': '👍', '3': '📚', '2': '📖'}[r.grade];
-        const msg = {'5': 'Отлично!', '4': 'Хорошо!', '3': 'Удовлетворительно', '2': 'Нужно повторить'}[r.grade];
-        document.getElementById('app').innerHTML = \`
+        const emoji = {
+            '10': '🏆', '9': '🌟', '8': '⭐', '7': '👍', '6': '✅',
+            '5': '📚', '4': '📖', '3': '📝', '2': '📋', '1': '📄'
+        }[r.grade];
+        const msg = {
+            '10': 'Превосходно!', '9': 'Отлично!', '8': 'Очень хорошо!', 
+            '7': 'Хорошо!', '6': 'Неплохо', '5': 'Удовлетворительно',
+            '4': 'Слабо', '3': 'Плохо', '2': 'Очень плохо', '1': 'Нужно учить!'
+        }[r.grade];
+        document.getElementById('app').innerHTML = `
             <div class="result-container active">
-                <div class="result-icon">\${emoji}</div>
+                <div class="result-icon">${emoji}</div>
                 <h2>Тест завершен!</h2>
-                <div class="result-score">\${r.correctAnswers} из \${r.totalQuestions}</div>
-                <div class="result-grade grade-\${r.grade}">Оценка: \${r.grade}</div>
-                <div class="result-message">\${msg}</div>
+                <div class="result-score">${r.correctAnswers} из ${r.totalQuestions}</div>
+                <div class="result-grade grade-${r.grade}">Оценка: ${r.grade}</div>
+                <div class="result-message">${msg}</div>
                 <div class="result-details">
-                    <p><strong>Ученик:</strong> \${r.studentName}</p>
-                    <p><strong>Класс:</strong> \${r.studentClass}</p>
-                    <p><strong>Тест:</strong> \${r.testTitle}</p>
-                    <p><strong>Процент:</strong> \${r.percentage}%</p>
+                    <p><strong>Ученик:</strong> ${r.studentName}</p>
+                    <p><strong>Класс:</strong> ${r.studentClass}</p>
+                    <p><strong>Тест:</strong> ${r.testTitle}</p>
+                    <p><strong>Процент:</strong> ${r.percentage}%</p>
                 </div>
                 <div class="button-group">
                     <a href="../../index.html" class="btn btn-primary">Вернуться к списку</a>
                 </div>
             </div>
-        \`;
+        `;
     }
 }
