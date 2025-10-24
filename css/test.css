@@ -31,10 +31,16 @@
 .result-container.active { display: block; animation: fadeInUp 0.5s ease; }
 .result-score { font-size: 2.5rem; font-weight: bold; color: var(--primary-color); margin: 20px 0; }
 .result-grade { font-size: 3rem; font-weight: bold; margin: 20px 0; }
-.grade-5 { color: var(--success); }
-.grade-4 { color: #2ecc71; }
-.grade-3 { color: var(--warning); }
-.grade-2 { color: var(--error); }
+.grade-10 { color: #d4af37; }
+.grade-9 { color: #27ae60; }
+.grade-8 { color: #2ecc71; }
+.grade-7 { color: #3498db; }
+.grade-6 { color: #1abc9c; }
+.grade-5 { color: #f39c12; }
+.grade-4 { color: #e67e22; }
+.grade-3 { color: #e74c3c; }
+.grade-2 { color: #c0392b; }
+.grade-1 { color: #95a5a6; }
 @media (max-width: 768px) {
     .student-form, .test-container, .result-container { padding: 20px; margin: 10px; }
     .test-title { font-size: 1.5rem; }
