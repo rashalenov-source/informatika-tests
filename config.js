@@ -1,9 +1,7 @@
-// Конфигурация GitHub API
-const GITHUB_CONFIG = {
-    owner: 'rashalenov-source',    // Замените на ваш username
-    repo: 'informatika-tests-results', // Репозиторий для результатов
-    token: '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'    // Personal Access Token
+// Конфигурация Google Sheets API
+const SHEETS_CONFIG = {
+    scriptUrl: 'https://script.google.com/macros/s/AKfycbxa4wZzD8_E1ZoNSs-UqFKguxxerv8ULurN_UpoycplvAR7fEGPgv17b2Rpwm818k_fRQ/exec'
+    // Пример: 'https://script.google.com/macros/s/AKfycbxxx.../exec'
 };
 
-// ВАЖНО! Не коммитьте этот файл с токеном в публичный репозиторий!
-// Добавьте config.js в .gitignore
+// Этот файл можно безопасно публиковать - URL не является секретным
