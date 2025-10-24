@@ -22,20 +22,20 @@ class GitHubAPI {
         `.trim();
         
         try {
-            const response = await fetch(\`\${this.apiUrl}/repos/\${this.owner}/\${this.repo}/issues\`, {
+            const response = await fetch(`${this.apiUrl}/repos/${this.owner}/${this.repo}/issues`, {
                 method: 'POST',
                 headers: {
-                    'Authorization': \`token \${this.token}\`,
+                    'Authorization': `token ${this.token}`,
                     'Content-Type': 'application/json',
                     'Accept': 'application/vnd.github.v3+json'
                 },
                 body: JSON.stringify({
                     title: issueTitle,
                     body: issueBody,
-                    labels: ['test-result', \`class-\${testResult.studentClass}\`]
+                    labels: ['test-result', `class-${testResult.studentClass}`]
                 })
             });
-            if (!response.ok) throw new Error(\`GitHub API error: \${response.status}\`);
+            if (!response.ok) throw new Error(`GitHub API error: ${response.status}`);
             const data = await response.json();
             return { success: true, issueUrl: data.html_url };
         } catch (error) {
