@@ -12,10 +12,10 @@
         <div id="app"></div>
     </div>
 
-    <script src="../../config.js"></script>
-    <script src="../../js/github-api.js"></script>
-    <script src="../../js/test-engine.js"></script>
-    <script>
+<script src="../../config.js"></script>
+   <script src="../../js/sheets-api.js"></script>
+   <script src="../../js/test-engine.js"></script>
+   <script>
         const testData = {
             title: "Информация вокруг нас",
             questions: [
@@ -134,8 +134,8 @@
             ]
         };
 
-        const github = new GitHubAPI(GITHUB_CONFIG);
-        const test = new TestEngine(testData, github);
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+       const test = new TestEngine(testData, sheets);
         test.init();
     </script>
 </body>
