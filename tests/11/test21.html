@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 21: Установка мобильного приложения - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 21: Установка мобильного приложения", questions: [{"question": "В каких форматах можно сохранить приложение? (выберите 2)", "type": "multiple", "options": [".aia", ".doc", ".apk", ".txt"], "correct": [0, 2]},
+                {"question": "Что такое .aia файл?", "type": "single", "options": ["Видео", "Исходный код для редактирования", "Музыка", "Картинка"], "correct": 1},
+                {"question": "Что такое .apk файл?", "type": "single", "options": ["Текст", "Исполняемое приложение для Android", "Архив", "Презентация"], "correct": 1},
+                {"question": "Как установить через QR-код?", "type": "single", "options": ["Нельзя", "Сканировать через MIT AI2 Companion", "Напечатать", "Нарисовать"], "correct": 1},
+                {"question": "Что нужно для установки apk?", "type": "single", "options": ["Ничего", "Разрешить установку из неизвестных источников", "Только Wi-Fi", "Только USB"], "correct": 1},
+                {"question": "Какое приложение нужно для теста?", "type": "single", "options": ["WhatsApp", "MIT AI2 Companion App", "Instagram", "TikTok"], "correct": 1},
+                {"question": "Можно ли установить через USB?", "type": "single", "options": ["Нет", "Да, скопировав .apk файл", "Только через Wi-Fi", "Только через Bluetooth"], "correct": 1},
+                {"question": "Что такое отладка?", "type": "single", "options": ["Удаление", "Процесс поиска и исправления ошибок", "Установка", "Запуск"], "correct": 1},
+                {"question": "Что такое тестирование?", "type": "single", "options": ["Удаление", "Проверка работы приложения", "Установка", "Копирование"], "correct": 1},
+                {"question": "Где хранится скачанный apk?", "type": "single", "options": ["В корзине", "В папке Download", "На рабочем столе", "Нигде"], "correct": 1}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

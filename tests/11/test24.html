@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 24: Умный дом - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 24: Умный дом", questions: [{"question": "Что такое умный дом?", "type": "single", "options": ["Большой дом", "Дом с автоматизированными системами управления", "Красивый дом", "Дорогой дом"], "correct": 1},
+                {"question": "Что является главным компонентом умного дома?", "type": "single", "options": ["Лампочка", "Контроллер", "Дверь", "Окно"], "correct": 1},
+                {"question": "Для чего нужен контроллер?", "type": "single", "options": ["Для красоты", "Для получения информации и управления системами", "Для игр", "Не нужен"], "correct": 1},
+                {"question": "Какие датчики используются? (выберите 4)", "type": "multiple", "options": ["Температуры", "Музыкальный", "Движения", "Задымления", "Протечки", "Танцевальный"], "correct": [0, 2, 3, 4]},
+                {"question": "Что измеряет мультисенсор? (выберите 3)", "type": "multiple", "options": ["Температуру", "Вкус", "Освещенность", "Присутствие человека", "Запах"], "correct": [0, 2, 3]},
+                {"question": "Что делает датчик протечки?", "type": "single", "options": ["Измеряет температуру", "Определяет наличие жидкости", "Открывает дверь", "Включает свет"], "correct": 1},
+                {"question": "Для чего нужен датчик задымления?", "type": "single", "options": ["Для вентиляции", "Срабатывает при попадании дыма", "Для освещения", "Не нужен"], "correct": 1},
+                {"question": "Что такое умная розетка?", "type": "single", "options": ["Обычная розетка", "Розетка, измеряющая потребление электроэнергии", "Выключатель", "Лампа"], "correct": 1},
+                {"question": "Какую программу используют для симуляции?", "type": "single", "options": ["Word", "Cisco Packet Tracer", "Excel", "Paint"], "correct": 1},
+                {"question": "Что такое IoT Manager?", "type": "single", "options": ["Игра", "Мобильное приложение для управления умным домом", "Браузер", "Антивирус"], "correct": 1}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

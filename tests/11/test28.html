@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 28: Продвижение проекта - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 28: Продвижение проекта", questions: [{"question": "Что такое продвижение проекта?", "type": "single", "options": ["Удаление проекта", "Комплекс мер для увеличения узнаваемости", "Закрытие проекта", "Копирование проекта"], "correct": 1},
+                {"question": "Какие каналы продвижения? (выберите 3)", "type": "multiple", "options": ["Социальные сети", "Только email", "СМИ", "Блоги", "Нет каналов"], "correct": [0, 2, 3]},
+                {"question": "Что такое целевая аудитория?", "type": "single", "options": ["Все люди", "Группа людей, заинтересованных в продукте", "Только дети", "Только взрослые"], "correct": 1},
+                {"question": "Зачем нужно видео проекта?", "type": "single", "options": ["Не нужно", "Для наглядной презентации идеи", "Только для красоты", "Обязательно нет"], "correct": 1},
+                {"question": "Что такое лендинг пейдж?", "type": "single", "options": ["Игра", "Одностраничный сайт для привлечения внимания", "Приложение", "Программа"], "correct": 1},
+                {"question": "Важность email рассылки?", "type": "single", "options": ["Не важна", "Важна для информирования заинтересованных людей", "Спам", "Запрещена"], "correct": 1},
+                {"question": "Что такое PR?", "type": "single", "options": ["Программирование", "Связи с общественностью", "Продажи", "Реклама"], "correct": 1},
+                {"question": "Какие метрики отслеживать? (выберите 3)", "type": "multiple", "options": ["Просмотры", "Погоду", "Конверсии", "Вовлеченность", "Температуру"], "correct": [0, 2, 3]},
+                {"question": "Что такое SEO?", "type": "single", "options": ["Программа", "Оптимизация для поисковых систем", "Игра", "Приложение"], "correct": 1},
+                {"question": "Зачем нужны партнерства?", "type": "single", "options": ["Не нужны", "Для расширения охвата аудитории", "Только для конкурентов", "Для убытков"], "correct": 1}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

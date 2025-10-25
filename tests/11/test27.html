@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 27: Правила функционирования Crowdfunding - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 27: Правила функционирования Crowdfunding", questions: [{"question": "Что такое Crowdfunding?", "type": "single", "options": ["Банковский кредит", "Коллективное финансирование проектов через интернет", "Государственная поддержка", "Личные сбережения"], "correct": 1},
+                {"question": "Какие платформы Crowdfunding существуют? (выберите 2)", "type": "multiple", "options": ["Kickstarter", "Facebook", "Indiegogo", "Instagram"], "correct": [0, 2]},
+                {"question": "Кто финансирует проекты на Crowdfunding?", "type": "single", "options": ["Только банки", "Множество людей (толпа)", "Только государство", "Только инвесторы"], "correct": 1},
+                {"question": "Что такое цель финансирования?", "type": "single", "options": ["Максимальная сумма", "Минимальная сумма, необходимая для реализации проекта", "Любая сумма", "Нет цели"], "correct": 1},
+                {"question": "Что происходит, если цель не достигнута?", "type": "single", "options": ["Деньги остаются у создателя", "Деньги возвращаются спонсорам", "Деньги делятся поровну", "Ничего"], "correct": 1},
+                {"question": "Какие виды вознаграждения бывают? (выберите 3)", "type": "multiple", "options": ["Продукт", "Ничего", "Благодарность", "Акции", "Долг"], "correct": [0, 2, 3]},
+                {"question": "Сколько длится кампания обычно?", "type": "single", "options": ["1 день", "30-60 дней", "1 год", "Бесконечно"], "correct": 1},
+                {"question": "Что важно для успеха кампании?", "type": "single", "options": ["Только деньги", "Хорошее описание проекта и видео", "Только фото", "Ничего"], "correct": 1},
+                {"question": "Можно ли обновлять проект во время кампании?", "type": "single", "options": ["Нет", "Да, это важно для поддержания интереса", "Только один раз", "Только в конце"], "correct": 1},
+                {"question": "Какой процент берут платформы?", "type": "single", "options": ["0%", "Обычно 5-10%", "50%", "100%"], "correct": 1}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

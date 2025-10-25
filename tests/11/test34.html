@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 34: Электронная цифровая подпись - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 34: Электронная цифровая подпись", questions: [{"question": "Что такое ЭЦП?", "type": "single", "options": ["Обычная подпись", "Электронная цифровая подпись для аутентификации", "Печать", "Штамп"], "correct": 1},
+                {"question": "Для чего нужна ЭЦП?", "type": "single", "options": ["Для красоты", "Для подтверждения подлинности электронных документов", "Для игр", "Не нужна"], "correct": 1},
+                {"question": "Из чего состоит ЭЦП? (выберите 2)", "type": "multiple", "options": ["Открытый ключ", "Бумага", "Закрытый ключ", "Ручка"], "correct": [0, 2]},
+                {"question": "Что такое открытый ключ?", "type": "single", "options": ["Секретный код", "Ключ, доступный всем для проверки подписи", "Пароль", "Логин"], "correct": 1},
+                {"question": "Что такое закрытый ключ?", "type": "single", "options": ["Всем известен", "Секретный ключ владельца для создания подписи", "Общедоступен", "Не важен"], "correct": 1},
+                {"question": "Где хранится закрытый ключ?", "type": "single", "options": ["В интернете", "На защищенном носителе владельца", "У всех", "Нигде"], "correct": 1},
+                {"question": "Что такое удостоверяющий центр?", "type": "single", "options": ["Магазин", "Организация, выдающая сертификаты ЭЦП", "Школа", "Больница"], "correct": 1},
+                {"question": "Что такое сертификат ЭЦП?", "type": "single", "options": ["Диплом", "Документ, подтверждающий соответствие ЭЦП требованиям", "Паспорт", "Права"], "correct": 1},
+                {"question": "Сколько действует сертификат обычно?", "type": "single", "options": ["Вечно", "1-2 года", "1 месяц", "10 лет"], "correct": 1},
+                {"question": "Можно ли подписать документ без ЭЦП?", "type": "single", "options": ["Всегда нужна ЭЦП", "Да, но он не будет юридически значимым", "Нет никогда", "Без разницы"], "correct": 1}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

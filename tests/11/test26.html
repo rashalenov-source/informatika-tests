@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 26: Понятие Startup. Как запустить? - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 26: Понятие Startup. Как запустить?", questions: [{"question": "Что такое Startup?", "type": "single", "options": ["Старая компания", "Компания с короткой историей операционной деятельности", "Большая корпорация", "Государственное предприятие"], "correct": 1},
+                {"question": "Кто ввел термин Startup?", "type": "single", "options": ["Билл Гейтс", "Стив Бланк", "Стив Джобс", "Марк Цукерберг"], "correct": 1},
+                {"question": "Что является примером успешного стартапа?", "type": "single", "options": ["Microsoft", "Facebook", "IBM", "Apple"], "correct": 1},
+                {"question": "По определению Пола Грэма, Startup = ?", "type": "single", "options": ["Деньги", "Рост", "Люди", "Время"], "correct": 1},
+                {"question": "В какой области больше всего стартапов?", "type": "single", "options": ["Сельское хозяйство", "IT", "Строительство", "Торговля"], "correct": 1},
+                {"question": "Чем стартап отличается от малого бизнеса?", "type": "single", "options": ["Размером офиса", "Способностью к росту без географических ограничений", "Количеством сотрудников", "Ничем"], "correct": 1},
+                {"question": "Примеры успешных стартапов? (выберите 3)", "type": "multiple", "options": ["Uber", "General Motors", "Airbnb", "Siemens", "Facebook"], "correct": [0, 2, 4]},
+                {"question": "Что важно для стартапа?", "type": "single", "options": ["Большой офис", "Инновационная идея и быстрый рост", "Старое оборудование", "Много сотрудников"], "correct": 1},
+                {"question": "Сколько стартапов создал Стив Бланк?", "type": "single", "options": ["2", "8", "15", "1"], "correct": 1},
+                {"question": "Что нужно для запуска стартапа? (выберите 3)", "type": "multiple", "options": ["Идея", "Много денег сразу", "Команда", "Большой офис", "Бизнес-план"], "correct": [0, 2, 4]}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

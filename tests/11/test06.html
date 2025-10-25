@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 6: Проектирование ИИ. Практикум - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 6: Проектирование ИИ. Практикум",
+            questions: [
+                {"question": "Какая программа используется для создания нейронной сети в практикуме?", "type": "single", "options": ["Word", "Excel", "PowerPoint", "Access"], "correct": 1},
+                {"question": "Что нужно задать для каждого входа нейрона?", "type": "single", "options": ["Цвет", "Вес", "Размер", "Имя"], "correct": 1},
+                {"question": "Какая функция активации чаще всего используется?", "type": "single", "options": ["Линейная", "Сигмоидная", "Квадратичная", "Кубическая"], "correct": 1},
+                {"question": "Что такое порог активации?", "type": "single", "options": ["Максимальное значение", "Значение, при котором нейрон активируется", "Минимальное значение", "Среднее значение"], "correct": 1},
+                {"question": "Как изменяются веса при обучении?", "type": "single", "options": ["Не изменяются", "Подстраиваются для уменьшения ошибки", "Увеличиваются", "Уменьшаются"], "correct": 1},
+                {"question": "Что такое эпоха обучения?", "type": "single", "options": ["Один час работы", "Один проход по всем обучающим данным", "Один день", "Одна минута"], "correct": 1},
+                {"question": "Зачем нужна тестовая выборка?", "type": "single", "options": ["Для обучения", "Для проверки качества обучения", "Для хранения", "Не нужна"], "correct": 1},
+                {"question": "Что такое переобучение?", "type": "single", "options": ["Хорошее обучение", "Слишком точная настройка под обучающие данные", "Быстрое обучение", "Медленное обучение"], "correct": 1},
+                {"question": "Какие данные нужны для обучения нейросети? (выберите 2)", "type": "multiple", "options": ["Входные данные", "Погода", "Ожидаемые результаты", "Время"], "correct": [0, 2]},
+                {"question": "Что показывает точность нейросети?", "type": "single", "options": ["Скорость работы", "Процент правильных ответов", "Размер сети", "Количество нейронов"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

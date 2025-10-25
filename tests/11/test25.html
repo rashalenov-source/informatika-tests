@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 25: Разработка проекта умного дома. Практикум - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 25: Разработка проекта умного дома. Практикум", questions: [{"question": "Что такое Cisco Packet Tracer?", "type": "single", "options": ["Игра", "Инструмент для проектирования и моделирования сетей IoT", "Текстовый редактор", "Браузер"], "correct": 1},
+                {"question": "Какие режимы отображения есть? (выберите 2)", "type": "multiple", "options": ["Логическая топология", "Музыкальный", "Физическая топология", "Танцевальный"], "correct": [0, 2]},
+                {"question": "Какие режимы моделирования? (выберите 2)", "type": "multiple", "options": ["Реального времени", "Космический", "Пошаговое моделирование", "Быстрый"], "correct": [0, 2]},
+                {"question": "Как включить IoT устройство в Packet Tracer?", "type": "single", "options": ["Нельзя", "Alt + клик по устройству", "Только правая кнопка", "Только двойной клик"], "correct": 1},
+                {"question": "Что такое Home Gateway?", "type": "single", "options": ["Дверь", "Устройство для связи между элементами умного дома", "Окно", "Лампа"], "correct": 1},
+                {"question": "Какие компоненты IoT доступны? (выберите 3)", "type": "multiple", "options": ["Smart Door", "Обычная дверь", "Wind Detector", "Веб-камера", "Обычное окно"], "correct": [0, 2, 3]},
+                {"question": "Как настроить беспроводное соединение?", "type": "single", "options": ["Проводами", "Через настройки Wi-Fi устройств", "Нельзя", "Bluetooth"], "correct": 1},
+                {"question": "Что показывает IoT Server?", "type": "single", "options": ["Время", "Список подключенных устройств", "Погоду", "Новости"], "correct": 1},
+                {"question": "Можно ли добавить датчик движения?", "type": "single", "options": ["Нет", "Да, из палитры устройств", "Только один", "Максимум два"], "correct": 1},
+                {"question": "Для чего нужна отладка проекта?", "type": "single", "options": ["Не нужна", "Для проверки правильности работы", "Для красоты", "Для удаления"], "correct": 1}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

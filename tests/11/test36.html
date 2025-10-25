@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 36: Итоговое повторение - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 36: Итоговое повторение", questions: [{"question": "Искусственный интеллект - это?", "type": "single", "options": ["Программа", "Способность машин выполнять творческие задачи", "Игра", "Интернет"], "correct": 1},
+                {"question": "Виртуальная реальность создает?", "type": "single", "options": ["Дополняет реальный мир", "Полностью искусственный мир", "Ничего", "Только звук"], "correct": 1},
+                {"question": "Виртуальная машина - это?", "type": "single", "options": ["Реальный компьютер", "Виртуальный компьютер внутри реального", "Программа", "Игра"], "correct": 1},
+                {"question": "IoT означает?", "type": "single", "options": ["Internet of Technology", "Internet of Things", "Intelligent of Things", "Interactive Technology"], "correct": 1},
+                {"question": "MIT App Inventor используется для?", "type": "single", "options": ["Игр", "Создания приложений для Android", "Текстов", "Музыки"], "correct": 1},
+                {"question": "Startup - это?", "type": "single", "options": ["Старая компания", "Молодая компания с инновационной идеей", "Государственное предприятие", "Банк"], "correct": 1},
+                {"question": "Crowdfunding - это?", "type": "single", "options": ["Банковский кредит", "Коллективное финансирование", "Налог", "Штраф"], "correct": 1},
+                {"question": "Blockchain - это?", "type": "single", "options": ["Игра", "Распределенная база данных", "Сайт", "Программа"], "correct": 1},
+                {"question": "ЭЦП нужна для?", "type": "single", "options": ["Игр", "Подтверждения электронных документов", "Развлечения", "Ничего"], "correct": 1},
+                {"question": "Портал электронного правительства РК?", "type": "single", "options": ["gov.ru", "egov.kz", "google.com", "mail.ru"], "correct": 1}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

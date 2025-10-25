@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 15: Характеристики мобильных устройств - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 15: Характеристики мобильных устройств",
+            questions: [
+                {"question": "Что относится к мобильным устройствам? (выберите 3)", "type": "multiple", "options": ["Смартфоны", "Настольный ПК", "Планшеты", "Ноутбуки", "Холодильник"], "correct": [0, 2, 3]},
+                {"question": "Что такое смартфон?", "type": "single", "options": ["Обычный телефон", "Устройство с большим рядом функциональных возможностей", "Планшет", "Компьютер"], "correct": 1},
+                {"question": "Какие основные компоненты мобильных устройств? (выберите 4)", "type": "multiple", "options": ["АКБ", "Холодильник", "Процессор", "Память", "Дисплей", "Печка"], "correct": [0, 2, 3, 4]},
+                {"question": "Что такое АКБ?", "type": "single", "options": ["Процессор", "Аккумуляторная батарея", "Экран", "Память"], "correct": 1},
+                {"question": "Что является 'мозгом' мобильного устройства?", "type": "single", "options": ["Экран", "Процессор", "Батарея", "Корпус"], "correct": 1},
+                {"question": "Что такое RAM?", "type": "single", "options": ["Постоянная память", "Оперативная память для временного хранения данных", "Процессор", "Экран"], "correct": 1},
+                {"question": "Какие типы сенсорных экранов бывают? (выберите 2)", "type": "multiple", "options": ["Резисторный", "Деревянный", "Емкостный", "Бумажный"], "correct": [0, 2]},
+                {"question": "За что отвечает процессор? (выберите 3)", "type": "multiple", "options": ["Вывод изображения", "Приготовление пищи", "Прием сигналов сети", "Управление работой камеры", "Сон"], "correct": [0, 2, 3]},
+                {"question": "Сколько примерно работает смартфон автономно?", "type": "single", "options": ["10 дней", "1-3 дня", "1 час", "1 месяц"], "correct": 1},
+                {"question": "Что такое LCD-дисплей?", "type": "single", "options": ["Батарея", "Экран устройства", "Процессор", "Память"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

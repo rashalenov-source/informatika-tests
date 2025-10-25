@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 35: Электронное правительство - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 35: Электронное правительство", questions: [{"question": "Что такое электронное правительство?", "type": "single", "options": ["Компьютерная игра", "Система взаимодействия госорганов с гражданами через ИТ", "Сайт", "Программа"], "correct": 1},
+                {"question": "Какой портал электронного правительства в РК?", "type": "single", "options": ["gov.ru", "egov.kz", "google.com", "mail.ru"], "correct": 1},
+                {"question": "Что нужно для входа на egov.kz?", "type": "single", "options": ["Только email", "ЭЦП или одноразовый пароль", "Ничего", "Только телефон"], "correct": 1},
+                {"question": "Какие услуги доступны? (выберите 3)", "type": "multiple", "options": ["Получение справок", "Приготовление еды", "Оплата налогов", "Регистрация транспорта", "Пение"], "correct": [0, 2, 3]},
+                {"question": "Преимущества электронного правительства? (выберите 3)", "type": "multiple", "options": ["Экономия времени", "Очереди", "Доступность 24/7", "Прозрачность", "Бюрократия"], "correct": [0, 2, 3]},
+                {"question": "Что такое электронный документооборот?", "type": "single", "options": ["Бумажные документы", "Обмен документами в электронном виде", "Почта", "Курьер"], "correct": 1},
+                {"question": "Можно ли получить паспорт через egov.kz?", "type": "single", "options": ["Нет", "Можно подать заявление онлайн", "Только в офисе", "Нельзя никогда"], "correct": 1},
+                {"question": "Что такое личный кабинет?", "type": "single", "options": ["Комната", "Персональный раздел пользователя на портале", "Офис", "Дом"], "correct": 1},
+                {"question": "Безопасно ли электронное правительство?", "type": "single", "options": ["Нет", "Да, используется шифрование и ЭЦП", "Без разницы", "Очень опасно"], "correct": 1},
+                {"question": "Кто может пользоваться egov.kz?", "type": "single", "options": ["Только чиновники", "Все граждане и резиденты РК", "Только взрослые", "Только богатые"], "correct": 1}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

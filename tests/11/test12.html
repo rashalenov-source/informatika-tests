@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 12: Разработка 3D панорамы. Практикум - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 12: Разработка 3D панорамы. Практикум",
+            questions: [
+                {"question": "Какая программа используется для создания панорам?", "type": "single", "options": ["Word", "Image Composite Editor", "Excel", "Paint"], "correct": 1},
+                {"question": "Что нужно для создания панорамы?", "type": "single", "options": ["Одна фотография", "Серия фотографий с разных точек", "Видео", "Рисунок"], "correct": 1},
+                {"question": "Под каким углом делаются снимки для полной панорамы?", "type": "single", "options": ["90°", "180°", "120°", "45°"], "correct": 2},
+                {"question": "Что делает программа-сшиватель?", "type": "single", "options": ["Удаляет фото", "Объединяет фотографии в панораму", "Редактирует цвета", "Сжимает файлы"], "correct": 1},
+                {"question": "Какие программы используются для создания панорам? (выберите 3)", "type": "multiple", "options": ["Hugin", "Word", "Photo Gallery", "Image Composite Editor", "Excel"], "correct": [0, 2, 3]},
+                {"question": "Что такое stitching?", "type": "single", "options": ["Удаление", "Склеивание фотографий", "Копирование", "Сжатие"], "correct": 1},
+                {"question": "Зачем нужен штатив при съемке?", "type": "single", "options": ["Для красоты", "Для стабилизации камеры и одинакового уровня", "Не нужен", "Для переноски"], "correct": 1},
+                {"question": "Что такое обрезка (crop) в панораме?", "type": "single", "options": ["Удаление всего", "Удаление лишних краев панорамы", "Увеличение", "Поворот"], "correct": 1},
+                {"question": "В каком формате сохраняются панорамы? (выберите 2)", "type": "multiple", "options": ["Flash", "DOC", "HTML5", "EXE"], "correct": [0, 2]},
+                {"question": "Что важно при съемке для панорамы?", "type": "single", "options": ["Цвет камеры", "Перекрытие соседних кадров", "Размер камеры", "Вес камеры"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 18: Перспективы интернета вещей - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 18: Перспективы интернета вещей", questions: [{"question": "Каков ожидаемый эффект IoT?", "type": "single", "options": ["Нет эффекта", "Унификация умных приборов под единые стандарты", "Удорожание", "Усложнение"], "correct": 1},
+                {"question": "Какая проблема IoT?", "type": "single", "options": ["Нет проблем", "Необходимость альтернативных методов программирования", "Слишком дешево", "Слишком просто"], "correct": 1},
+                {"question": "Где применяется Яндекс.Навигатор как пример IoT?", "type": "single", "options": ["В космосе", "Для предотвращения пробок на дорогах", "В океане", "Нигде"], "correct": 1},
+                {"question": "Как IoT используется в спорте?", "type": "single", "options": ["Не используется", "Для накопления статистики и анализа данных", "Только для игр", "Для отдыха"], "correct": 1},
+                {"question": "Что такое умные счетчики?", "type": "single", "options": ["Обычные счетчики", "Приборы учета, передающие показания через интернет", "Калькуляторы", "Часы"], "correct": 1},
+                {"question": "Где IoT применяется в сельском хозяйстве?", "type": "single", "options": ["Нигде", "Мониторинг влажности и температуры грунта", "Только на складе", "Только в офисе"], "correct": 1},
+                {"question": "Преимущества IoT на заводах? (выберите 2)", "type": "multiple", "options": ["Сокращение расходов", "Увеличение расходов", "Увеличение прибыли", "Уменьшение качества"], "correct": [0, 2]},
+                {"question": "Что контролирует IoT на морских ветрогенераторах?", "type": "single", "options": ["Цвет", "Износ роторов и турбин", "Температуру воды", "Рыбу"], "correct": 1},
+                {"question": "Сколько лет до бума развития IoT?", "type": "single", "options": ["100 лет", "5-10 лет", "1 год", "50 лет"], "correct": 1},
+                {"question": "Какие перспективы IoT? (выберите 3)", "type": "multiple", "options": ["Умный дом", "Упадок", "Умный город", "Умная планета", "Разрушение"], "correct": [0, 2, 3]}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

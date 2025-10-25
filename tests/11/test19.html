@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 19: Создание интерфейса мобильного приложения - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 19: Создание интерфейса мобильного приложения", questions: [{"question": "Что такое визуальный дизайн интерфейсов?", "type": "single", "options": ["Цвет экрана", "Часть создания интерфейса с графическим и информационным дизайном", "Размер приложения", "Скорость работы"], "correct": 1},
+                {"question": "Из чего состоит визуальный дизайн? (выберите 2)", "type": "multiple", "options": ["Графический дизайн", "Музыкальный дизайн", "Информационный дизайн", "Вкусовой дизайн"], "correct": [0, 2]},
+                {"question": "Что такое элементы управления?", "type": "single", "options": ["Кнопки клавиатуры", "Экранные объекты для взаимодействия с приложением", "Мышь", "Монитор"], "correct": 1},
+                {"question": "Что такое MIT App Inventor?", "type": "single", "options": ["Игра", "Облачная среда визуальной разработки приложений для Android", "Браузер", "Антивирус"], "correct": 1},
+                {"question": "Сколько этапов разработки в MIT App Inventor?", "type": "single", "options": ["1", "2", "3", "4"], "correct": 1},
+                {"question": "Какие этапы разработки? (выберите 2)", "type": "multiple", "options": ["Проектирование интерфейса", "Покупка телефона", "Программирование компонентов", "Продажа"], "correct": [0, 2]},
+                {"question": "Что такое режим Дизайнер?", "type": "single", "options": ["Режим удаления", "Режим создания интерфейса приложения", "Режим копирования", "Режим печати"], "correct": 1},
+                {"question": "Что включает Палитра?", "type": "single", "options": ["Цвета", "Наборы компонентов приложения", "Звуки", "Видео"], "correct": 1},
+                {"question": "Строительные блоки дизайна? (выберите 3)", "type": "multiple", "options": ["Форма", "Запах", "Размер", "Цвет", "Вкус"], "correct": [0, 2, 3]},
+                {"question": "Для какой ОС создаются приложения в MIT App Inventor?", "type": "single", "options": ["Windows", "Android", "iOS", "Linux"], "correct": 1}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 17: Что такое интернет вещей? - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 17: Что такое интернет вещей?", questions: [{"question": "Что такое интернет вещей (IoT)?", "type": "single", "options": ["Обычный интернет", "Концепция сети физических объектов с встроенными технологиями для взаимодействия", "Социальная сеть", "Программа"], "correct": 1},
+                {"question": "Что означает IoT?", "type": "single", "options": ["Things of Internet", "Internet of Things", "Internet and Things", "Things Internet"], "correct": 1},
+                {"question": "Кто пророчил радиоволнам роль нейронов большого мозга?", "type": "single", "options": ["Эйнштейн", "Никола Тесла", "Эдисон", "Маркони"], "correct": 1},
+                {"question": "На какие типы делится IoT? (выберите 2)", "type": "multiple", "options": ["Промышленный", "Домашний", "Пользовательский", "Школьный"], "correct": [0, 2]},
+                {"question": "Какие условия нужны для IoT? (выберите 3)", "type": "multiple", "options": ["Единый центр", "Красивый дизайн", "Единые стандарты", "Безопасность", "Дешевизна"], "correct": [0, 2, 3]},
+                {"question": "Где применяется IoT? (выберите 3)", "type": "multiple", "options": ["Медицина", "Только дома", "Сельское хозяйство", "Транспорт", "Нигде"], "correct": [0, 2, 3]},
+                {"question": "Что такое единый центр в IoT?", "type": "single", "options": ["Компьютер", "Технически сложное устройство, контролирующее другие устройства", "Интернет", "Сервер"], "correct": 1},
+                {"question": "Почему нужны единые стандарты для IoT?", "type": "single", "options": ["Не нужны", "Для глобальной работы системы", "Для красоты", "Для удобства"], "correct": 1},
+                {"question": "В каких областях используют IoT? (выберите 4)", "type": "multiple", "options": ["Умный дом", "Кулинария", "Умный город", "Производство", "Здравоохранение", "Рисование"], "correct": [0, 2, 3, 4]},
+                {"question": "Что обеспечивает соединение IoT устройств?", "type": "single", "options": ["Провода", "Облачные системы", "Батарейки", "Магниты"], "correct": 1}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

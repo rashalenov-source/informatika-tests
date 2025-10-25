@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 31: Анализ и оценка проекта - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 31: Анализ и оценка проекта", questions: [{"question": "Зачем нужен анализ проекта?", "type": "single", "options": ["Не нужен", "Для оценки эффективности и выявления проблем", "Только для отчета", "Для красоты"], "correct": 1},
+                {"question": "Какие метрики важны? (выберите 3)", "type": "multiple", "options": ["Количество пользователей", "Погода", "Доход", "Удержание", "Цвет логотипа"], "correct": [0, 2, 3]},
+                {"question": "Что такое MVP?", "type": "single", "options": ["Награда", "Минимально жизнеспособный продукт", "Программа", "Игра"], "correct": 1},
+                {"question": "Зачем нужна обратная связь?", "type": "single", "options": ["Не нужна", "Для улучшения продукта на основе мнений пользователей", "Только для статистики", "Для критики"], "correct": 1},
+                {"question": "Что такое pivot?", "type": "single", "options": ["Поворот", "Изменение стратегии стартапа", "Закрытие", "Успех"], "correct": 1},
+                {"question": "Какие инструменты аналитики? (выберите 2)", "type": "multiple", "options": ["Google Analytics", "Блокнот", "Mixpanel", "Калькулятор"], "correct": [0, 2]},
+                {"question": "Что такое User Acquisition?", "type": "single", "options": ["Продажи", "Привлечение пользователей", "Удаление", "Реклама"], "correct": 1},
+                {"question": "Что такое Retention Rate?", "type": "single", "options": ["Скорость", "Показатель удержания пользователей", "Доход", "Цена"], "correct": 1},
+                {"question": "Что такое Churn Rate?", "type": "single", "options": ["Рост", "Процент пользователей, покинувших продукт", "Прибыль", "Реклама"], "correct": 1},
+                {"question": "Когда нужно масштабирование?", "type": "single", "options": ["Сразу", "После проверки гипотез и достижения product-market fit", "Никогда", "Случайно"], "correct": 1}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

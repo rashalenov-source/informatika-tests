@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 9: Виртуальная и дополненная реальности - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 9: Виртуальная и дополненная реальности",
+            questions: [
+                {"question": "Что такое виртуальная реальность (VR)?", "type": "single", "options": ["Дополнение реального мира", "Искусственный мир, созданный посредством технического и программного обеспечения", "Компьютерная игра", "Интернет"], "correct": 1},
+                {"question": "Кто ввел понятие 'виртуальная реальность'?", "type": "single", "options": ["Алан Тьюринг", "Ярон Ланьер", "Билл Гейтс", "Стив Джобс"], "correct": 1},
+                {"question": "В каком году было введено понятие VR?", "type": "single", "options": ["1980", "1989", "1995", "2000"], "correct": 1},
+                {"question": "Какие типы VR существуют? (выберите 3)", "type": "multiple", "options": ["Простой VR", "Сложный VR", "3D модель VR", "VR для нескольких пользователей", "Текстовый VR"], "correct": [0, 2, 3]},
+                {"question": "Что такое дополненная реальность (AR)?", "type": "single", "options": ["Полностью искусственный мир", "Дополнение физического мира цифровыми данными в режиме реального времени", "Виртуальная игра", "Интернет"], "correct": 1},
+                {"question": "Кто ввел понятие 'дополненная реальность'?", "type": "single", "options": ["Ярон Ланьер", "Томас П. Коделл", "Билл Гейтс", "Алан Тьюринг"], "correct": 1},
+                {"question": "Как называется сочетание ощущений человека и воздействие на него в VR?", "type": "single", "options": ["Виртуальный мир", "Интерактивный мир", "Реальный мир", "Цифровой мир"], "correct": 1},
+                {"question": "Какие гаджеты используются для VR? (выберите 2)", "type": "multiple", "options": ["Очки виртуальной реальности", "Обычные очки", "Шлем виртуальной реальности", "Солнцезащитные очки"], "correct": [0, 2]},
+                {"question": "В каких сферах применяется VR? (выберите 3)", "type": "multiple", "options": ["Образование", "Только игры", "Медицина", "Архитектура", "Нигде"], "correct": [0, 2, 3]},
+                {"question": "Чем VR отличается от AR?", "type": "single", "options": ["Ничем", "VR создает новый мир, AR дополняет реальный", "VR дешевле", "VR быстрее"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

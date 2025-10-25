@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 30: Создание маркетинговой рекламы - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 30: Создание маркетинговой рекламы", questions: [{"question": "Что такое инфографика?", "type": "single", "options": ["Текст", "Визуальное представление информации", "Музыка", "Видео"], "correct": 1},
+                {"question": "Зачем нужна инфографика?", "type": "single", "options": ["Не нужна", "Для упрощения восприятия сложной информации", "Только для красоты", "Для усложнения"], "correct": 1},
+                {"question": "Какие инструменты для создания? (выберите 3)", "type": "multiple", "options": ["Canva", "Блокнот", "Piktochart", "Калькулятор", "Adobe Illustrator"], "correct": [0, 2, 4]},
+                {"question": "Что важно в инфографике? (выберите 3)", "type": "multiple", "options": ["Наглядность", "Много текста", "Структура", "Цветовая схема", "Случайные цвета"], "correct": [0, 2, 3]},
+                {"question": "Какие элементы использовать? (выберите 3)", "type": "multiple", "options": ["Иконки", "Только текст", "Графики", "Диаграммы", "Ничего"], "correct": [0, 2, 3]},
+                {"question": "Что такое видеореклама?", "type": "single", "options": ["Текст", "Рекламный ролик в видео формате", "Картинка", "Звук"], "correct": 1},
+                {"question": "Сколько длится эффективная видеореклама?", "type": "single", "options": ["1 час", "15-60 секунд обычно", "5 минут", "Неограниченно"], "correct": 1},
+                {"question": "Что такое сторителлинг в рекламе?", "type": "single", "options": ["Ложь", "Рассказ истории для вовлечения аудитории", "Только факты", "Числа"], "correct": 1},
+                {"question": "Какие платформы для видео? (выберите 3)", "type": "multiple", "options": ["YouTube", "Блокнот", "Instagram", "Калькулятор", "TikTok"], "correct": [0, 2, 4]},
+                {"question": "Что такое призыв к действию (CTA)?", "type": "single", "options": ["Команда", "Элемент, побуждающий совершить действие", "Кнопка", "Текст"], "correct": 1}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

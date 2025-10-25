@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 16: Создание виртуальной машины. Практикум - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 16: Создание виртуальной машины. Практикум",
+            questions: [
+                {"question": "Какую программу используем для создания виртуальной машины?", "type": "single", "options": ["Word", "VirtualBox", "Excel", "Paint"], "correct": 1},
+                {"question": "Что нужно скачать для установки ОС на виртуальную машину?", "type": "single", "options": ["Игру", "Образ операционной системы (ISO)", "Видео", "Музыку"], "correct": 1},
+                {"question": "Сколько памяти рекомендуется выделить для Linux Mint?", "type": "single", "options": ["512 МБ", "2048 МБ", "8192 МБ", "256 МБ"], "correct": 1},
+                {"question": "Сколько места на диске нужно для Linux Mint?", "type": "single", "options": ["10 ГБ", "Около 50 ГБ", "500 ГБ", "5 ГБ"], "correct": 1},
+                {"question": "Какие типы виртуальных дисков существуют? (выберите 2)", "type": "multiple", "options": ["Динамический", "Круглый", "Фиксированный", "Квадратный"], "correct": [0, 2]},
+                {"question": "Что такое образ ISO?", "type": "single", "options": ["Видео файл", "Файл-образ оптического диска", "Музыкальный файл", "Текстовый файл"], "correct": 1},
+                {"question": "Можно ли установить Windows на виртуальную машину?", "type": "single", "options": ["Нет", "Да, можно", "Только Linux", "Только Mac"], "correct": 1},
+                {"question": "Что происходит при запуске виртуальной машины?", "type": "single", "options": ["Компьютер выключается", "Используется часть ресурсов основного ПК", "Ничего", "Компьютер ломается"], "correct": 1},
+                {"question": "Зачем нужна виртуальная машина разработчикам?", "type": "single", "options": ["Для игр", "Для тестирования программ на разных ОС", "Не нужна", "Для музыки"], "correct": 1},
+                {"question": "Можно ли запускать несколько виртуальных машин одновременно?", "type": "single", "options": ["Нет, никогда", "Да, если хватает ресурсов", "Только одну", "Только две"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

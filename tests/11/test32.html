@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 32: Цифровизация в Казахстане - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 32: Цифровизация в Казахстане", questions: [{"question": "Что такое цифровизация?", "type": "single", "options": ["Удаление компьютеров", "Внедрение цифровых технологий во все сферы жизни", "Только интернет", "Только телефоны"], "correct": 1},
+                {"question": "Какая программа цифровизации в РК?", "type": "single", "options": ["Цифровой мир", "Цифровой Казахстан", "Казахстан онлайн", "Электронная страна"], "correct": 1},
+                {"question": "Когда принята программа Цифровой Казахстан?", "type": "single", "options": ["2015", "2017", "2020", "2022"], "correct": 1},
+                {"question": "Какие направления цифровизации? (выберите 3)", "type": "multiple", "options": ["Электронное правительство", "Сельское хозяйство без техники", "Цифровая инфраструктура", "Кибербезопасность", "Отказ от технологий"], "correct": [0, 2, 3]},
+                {"question": "Что такое электронное правительство?", "type": "single", "options": ["Сайт", "Система предоставления госуслуг онлайн", "Игра", "Программа"], "correct": 1},
+                {"question": "Какой портал электронного правительства?", "type": "single", "options": ["google.kz", "egov.kz", "mail.ru", "yandex.kz"], "correct": 1},
+                {"question": "Что такое цифровая грамотность?", "type": "single", "options": ["Умение писать", "Навыки использования цифровых технологий", "Знание языков", "Умение читать"], "correct": 1},
+                {"question": "Зачем нужна кибербезопасность?", "type": "single", "options": ["Не нужна", "Для защиты от киберугроз", "Для игр", "Для развлечения"], "correct": 1},
+                {"question": "Что такое Smart City?", "type": "single", "options": ["Большой город", "Город с интеграцией IoT и цифровых технологий", "Старый город", "Маленький город"], "correct": 1},
+                {"question": "Преимущества цифровизации? (выберите 3)", "type": "multiple", "options": ["Удобство услуг", "Усложнение", "Экономия времени", "Прозрачность", "Увеличение бюрократии"], "correct": [0, 2, 3]}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

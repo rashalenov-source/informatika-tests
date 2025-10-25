@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 33: Технология Blockchain - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 33: Технология Blockchain", questions: [{"question": "Что такое Blockchain?", "type": "single", "options": ["Игра", "Распределенная база данных с цепочкой блоков", "Программа", "Сайт"], "correct": 1},
+                {"question": "Что такое блок в Blockchain?", "type": "single", "options": ["Кубик", "Контейнер с данными транзакций", "Файл", "Папка"], "correct": 1},
+                {"question": "Что такое хеш?", "type": "single", "options": ["Имя", "Уникальный цифровой отпечаток блока", "Пароль", "Логин"], "correct": 1},
+                {"question": "Главное преимущество Blockchain?", "type": "single", "options": ["Скорость", "Децентрализация и безопасность", "Цена", "Размер"], "correct": 1},
+                {"question": "Где применяется Blockchain? (выберите 3)", "type": "multiple", "options": ["Криптовалюты", "Кулинария", "Смарт-контракты", "Логистика", "Живопись"], "correct": [0, 2, 3]},
+                {"question": "Что такое криптовалюта?", "type": "single", "options": ["Обычные деньги", "Цифровая валюта на основе Blockchain", "Банковская карта", "Чек"], "correct": 1},
+                {"question": "Пример криптовалюты?", "type": "single", "options": ["Доллар", "Bitcoin", "Евро", "Рубль"], "correct": 1},
+                {"question": "Что такое майнинг?", "type": "single", "options": ["Добыча угля", "Процесс создания новых блоков в Blockchain", "Торговля", "Покупка"], "correct": 1},
+                {"question": "Можно ли изменить данные в Blockchain?", "type": "single", "options": ["Да, легко", "Практически невозможно из-за криптографии", "Только администратор", "Кто угодно"], "correct": 1},
+                {"question": "Что такое смарт-контракт?", "type": "single", "options": ["Бумажный договор", "Самоисполняемый контракт на Blockchain", "Обычный контракт", "Расписка"], "correct": 1}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

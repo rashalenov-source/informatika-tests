@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 11: 3D панорама и виртуальный тур - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 11: 3D панорама и виртуальный тур",
+            questions: [
+                {"question": "Что такое 3D панорама?", "type": "single", "options": ["Обычная фотография", "360-градусное изображение окружающего пространства", "Видео", "Рисунок"], "correct": 1},
+                {"question": "Какие виды 3D панорам существуют? (выберите 3)", "type": "multiple", "options": ["Плоскостная", "Круглая", "Сферическая", "Цилиндрическая", "Квадратная"], "correct": [0, 2, 3]},
+                {"question": "Что такое виртуальный тур?", "type": "single", "options": ["Обычная экскурсия", "Совокупность 3D панорам, связанных активными зонами", "Видеоролик", "Презентация"], "correct": 1},
+                {"question": "Сколько этапов в создании 3D тура?", "type": "single", "options": ["Один", "Два", "Три", "Четыре"], "correct": 2},
+                {"question": "Какие этапы создания 3D тура? (выберите 3)", "type": "multiple", "options": ["Съемка объекта", "Покупка камеры", "Обработка снимков", "Сборка тура", "Продажа тура"], "correct": [0, 2, 3]},
+                {"question": "Какой обзор у сферической панорамы?", "type": "single", "options": ["180° по горизонтали", "360° по горизонтали и 180° по вертикали", "90° по горизонтали", "270° по горизонтали"], "correct": 1},
+                {"question": "Где применяются 3D панорамы? (выберите 3)", "type": "multiple", "options": ["Недвижимость", "Только в играх", "Гостиничный бизнес", "Ресторанный бизнес", "Нигде"], "correct": [0, 2, 3]},
+                {"question": "Что такое активные зоны в виртуальном туре?", "type": "single", "options": ["Опасные места", "Зоны для перемещения между панорамами", "Яркие места", "Темные места"], "correct": 1},
+                {"question": "Что можно добавить в виртуальный тур? (выберите 3)", "type": "multiple", "options": ["Музыку", "Запахи", "Видеоролики", "Надписи", "Вкусы"], "correct": [0, 2, 3]},
+                {"question": "Что нужно для просмотра 3D панорамы?", "type": "single", "options": ["Специальные очки всегда", "Интернет-браузер с поддержкой технологий", "Только VR-шлем", "Специальная комната"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

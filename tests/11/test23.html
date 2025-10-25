@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 23: Приложение Национальные инструменты. Практикум - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 23: Приложение Национальные инструменты. Практикум", questions: [{"question": "Какой компонент проигрывает звук?", "type": "single", "options": ["Кнопка", "Звук (Sound)", "Текст", "Холст"], "correct": 1},
+                {"question": "Какой формат аудио поддерживается?", "type": "single", "options": [".doc", ".mp3", ".exe", ".txt"], "correct": 1},
+                {"question": "Можно ли добавить изображение инструмента?", "type": "single", "options": ["Нет", "Да, через компонент Изображение", "Только текст", "Только звук"], "correct": 1},
+                {"question": "Как запустить звук при нажатии кнопки?", "type": "single", "options": ["Автоматически", "Вызвать метод Play компонента Звук", "Нельзя", "Случайно"], "correct": 1},
+                {"question": "Можно ли использовать несколько звуков?", "type": "single", "options": ["Нет, только один", "Да, добавить несколько компонентов Звук", "Только два", "Нельзя"], "correct": 1},
+                {"question": "Что такое свойство Source у компонента Звук?", "type": "single", "options": ["Цвет", "Путь к аудиофайлу", "Размер", "Время"], "correct": 1},
+                {"question": "Можно ли зациклить звук?", "type": "single", "options": ["Нет", "Да, через свойство Loop", "Только один раз", "Случайно"], "correct": 1},
+                {"question": "Как остановить звук?", "type": "single", "options": ["Нельзя", "Вызвать метод Stop", "Только перезапуск", "Выключить телефон"], "correct": 1},
+                {"question": "Можно ли добавить несколько экранов?", "type": "single", "options": ["Нет, только один", "Да, создать новые Screen", "Только два", "Максимум три"], "correct": 1},
+                {"question": "Какие казахские инструменты можно добавить? (выберите 3)", "type": "multiple", "options": ["Домбра", "Гитара", "Кобыз", "Фортепиано", "Сыбызгы"], "correct": [0, 2, 4]}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

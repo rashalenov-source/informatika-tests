@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 14: Виртуальные машины - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 14: Виртуальные машины",
+            questions: [
+                {"question": "Что такое виртуальная машина?", "type": "single", "options": ["Физический компьютер", "Искусственно созданный при помощи ПО виртуальный компьютер", "Игра", "Программа для рисования"], "correct": 1},
+                {"question": "Что использует виртуальная машина?", "type": "single", "options": ["Собственное оборудование", "Часть ресурсов основного компьютера", "Интернет", "Батарейки"], "correct": 1},
+                {"question": "Какие типы виртуальных машин существуют? (выберите 2)", "type": "multiple", "options": ["Процессная", "Игровая", "Системная", "Графическая"], "correct": [0, 2]},
+                {"question": "Для чего используются виртуальные машины? (выберите 3)", "type": "multiple", "options": ["Установка другой ОС", "Приготовление пищи", "Тестирование ПО", "Безопасный запуск программ", "Уборка"], "correct": [0, 2, 3]},
+                {"question": "Какие программы создают виртуальные машины? (выберите 3)", "type": "multiple", "options": ["VirtualBox", "Word", "VMware", "Microsoft Virtual PC", "Excel"], "correct": [0, 2, 3]},
+                {"question": "Какая виртуальная машина бесплатная?", "type": "single", "options": ["Все платные", "VirtualBox", "Нет таких", "Все бесплатные"], "correct": 1},
+                {"question": "Что можно установить на виртуальную машину?", "type": "single", "options": ["Только Windows", "Любую поддерживаемую ОС", "Только Linux", "Только Mac OS"], "correct": 1},
+                {"question": "Какой недостаток Microsoft Virtual PC?", "type": "single", "options": ["Платная", "Работает только с Windows", "Медленная", "Сложная"], "correct": 1},
+                {"question": "Что такое процессная виртуальная машина?", "type": "single", "options": ["Полная ОС", "Виртуальная платформа для выполнения отдельного процесса", "Игровая платформа", "Браузер"], "correct": 1},
+                {"question": "Нужна ли виртуальная машина всем пользователям?", "type": "single", "options": ["Да, обязательно", "Нет, только продвинутым пользователям", "Только детям", "Только взрослым"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

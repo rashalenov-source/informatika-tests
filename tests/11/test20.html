@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 20: Разработка мобильного приложения - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 20: Разработка мобильного приложения", questions: [{"question": "Что такое режим Блоки?", "type": "single", "options": ["Режим дизайна", "Режим программирования компонентов", "Режим удаления", "Режим игры"], "correct": 1},
+                {"question": "Что используется для программирования?", "type": "single", "options": ["Текст", "Блоки кода", "Рисунки", "Музыка"], "correct": 1},
+                {"question": "Какие блоки существуют? (выберите 3)", "type": "multiple", "options": ["Встроенные", "Деревянные", "Компонентов", "Переменных", "Железные"], "correct": [0, 1, 3]},
+                {"question": "Что такое событие в приложении?", "type": "single", "options": ["Праздник", "Действие пользователя, на которое реагирует приложение", "Ошибка", "Закрытие"], "correct": 1},
+                {"question": "Какие конструкции используются? (выберите 2)", "type": "multiple", "options": ["Условия", "Танцы", "Циклы", "Песни"], "correct": [0, 2]},
+                {"question": "Для чего нужны переменные?", "type": "single", "options": ["Для красоты", "Для хранения данных", "Для звука", "Не нужны"], "correct": 1},
+                {"question": "Что делает блок IF?", "type": "single", "options": ["Удаляет", "Проверяет условие", "Сохраняет", "Закрывает"], "correct": 1},
+                {"question": "Что такое цикл?", "type": "single", "options": ["Одно действие", "Повторение действий", "Удаление", "Копирование"], "correct": 1},
+                {"question": "Можно ли добавить звук в приложение?", "type": "single", "options": ["Нет", "Да, через компонент Звук", "Только музыку", "Только голос"], "correct": 1},
+                {"question": "Как назвать компоненты правильно?", "type": "single", "options": ["Любые имена", "Название + Функция (Кнопка Назад)", "Только цифры", "Только буквы"], "correct": 1}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

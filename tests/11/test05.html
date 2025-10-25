@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 5: Проектирование искусственного интеллекта - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 5: Проектирование искусственного интеллекта",
+            questions: [
+                {"question": "Что такое нейросеть?", "type": "single", "options": ["Компьютерная сеть", "Модель, которая позволяет принимать правильное решение на основе определенных условий", "Интернет", "Программа"], "correct": 1},
+                {"question": "Какие виды нейронных сетей существуют? (выберите 2)", "type": "multiple", "options": ["Однослойные", "Двухслойные", "Многослойные", "Трехслойные"], "correct": [0, 2]},
+                {"question": "Что такое сеть прямого распространения?", "type": "single", "options": ["Сеть с обратными связями", "Однонаправленная сеть", "Круговая сеть", "Замкнутая сеть"], "correct": 1},
+                {"question": "Что такое рекуррентная сеть?", "type": "single", "options": ["Однонаправленная", "Сеть с обратными связями", "Прямая сеть", "Линейная сеть"], "correct": 1},
+                {"question": "Сколько слоев в простейшей нейронной сети?", "type": "single", "options": ["Один", "Два", "Три", "Четыре"], "correct": 1},
+                {"question": "Что входит в структуру нейронной сети? (выберите 3)", "type": "multiple", "options": ["Входной слой", "Монитор", "Скрытый слой", "Выходной слой", "Клавиатура"], "correct": [0, 2, 3]},
+                {"question": "Для чего нужен скрытый слой?", "type": "single", "options": ["Для ввода данных", "Для обработки информации", "Для вывода результата", "Не нужен"], "correct": 1},
+                {"question": "Что такое обучение нейронной сети?", "type": "single", "options": ["Программирование", "Настройка весов связей между нейронами", "Установка программ", "Покупка оборудования"], "correct": 1},
+                {"question": "Какая программа используется для проектирования ИИ?", "type": "single", "options": ["Word", "Excel", "Paint", "Notepad"], "correct": 1},
+                {"question": "Что является результатом работы нейронной сети?", "type": "single", "options": ["Входные данные", "Выходные данные", "Веса", "Функции"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

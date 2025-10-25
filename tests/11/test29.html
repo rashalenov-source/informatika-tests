@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 29: IT Startup и реклама - 11 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container"><div id="app"></div></div>
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {title: "Тест 29: IT Startup и реклама", questions: [{"question": "Что такое маркетинговая реклама?", "type": "single", "options": ["Обман", "Продвижение продукта через различные каналы", "Только ТВ", "Только радио"], "correct": 1},
+                {"question": "Какие виды рекламы? (выберите 3)", "type": "multiple", "options": ["Контекстная", "Космическая", "Таргетированная", "Баннерная", "Подводная"], "correct": [0, 2, 3]},
+                {"question": "Что такое контекстная реклама?", "type": "single", "options": ["Реклама везде", "Реклама в поисковых системах по ключевым словам", "Только на ТВ", "Только в газетах"], "correct": 1},
+                {"question": "Что такое таргетированная реклама?", "type": "single", "options": ["Для всех", "Реклама, нацеленная на определенную аудиторию", "Случайная", "Не эффективная"], "correct": 1},
+                {"question": "Какие платформы для таргетинга? (выберите 2)", "type": "multiple", "options": ["Facebook Ads", "Блокнот", "Google Ads", "Калькулятор"], "correct": [0, 2]},
+                {"question": "Что такое конверсия?", "type": "single", "options": ["Валюта", "Процент пользователей, совершивших целевое действие", "Просмотры", "Клики"], "correct": 1},
+                {"question": "Что такое A/B тестирование?", "type": "single", "options": ["Тест на знания", "Сравнение двух вариантов рекламы", "Игра", "Программа"], "correct": 1},
+                {"question": "Зачем нужна аналитика?", "type": "single", "options": ["Не нужна", "Для оценки эффективности рекламы", "Для красоты", "Для игры"], "correct": 1},
+                {"question": "Что такое ROI?", "type": "single", "options": ["Страна", "Возврат инвестиций (Return On Investment)", "Валюта", "Программа"], "correct": 1},
+                {"question": "Какой бюджет нужен для рекламы стартапа?", "type": "single", "options": ["Всегда огромный", "Зависит от целей и аудитории", "Нулевой", "Бесконечный"], "correct": 1}]};
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
