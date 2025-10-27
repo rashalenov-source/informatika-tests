@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 10: Выбор программного обеспечения - 9 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 10: Выбор программного обеспечения",
+            questions: [
+                {"question": "ПО делится на:", "type": "multiple", "options": ["Системное", "Прикладное", "Инструментальное", "Космическое"], "correct": [0, 1, 2]},
+                {"question": "Системное ПО:", "type": "single", "options": ["Word", "Windows", "Photoshop", "Excel"], "correct": 1},
+                {"question": "Прикладное ПО для:", "type": "single", "options": ["Управления ПК", "Решения пользовательских задач", "Ничего", "Программирования"], "correct": 1},
+                {"question": "Примеры текстовых редакторов:", "type": "multiple", "options": ["Word", "Блокнот", "Chrome", "Google Docs"], "correct": [0, 1, 3]},
+                {"question": "Для работы с таблицами:", "type": "single", "options": ["Paint", "Excel", "Блокнот", "Калькулятор"], "correct": 1},
+                {"question": "Для графики используют:", "type": "multiple", "options": ["Photoshop", "GIMP", "Word", "Paint"], "correct": [0, 1, 3]},
+                {"question": "Антивирус - это:", "type": "single", "options": ["Игра", "Защита от вирусов", "Браузер", "Редактор"], "correct": 1},
+                {"question": "Браузеры:", "type": "multiple", "options": ["Chrome", "Firefox", "Word", "Opera"], "correct": [0, 1, 3]},
+                {"question": "Выбор ПО зависит от:", "type": "multiple", "options": ["Задач пользователя", "Бюджета", "Совместимости", "Цвета"], "correct": [0, 1, 2]},
+                {"question": "Лицензионное ПО:", "type": "single", "options": ["Бесплатное", "Легальное, оплаченное", "Пиратское", "Ненужное"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

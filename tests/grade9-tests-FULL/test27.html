@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 27: Создание окна и фона игры_1 - 9 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 27: Создание окна и фона игры_1",
+            questions: [
+                {"question": "pygame.display.set_mode():", "type": "single", "options": ["Закрыть", "Создать окно", "Свернуть", "Развернуть"], "correct": 1},
+                {"question": "Размер окна задается:", "type": "single", "options": ["Случайно", "(ширина, высота)", "Автоматически", "Не задается"], "correct": 1},
+                {"question": "set_caption():", "type": "single", "options": ["Размер", "Заголовок окна", "Цвет", "Позиция"], "correct": 1},
+                {"question": "screen.fill():", "type": "single", "options": ["Очистить", "Залить цветом", "Удалить", "Скрыть"], "correct": 1},
+                {"question": "Цвет задается:", "type": "single", "options": ["Словом", "(R,G,B)", "Числом", "Не задается"], "correct": 1},
+                {"question": "pygame.display.flip():", "type": "single", "options": ["Поворот", "Обновление экрана", "Закрытие", "Очистка"], "correct": 1},
+                {"question": "Игровой цикл while:", "type": "single", "options": ["Не нужен", "Основа игры", "Вреден", "Опасен"], "correct": 1},
+                {"question": "Фон можно:", "type": "multiple", "options": ["Залить цветом", "Загрузить картинку", "Градиент", "Не делать"], "correct": [0, 1, 2]},
+                {"question": "Фоновое изображение:", "type": "single", "options": ["Не нужно", "pygame.image.load()", "Нельзя", "Сложно"], "correct": 1},
+                {"question": "FPS важен для:", "type": "single", "options": ["Красоты", "Плавности анимации", "Звука", "Ничего"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

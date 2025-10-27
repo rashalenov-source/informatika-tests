@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 20: Одномерные массивы_1 - 9 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 20: Одномерные массивы_1",
+            questions: [
+                {"question": "Массив - это:", "type": "single", "options": ["Переменная", "Набор элементов одного типа", "Функция", "Класс"], "correct": 1},
+                {"question": "Индексация в Python начинается с:", "type": "single", "options": ["1", "0", "-1", "10"], "correct": 1},
+                {"question": "Создание списка в Python:", "type": "single", "options": ["arr = {}", "arr = []", "arr = ()", "arr = <>"], "correct": 1},
+                {"question": "Доступ к элементу:", "type": "single", "options": ["arr.0", "arr[0]", "arr(0)", "arr{0}"], "correct": 1},
+                {"question": "Длина массива:", "type": "single", "options": ["size(arr)", "len(arr)", "length(arr)", "count(arr)"], "correct": 1},
+                {"question": "Добавление элемента:", "type": "single", "options": ["arr.add(x)", "arr.append(x)", "arr.insert(x)", "arr.push(x)"], "correct": 1},
+                {"question": "Удаление элемента:", "type": "single", "options": ["arr.delete(x)", "arr.remove(x)", "arr.erase(x)", "arr.pop(x)"], "correct": 1},
+                {"question": "Срез списка [1:3]:", "type": "single", "options": ["Элементы 1,2,3", "Элементы 1,2", "Элемент 1", "Элемент 3"], "correct": 1},
+                {"question": "Последний элемент:", "type": "single", "options": ["arr[0]", "arr[-1]", "arr[last]", "arr[end]"], "correct": 1},
+                {"question": "Копирование списка:", "type": "single", "options": ["b = a", "b = a.copy()", "b = copy(a)", "b = a.clone()"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

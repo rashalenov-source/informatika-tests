@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 2: Оценка рисков длительной работы за компьютером - 9 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 2: Оценка рисков длительной работы за компьютером",
+            questions: [
+                {"question": "Какое расстояние должно быть от глаз до монитора?", "type": "single", "options": ["10-20 см", "50-70 см", "1 метр", "2 метра"], "correct": 1},
+                {"question": "Рекомендуемое время непрерывной работы за компьютером для школьника:", "type": "single", "options": ["15 минут", "45 минут", "3 часа", "6 часов"], "correct": 1},
+                {"question": "Что может вызвать длительная работа за компьютером?", "type": "multiple", "options": ["Усталость глаз", "Боли в спине", "Улучшение зрения", "Головные боли"], "correct": [0, 1, 3]},
+                {"question": "Правильная посадка за компьютером:", "type": "single", "options": ["Лежа", "Прямая спина, ноги на полу", "Стоя", "Согнувшись"], "correct": 1},
+                {"question": "Освещение при работе за компьютером должно быть:", "type": "single", "options": ["Очень ярким", "Слабым", "Умеренным, без бликов", "Выключенным"], "correct": 2},
+                {"question": "Гимнастика для глаз нужна:", "type": "single", "options": ["Никогда", "Каждые 20-30 минут", "Раз в день", "Раз в неделю"], "correct": 1},
+                {"question": "Высота монитора должна быть:", "type": "single", "options": ["Выше уровня глаз", "На уровне или чуть ниже глаз", "На полу", "Под столом"], "correct": 1},
+                {"question": "Что помогает снизить усталость?", "type": "multiple", "options": ["Перерывы", "Физкультминутки", "Правильная осанка", "Отсутствие перерывов"], "correct": [0, 1, 2]},
+                {"question": "Синдром компьютерного зрения может вызвать:", "type": "single", "options": ["Улучшение зрения", "Сухость и усталость глаз", "Ничего", "Рост волос"], "correct": 1},
+                {"question": "Проветривание помещения необходимо:", "type": "single", "options": ["Никогда", "Регулярно", "Раз в год", "Только зимой"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

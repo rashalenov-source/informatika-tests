@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 9: Характеристики, влияющие на выбор компьютера - 9 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 9: Характеристики, влияющие на выбор компьютера",
+            questions: [
+                {"question": "Для офисной работы нужен:", "type": "single", "options": ["Суперкомпьютер", "Средний ПК", "Слабый", "Игровой"], "correct": 1},
+                {"question": "Для игр важны:", "type": "multiple", "options": ["Мощная видеокарта", "Много RAM", "Красивый корпус", "Быстрый процессор"], "correct": [0, 1, 3]},
+                {"question": "Для видеомонтажа нужно:", "type": "single", "options": ["Слабый ПК", "Мощный процессор и много RAM", "Только монитор", "Ничего"], "correct": 1},
+                {"question": "SSD быстрее HDD:", "type": "single", "options": ["Нет", "Да", "Одинаково", "Медленнее"], "correct": 1},
+                {"question": "Для программирования:", "type": "single", "options": ["Не нужен ПК", "Средние характеристики", "Супермощный", "Слабый"], "correct": 1},
+                {"question": "Для учебы подойдет:", "type": "single", "options": ["Любой современный ПК", "Нет", "Только дорогой", "Только игровой"], "correct": 0},
+                {"question": "Для 3D-моделирования нужна:", "type": "single", "options": ["Слабая видеокарта", "Мощная видеокарта", "Нет нужды", "Только процессор"], "correct": 1},
+                {"question": "Портативность важна для:", "type": "single", "options": ["Настольного ПК", "Ноутбука", "Сервера", "Планшета для игр"], "correct": 1},
+                {"question": "Бюджет влияет на:", "type": "multiple", "options": ["Выбор компонентов", "Производительность", "Возможности", "Ничего"], "correct": [0, 1, 2]},
+                {"question": "Апгрейд - это:", "type": "single", "options": ["Удаление", "Улучшение компонентов", "Поломка", "Продажа"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

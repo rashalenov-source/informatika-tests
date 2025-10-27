@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 12: Создание базы данных в электронной таблице_1 - 9 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 12: Создание базы данных в электронной таблице_1",
+            questions: [
+                {"question": "Первая строка таблицы содержит:", "type": "single", "options": ["Данные", "Названия полей", "Ничего", "Формулы"], "correct": 1},
+                {"question": "Каждая строка - это:", "type": "single", "options": ["Поле", "Запись", "Столбец", "Формула"], "correct": 1},
+                {"question": "Для создания БД в Excel нужно:", "type": "multiple", "options": ["Определить поля", "Ввести данные", "Отформатировать", "Играть"], "correct": [0, 1, 2]},
+                {"question": "Тип данных нужно:", "type": "single", "options": ["Не указывать", "Выбрать для каждого поля", "Угадать", "Не важно"], "correct": 1},
+                {"question": "Для чисел формат:", "type": "single", "options": ["Текстовый", "Числовой", "Дата", "Общий"], "correct": 1},
+                {"question": "Для дат формат:", "type": "single", "options": ["Числовой", "Дата", "Текст", "Время"], "correct": 1},
+                {"question": "Ширину столбца:", "type": "single", "options": ["Нельзя менять", "Можно настроить", "Не нужно", "Только увеличить"], "correct": 1},
+                {"question": "Автозаполнение помогает:", "type": "single", "options": ["Удалить", "Быстро ввести данные", "Ничего", "Сломать"], "correct": 1},
+                {"question": "Проверка данных:", "type": "single", "options": ["Не нужна", "Предотвращает ошибки", "Замедляет", "Вредна"], "correct": 1},
+                {"question": "Границы таблицы:", "type": "single", "options": ["Не нужны", "Улучшают читаемость", "Вредят", "Замедляют"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

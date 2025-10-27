@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 24: Двумерные массивы_3 - 9 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 24: Двумерные массивы_3",
+            questions: [
+                {"question": "Вложенные циклы для 2D:", "type": "single", "options": ["Не нужны", "Внешний для строк, внутренний для столбцов", "Один цикл", "Нет циклов"], "correct": 1},
+                {"question": "Изменение элемента:", "type": "single", "options": ["Нельзя", "arr[i][j] = значение", "Сложно", "Опасно"], "correct": 1},
+                {"question": "Удаление строки:", "type": "single", "options": ["Невозможно", "del arr[i]", "arr.remove_row()", "Сложно"], "correct": 1},
+                {"question": "Удаление столбца:", "type": "single", "options": ["Просто", "Удалить элемент из каждой строки", "Нельзя", "Одной командой"], "correct": 1},
+                {"question": "Срезы в 2D:", "type": "single", "options": ["Не работают", "arr[1:3]", "Нельзя", "Опасны"], "correct": 1},
+                {"question": "List comprehension:", "type": "single", "options": ["Не существует", "Краткая запись циклов", "Сложно", "Не работает"], "correct": 1},
+                {"question": "Обнуление матрицы:", "type": "single", "options": ["Нельзя", "Заполнить нулями циклом", "Удалить", "Сложно"], "correct": 1},
+                {"question": "Симметричная матрица:", "type": "single", "options": ["Не бывает", "arr[i][j] == arr[j][i]", "Квадратная", "Любая"], "correct": 1},
+                {"question": "Поворот матрицы:", "type": "single", "options": ["Невозможен", "Транспонирование и реверс", "Прост", "Быстрый"], "correct": 1},
+                {"question": "NumPy для массивов:", "type": "single", "options": ["Не нужен", "Мощная библиотека", "Не работает", "Опасен"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
