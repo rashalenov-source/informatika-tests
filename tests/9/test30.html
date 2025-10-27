@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 30: Анимирование персонажей_1 - 9 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 30: Анимирование персонажей_1",
+            questions: [
+                {"question": "Анимация - это:", "type": "single", "options": ["Звук", "Смена кадров", "Фон", "Уровень"], "correct": 1},
+                {"question": "Спрайт-шит:", "type": "single", "options": ["Бумага", "Набор кадров в одном файле", "Ошибка", "Не существует"], "correct": 1},
+                {"question": "Кадры анимации:", "type": "single", "options": ["Один", "Последовательность изображений", "Случайные", "Не нужны"], "correct": 1},
+                {"question": "Скорость анимации:", "type": "single", "options": ["Не важна", "Смена кадров в секунду", "Максимальная", "Минимальная"], "correct": 1},
+                {"question": "Цикличная анимация:", "type": "single", "options": ["Невозможна", "Повторяется бесконечно", "Один раз", "Не нужна"], "correct": 1},
+                {"question": "Состояния персонажа:", "type": "multiple", "options": ["Идет", "Прыгает", "Стоит", "Спит"], "correct": [0, 1, 2]},
+                {"question": "Для движения изменяют:", "type": "single", "options": ["Цвет", "rect.x или rect.y", "Размер", "Прозрачность"], "correct": 1},
+                {"question": "Плавное движение:", "type": "single", "options": ["Невозможно", "Маленькие изменения координат", "Резкое", "Не нужно"], "correct": 1},
+                {"question": "Направление движения:", "type": "single", "options": ["Случайно", "Задается переменными", "Не важно", "Фиксировано"], "correct": 1},
+                {"question": "Границы экрана:", "type": "single", "options": ["Не нужны", "Проверка координат", "Нет", "Не работают"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

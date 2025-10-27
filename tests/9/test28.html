@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 28: Создание окна и фона игры_2 - 9 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 28: Создание окна и фона игры_2",
+            questions: [
+                {"question": "Полноэкранный режим:", "type": "single", "options": ["Нельзя", "pygame.FULLSCREEN", "Автоматически", "Не работает"], "correct": 1},
+                {"question": "Изменение размера окна:", "type": "single", "options": ["Невозможно", "pygame.RESIZABLE", "Опасно", "Не нужно"], "correct": 1},
+                {"question": "Координаты (0,0):", "type": "single", "options": ["Центр", "Верхний левый угол", "Правый нижний", "Случайны"], "correct": 1},
+                {"question": "Ось X идет:", "type": "single", "options": ["Вверх", "Вправо", "Вниз", "Влево"], "correct": 1},
+                {"question": "Ось Y идет:", "type": "single", "options": ["Вверх", "Вниз", "Влево", "Вправо"], "correct": 1},
+                {"question": "Анимация фона:", "type": "single", "options": ["Невозможна", "Смена картинок или движение", "Не нужна", "Сложна"], "correct": 1},
+                {"question": "Многослойный фон:", "type": "single", "options": ["Нельзя", "Несколько blit()", "Не работает", "Опасен"], "correct": 1},
+                {"question": "Прозрачность:", "type": "single", "options": ["Нет", "set_alpha()", "Не работает", "Не нужна"], "correct": 1},
+                {"question": "Обновление части экрана:", "type": "single", "options": ["Нельзя", "pygame.display.update(rect)", "Всегда всё", "Не работает"], "correct": 1},
+                {"question": "Иконка окна:", "type": "single", "options": ["Нельзя", "set_icon()", "Не нужна", "Автоматически"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

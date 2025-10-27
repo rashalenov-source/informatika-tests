@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 15: Поиск, сортировка и фильтрация данных_2 - 9 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 15: Поиск, сортировка и фильтрация данных_2",
+            questions: [
+                {"question": "Критерии фильтрации:", "type": "multiple", "options": ["Равно", "Больше", "Меньше", "Космос"], "correct": [0, 1, 2]},
+                {"question": "Текстовые фильтры:", "type": "multiple", "options": ["Содержит", "Начинается с", "Заканчивается на", "Летает"], "correct": [0, 1, 2]},
+                {"question": "Числовые фильтры:", "type": "multiple", "options": ["Больше", "Меньше", "Между", "Любой"], "correct": [0, 1, 2]},
+                {"question": "Фильтр по цвету:", "type": "single", "options": ["Невозможен", "Доступен", "Не работает", "Вреден"], "correct": 1},
+                {"question": "Копирование отфильтрованных данных:", "type": "single", "options": ["Нельзя", "Можно", "Опасно", "Сложно"], "correct": 1},
+                {"question": "Функция СЧЁТЕСЛИ:", "type": "single", "options": ["Не существует", "Подсчитывает по условию", "Удаляет", "Ничего"], "correct": 1},
+                {"question": "СУММЕСЛИ:", "type": "single", "options": ["Не работает", "Суммирует по условию", "Удаляет", "Копирует"], "correct": 1},
+                {"question": "Комбинированные фильтры:", "type": "single", "options": ["Невозможны", "Несколько условий сразу", "Не нужны", "Вредны"], "correct": 1},
+                {"question": "Сортировка по нескольким уровням:", "type": "single", "options": ["Нельзя", "Возможна", "Не работает", "Опасна"], "correct": 1},
+                {"question": "После фильтрации видны:", "type": "single", "options": ["Все данные", "Только соответствующие условию", "Ничего", "Случайные"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

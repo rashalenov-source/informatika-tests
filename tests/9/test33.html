@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 33: Программирование условий_2 - 9 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 33: Программирование условий_2",
+            questions: [
+                {"question": "Рекорды:", "type": "single", "options": ["Не сохраняются", "Сохранение лучшего счета", "Случайны", "Не нужны"], "correct": 1},
+                {"question": "Сохранение в файл:", "type": "single", "options": ["Невозможно", "open(), write()", "Не работает", "Опасно"], "correct": 1},
+                {"question": "Загрузка из файла:", "type": "single", "options": ["Нельзя", "open(), read()", "Не нужна", "Сложна"], "correct": 1},
+                {"question": "Звуковые эффекты:", "type": "single", "options": ["Не нужны", "pygame.mixer.Sound()", "Не работают", "Вредны"], "correct": 1},
+                {"question": "Фоновая музыка:", "type": "single", "options": ["Нельзя", "pygame.mixer.music", "Не нужна", "Опасна"], "correct": 1},
+                {"question": "Частицы:", "type": "single", "options": ["Не существуют", "Визуальные эффекты", "Не нужны", "Сложны"], "correct": 1},
+                {"question": "Камера в игре:", "type": "single", "options": ["Не бывает", "Смещение координат отрисовки", "Не нужна", "Невозможна"], "correct": 1},
+                {"question": "Искусственный интеллект:", "type": "single", "options": ["Не нужен", "Поведение врагов", "Случаен", "Сложен"], "correct": 1},
+                {"question": "Процедурная генерация:", "type": "single", "options": ["Не работает", "Случайное создание уровней", "Не нужна", "Опасна"], "correct": 1},
+                {"question": "Оптимизация игры:", "type": "single", "options": ["Не важна", "Увеличение производительности", "Не нужна", "Вредна"], "correct": 1}
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
