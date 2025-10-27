@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 01 - Измерение информации</title>
+    <link rel="stylesheet" href="../../test.css">
+</head>
+<body>
+    <div class="container">
+        <div class="test-header">
+            <h1>Тест 01: Измерение информации</h1>
+            <div class="test-info">
+                <p><strong>Класс:</strong> 8</p>
+                <p><strong>Предмет:</strong> Информатика</p>
+                <p><strong>Образовательная цель:</strong> 8.2.1.1 применять алфавитный подход при определении количества информации</p>
+            </div>
+        </div>
+
+        <form id="testForm">
+            <input type="hidden" name="grade" value="8">
+            <input type="hidden" name="subject" value="Информатика">
+            <input type="hidden" name="test_number" value="01">
+
+            <div class="student-info">
+                <div class="form-group">
+                    <label for="studentName">ФИО ученика:</label>
+                    <input type="text" id="studentName" name="studentName" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentClass">Класс:</label>
+                    <input type="text" id="studentClass" name="studentClass" value="8" required>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">1. Какой подход к измерению информации использует мощность алфавита?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q1" value="0" required>
+                        Вероятностный
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="1" required>
+                        Алфавитный
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="2" required>
+                        Содержательный
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="3" required>
+                        Статистический
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">2. Что называется мощностью алфавита?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q2" value="0" required>
+                        Число символов в тексте
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="1" required>
+                        Количество различных символов в алфавите
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="2" required>
+                        Длина сообщения
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="3" required>
+                        Объем информации
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">3. Сколько бит информации содержит один символ из 256-символьного алфавита?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q3" value="0" required>
+                        4 бита
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="1" required>
+                        6 бит
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="2" required>
+                        8 бит
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="3" required>
+                        16 бит
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">4. Формула для вычисления информационного объема текста: I = K × i. Что означает K?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q4" value="0" required>
+                        Мощность алфавита
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="1" required>
+                        Количество символов в тексте
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="2" required>
+                        Информационный вес символа
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="3" required>
+                        Число строк
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">5. Сколько символов содержится в сообщении, если его информационный объем 200 бит, а каждый символ весит 8 бит?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q5" value="0" required>
+                        20 символов
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="1" required>
+                        25 символов
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="2" required>
+                        100 символов
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="3" required>
+                        1600 символов
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">6. Чему равна мощность алфавита, если информационный вес одного символа равен 5 бит?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q6" value="0" required>
+                        16 символов
+                    </label>
+                    <label>
+                        <input type="radio" name="q6" value="1" required>
+                        25 символов
+                    </label>
+                    <label>
+                        <input type="radio" name="q6" value="2" required>
+                        32 символа
+                    </label>
+                    <label>
+                        <input type="radio" name="q6" value="3" required>
+                        64 символа
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">7. Текст состоит из 100 символов. Мощность алфавита 64. Каков информационный объем текста в битах?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q7" value="0" required>
+                        100 бит
+                    </label>
+                    <label>
+                        <input type="radio" name="q7" value="1" required>
+                        600 бит
+                    </label>
+                    <label>
+                        <input type="radio" name="q7" value="2" required>
+                        640 бит
+                    </label>
+                    <label>
+                        <input type="radio" name="q7" value="3" required>
+                        6400 бит
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">8. Какая единица измерения информации является минимальной?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q8" value="0" required>
+                        Байт
+                    </label>
+                    <label>
+                        <input type="radio" name="q8" value="1" required>
+                        Бит
+                    </label>
+                    <label>
+                        <input type="radio" name="q8" value="2" required>
+                        Кбайт
+                    </label>
+                    <label>
+                        <input type="radio" name="q8" value="3" required>
+                        Мбайт
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">9. Сколько байт в 1 Кбайт?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q9" value="0" required>
+                        100 байт
+                    </label>
+                    <label>
+                        <input type="radio" name="q9" value="1" required>
+                        1000 байт
+                    </label>
+                    <label>
+                        <input type="radio" name="q9" value="2" required>
+                        1024 байта
+                    </label>
+                    <label>
+                        <input type="radio" name="q9" value="3" required>
+                        1048 байт
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">10. Информационный объем текста 2 Кбайта. Сколько это бит?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q10" value="0" required>
+                        2048 бит
+                    </label>
+                    <label>
+                        <input type="radio" name="q10" value="1" required>
+                        16384 бита
+                    </label>
+                    <label>
+                        <input type="radio" name="q10" value="2" required>
+                        2000 бит
+                    </label>
+                    <label>
+                        <input type="radio" name="q10" value="3" required>
+                        20000 бит
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="submit-section">
+                <button type="button" onclick="submitTest()" class="submit-btn">Отправить ответы</button>
+            </div>
+        </form>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script src="../../config-sheets.js"></script>
+    <script src="../../sheets-api.js"></script>
+    <script src="../../test-engine-sheets.js"></script>
+    <script>
+        const correctAnswers = ['1', '1', '2', '1', '1', '2', '1', '1', '2', '1'];
+    </script>
+</body>
+</html>

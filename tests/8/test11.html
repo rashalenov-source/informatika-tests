@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 11 - Встроенные функции: текстовые и логические функции</title>
+    <link rel="stylesheet" href="../../test.css">
+</head>
+<body>
+    <div class="container">
+        <div class="test-header">
+            <h1>Тест 11: Встроенные функции: текстовые и логические функции</h1>
+            <div class="test-info">
+                <p><strong>Класс:</strong> 8</p>
+                <p><strong>Предмет:</strong> Информатика</p>
+                <p><strong>Образовательная цель:</strong> 8.2.2.3 использовать встроенные функции для решения задач</p>
+            </div>
+        </div>
+
+        <form id="testForm">
+            <input type="hidden" name="grade" value="8">
+            <input type="hidden" name="subject" value="Информатика">
+            <input type="hidden" name="test_number" value="11">
+
+            <div class="student-info">
+                <div class="form-group">
+                    <label for="studentName">ФИО ученика:</label>
+                    <input type="text" id="studentName" name="studentName" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentClass">Класс:</label>
+                    <input type="text" id="studentClass" name="studentClass" value="8" required>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">1. Для чего используется функция ЕСЛИ (IF) в Excel?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q1" value="0" required>
+                        Для суммирования
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="1" required>
+                        Для проверки условия
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="2" required>
+                        Для умножения
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="3" required>
+                        Для сортировки
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">2. Какой результат вернет функция =ЕСЛИ(5>3; 'Да'; 'Нет')?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q2" value="0" required>
+                        Нет
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="1" required>
+                        Да
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="2" required>
+                        5
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="3" required>
+                        3
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">3. Функция СУММ (SUM) используется для:</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q3" value="0" required>
+                        Вычисления среднего
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="1" required>
+                        Суммирования чисел
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="2" required>
+                        Подсчета ячеек
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="3" required>
+                        Умножения
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">4. Что делает функция СЧЁТ (COUNT)?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q4" value="0" required>
+                        Суммирует
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="1" required>
+                        Подсчитывает количество ячеек с числами
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="2" required>
+                        Находит максимум
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="3" required>
+                        Сортирует
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">5. Что вернет функция =МАКС(1,5,3,9,2)?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q5" value="0" required>
+                        1
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="1" required>
+                        9
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="2" required>
+                        20
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="3" required>
+                        3
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">6. Функция МИН используется для:</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q6" value="0" required>
+                        Нахождения минимального значения
+                    </label>
+                    <label>
+                        <input type="radio" name="q6" value="1" required>
+                        Нахождения суммы
+                    </label>
+                    <label>
+                        <input type="radio" name="q6" value="2" required>
+                        Подсчета ячеек
+                    </label>
+                    <label>
+                        <input type="radio" name="q6" value="3" required>
+                        Среднего значения
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">7. Что делает функция СРЗНАЧ (AVERAGE)?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q7" value="0" required>
+                        Находит максимум
+                    </label>
+                    <label>
+                        <input type="radio" name="q7" value="1" required>
+                        Вычисляет среднее значение
+                    </label>
+                    <label>
+                        <input type="radio" name="q7" value="2" required>
+                        Суммирует
+                    </label>
+                    <label>
+                        <input type="radio" name="q7" value="3" required>
+                        Подсчитывает
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">8. Синтаксис функции ЕСЛИ: =ЕСЛИ(условие; значение_если_истина; ...)?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q8" value="0" required>
+                        значение_если_ложь
+                    </label>
+                    <label>
+                        <input type="radio" name="q8" value="1" required>
+                        значение_если_ошибка
+                    </label>
+                    <label>
+                        <input type="radio" name="q8" value="2" required>
+                        значение_по_умолчанию
+                    </label>
+                    <label>
+                        <input type="radio" name="q8" value="3" required>
+                        нет продолжения
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">9. Что вернет =ЕСЛИ(10<5; 'Меньше'; 'Больше')?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q9" value="0" required>
+                        Меньше
+                    </label>
+                    <label>
+                        <input type="radio" name="q9" value="1" required>
+                        Больше
+                    </label>
+                    <label>
+                        <input type="radio" name="q9" value="2" required>
+                        10
+                    </label>
+                    <label>
+                        <input type="radio" name="q9" value="3" required>
+                        5
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">10. Функция СТЕПЕНЬ(2;3) вернет:</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q10" value="0" required>
+                        5
+                    </label>
+                    <label>
+                        <input type="radio" name="q10" value="1" required>
+                        6
+                    </label>
+                    <label>
+                        <input type="radio" name="q10" value="2" required>
+                        8
+                    </label>
+                    <label>
+                        <input type="radio" name="q10" value="3" required>
+                        9
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="submit-section">
+                <button type="button" onclick="submitTest()" class="submit-btn">Отправить ответы</button>
+            </div>
+        </form>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script src="../../config-sheets.js"></script>
+    <script src="../../sheets-api.js"></script>
+    <script src="../../test-engine-sheets.js"></script>
+    <script>
+        const correctAnswers = ['1', '1', '1', '1', '1', '0', '1', '0', '1', '2'];
+    </script>
+</body>
+</html>

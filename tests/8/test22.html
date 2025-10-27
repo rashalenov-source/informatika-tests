@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 22 - Управление циклом break</title>
+    <link rel="stylesheet" href="../../test.css">
+</head>
+<body>
+    <div class="container">
+        <div class="test-header">
+            <h1>Тест 22: Управление циклом break</h1>
+            <div class="test-info">
+                <p><strong>Класс:</strong> 8</p>
+                <p><strong>Предмет:</strong> Информатика</p>
+                <p><strong>Образовательная цель:</strong> 8.3.3.3 использовать инструкции управления циклом break</p>
+            </div>
+        </div>
+
+        <form id="testForm">
+            <input type="hidden" name="grade" value="8">
+            <input type="hidden" name="subject" value="Информатика">
+            <input type="hidden" name="test_number" value="22">
+
+            <div class="student-info">
+                <div class="form-group">
+                    <label for="studentName">ФИО ученика:</label>
+                    <input type="text" id="studentName" name="studentName" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentClass">Класс:</label>
+                    <input type="text" id="studentClass" name="studentClass" value="8" required>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">1. Что делает оператор break?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q1" value="0" required>
+                        Пропускает итерацию
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="1" required>
+                        Полностью прерывает цикл
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="2" required>
+                        Продолжает цикл
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="3" required>
+                        Ничего
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">2. Где используется break?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q2" value="0" required>
+                        Вне циклов
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="1" required>
+                        Внутри циклов
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="2" required>
+                        В функциях
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="3" required>
+                        В условиях без циклов
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">3. Что произойдет после break?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q3" value="0" required>
+                        Цикл продолжится
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="1" required>
+                        Выход из цикла
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="2" required>
+                        Переход к следующей итерации
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="3" required>
+                        Ошибка
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">4. Что выведет: for i in range(5): if i==3: break; print(i)</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q4" value="0" required>
+                        0 1 2 3 4
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="1" required>
+                        0 1 2
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="2" required>
+                        0 1 2 3
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="3" required>
+                        3 4
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">5. Можно ли использовать break в while?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q5" value="0" required>
+                        Нет
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="1" required>
+                        Да
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="2" required>
+                        Только в for
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="3" required>
+                        Нельзя
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">6. Чем break отличается от continue?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q6" value="0" required>
+                        Ничем
+                    </label>
+                    <label>
+                        <input type="radio" name="q6" value="1" required>
+                        break прерывает цикл, continue пропускает итерацию
+                    </label>
+                    <label>
+                        <input type="radio" name="q6" value="2" required>
+                        break быстрее
+                    </label>
+                    <label>
+                        <input type="radio" name="q6" value="3" required>
+                        continue не работает
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">7. Что выведет: i=0; while True: print(i); i+=1; if i==2: break</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q7" value="0" required>
+                        0 1
+                    </label>
+                    <label>
+                        <input type="radio" name="q7" value="1" required>
+                        0 1 2
+                    </label>
+                    <label>
+                        <input type="radio" name="q7" value="2" required>
+                        Бесконечно
+                    </label>
+                    <label>
+                        <input type="radio" name="q7" value="3" required>
+                        Ошибка
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">8. Прервет ли break внешний цикл при вложенных циклах?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q8" value="0" required>
+                        Да, все циклы
+                    </label>
+                    <label>
+                        <input type="radio" name="q8" value="1" required>
+                        Нет, только текущий
+                    </label>
+                    <label>
+                        <input type="radio" name="q8" value="2" required>
+                        Иногда
+                    </label>
+                    <label>
+                        <input type="radio" name="q8" value="3" required>
+                        Всегда внешний
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">9. Когда полезен break?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q9" value="0" required>
+                        Никогда
+                    </label>
+                    <label>
+                        <input type="radio" name="q9" value="1" required>
+                        Для выхода при выполнении условия
+                    </label>
+                    <label>
+                        <input type="radio" name="q9" value="2" required>
+                        Всегда
+                    </label>
+                    <label>
+                        <input type="radio" name="q9" value="3" required>
+                        Для пропуска
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">10. Можно ли использовать несколько break в цикле?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q10" value="0" required>
+                        Нет
+                    </label>
+                    <label>
+                        <input type="radio" name="q10" value="1" required>
+                        Да
+                    </label>
+                    <label>
+                        <input type="radio" name="q10" value="2" required>
+                        Только два
+                    </label>
+                    <label>
+                        <input type="radio" name="q10" value="3" required>
+                        Только один
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="submit-section">
+                <button type="button" onclick="submitTest()" class="submit-btn">Отправить ответы</button>
+            </div>
+        </form>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script src="../../config-sheets.js"></script>
+    <script src="../../sheets-api.js"></script>
+    <script src="../../test-engine-sheets.js"></script>
+    <script>
+        const correctAnswers = ['1', '1', '1', '1', '1', '1', '0', '1', '1', '1'];
+    </script>
+</body>
+</html>

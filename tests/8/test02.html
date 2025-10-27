@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 02 - Процессор</title>
+    <link rel="stylesheet" href="../../test.css">
+</head>
+<body>
+    <div class="container">
+        <div class="test-header">
+            <h1>Тест 02: Процессор</h1>
+            <div class="test-info">
+                <p><strong>Класс:</strong> 8</p>
+                <p><strong>Предмет:</strong> Информатика</p>
+                <p><strong>Образовательная цель:</strong> 8.1.1.1 объяснять на элементарном уровне функции процессора и его основные характеристики</p>
+            </div>
+        </div>
+
+        <form id="testForm">
+            <input type="hidden" name="grade" value="8">
+            <input type="hidden" name="subject" value="Информатика">
+            <input type="hidden" name="test_number" value="02">
+
+            <div class="student-info">
+                <div class="form-group">
+                    <label for="studentName">ФИО ученика:</label>
+                    <input type="text" id="studentName" name="studentName" required>
+                </div>
+                <div class="form-group">
+                    <label for="studentClass">Класс:</label>
+                    <input type="text" id="studentClass" name="studentClass" value="8" required>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">1. Что такое процессор?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q1" value="0" required>
+                        Устройство для хранения данных
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="1" required>
+                        Центральное устройство компьютера для обработки информации
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="2" required>
+                        Устройство вывода информации
+                    </label>
+                    <label>
+                        <input type="radio" name="q1" value="3" required>
+                        Программа для управления компьютером
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">2. Какой компонент процессора выполняет арифметические и логические операции?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q2" value="0" required>
+                        Регистры
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="1" required>
+                        Арифметико-логическое устройство (АЛУ)
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="2" required>
+                        Кэш-память
+                    </label>
+                    <label>
+                        <input type="radio" name="q2" value="3" required>
+                        Системная шина
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">3. Что такое тактовая частота процессора?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q3" value="0" required>
+                        Количество ядер
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="1" required>
+                        Число операций в секунду
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="2" required>
+                        Объем кэш-памяти
+                    </label>
+                    <label>
+                        <input type="radio" name="q3" value="3" required>
+                        Скорость передачи данных
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">4. В каких единицах измеряется тактовая частота процессора?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q4" value="0" required>
+                        Байтах
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="1" required>
+                        Герцах (ГГц)
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="2" required>
+                        Битах
+                    </label>
+                    <label>
+                        <input type="radio" name="q4" value="3" required>
+                        Вольтах
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">5. Что такое ядро процессора?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q5" value="0" required>
+                        Программа управления
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="1" required>
+                        Независимый вычислительный блок
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="2" required>
+                        Тип памяти
+                    </label>
+                    <label>
+                        <input type="radio" name="q5" value="3" required>
+                        Системная плата
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">6. Какая функция процессора отвечает за выполнение программных инструкций?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q6" value="0" required>
+                        Хранение данных
+                    </label>
+                    <label>
+                        <input type="radio" name="q6" value="1" required>
+                        Обработка команд
+                    </label>
+                    <label>
+                        <input type="radio" name="q6" value="2" required>
+                        Вывод изображения
+                    </label>
+                    <label>
+                        <input type="radio" name="q6" value="3" required>
+                        Подключение устройств
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">7. Что происходит при увеличении тактовой частоты процессора?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q7" value="0" required>
+                        Уменьшается производительность
+                    </label>
+                    <label>
+                        <input type="radio" name="q7" value="1" required>
+                        Увеличивается скорость обработки
+                    </label>
+                    <label>
+                        <input type="radio" name="q7" value="2" required>
+                        Снижается энергопотребление
+                    </label>
+                    <label>
+                        <input type="radio" name="q7" value="3" required>
+                        Уменьшается объем памяти
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">8. Какой процессор быстрее: 2.5 ГГц или 3.2 ГГц?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q8" value="0" required>
+                        2.5 ГГц
+                    </label>
+                    <label>
+                        <input type="radio" name="q8" value="1" required>
+                        3.2 ГГц
+                    </label>
+                    <label>
+                        <input type="radio" name="q8" value="2" required>
+                        Одинаковые
+                    </label>
+                    <label>
+                        <input type="radio" name="q8" value="3" required>
+                        Невозможно определить
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">9. Что такое многоядерный процессор?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q9" value="0" required>
+                        Процессор с несколькими независимыми ядрами
+                    </label>
+                    <label>
+                        <input type="radio" name="q9" value="1" required>
+                        Процессор с большой памятью
+                    </label>
+                    <label>
+                        <input type="radio" name="q9" value="2" required>
+                        Процессор для графики
+                    </label>
+                    <label>
+                        <input type="radio" name="q9" value="3" required>
+                        Процессор с высокой частотой
+                    </label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p class="question-text">10. Какое устройство управляет работой процессора?</p>
+                <div class="options">
+                    <label>
+                        <input type="radio" name="q10" value="0" required>
+                        Монитор
+                    </label>
+                    <label>
+                        <input type="radio" name="q10" value="1" required>
+                        Операционная система
+                    </label>
+                    <label>
+                        <input type="radio" name="q10" value="2" required>
+                        Клавиатура
+                    </label>
+                    <label>
+                        <input type="radio" name="q10" value="3" required>
+                        Принтер
+                    </label>
+                </div>
+            </div>
+
+
+
+            <div class="submit-section">
+                <button type="button" onclick="submitTest()" class="submit-btn">Отправить ответы</button>
+            </div>
+        </form>
+
+        <div id="result" class="result"></div>
+    </div>
+
+    <script src="../../config-sheets.js"></script>
+    <script src="../../sheets-api.js"></script>
+    <script src="../../test-engine-sheets.js"></script>
+    <script>
+        const correctAnswers = ['1', '1', '1', '1', '1', '1', '1', '1', '0', '1'];
+    </script>
+</body>
+</html>
