@@ -1,0 +1,45 @@
+-теги (Урок 17)
+
+HTML
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 17: Способы разработки веб-сайтов. HTML-теги - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 17: Способы разработки веб-сайтов. HTML-теги",
+            questions: [
+                {"question": "**HTML** (Hyper Text Markup Language) — это:", "type": "single", "options": ["Язык программирования.", "Язык гипертекстовой разметки.", "Каскадные таблицы стилей.", "Система управления базами данных."], "correct": 1},
+                {"question": "Какие теги являются **парными** (требуют закрывающего тега) (несколько ответов)?", "type": "multiple", "options": ["<p>", "<br>", "<body>", "<img>", "<h1>"], "correct": [0, 2, 4]},
+                {"question": "Какой элемент HTML содержит **метаинформацию** о документе (кодировку, заголовок окна браузера) и не отображается в теле страницы?", "type": "single", "options": ["<body>", "<html>", "<title>", "<head>"], "correct": 3},
+                {"question": "Какую информацию содержит парный тег **`<title>`**?", "type": "single", "options": ["Заголовок, отображаемый в теле страницы.", "Название, отображаемое в заголовке окна браузера.", "Кодировку документа.", "Ссылку на CSS-файл."], "correct": 1},
+                {"question": "Атрибут HTML-элемента — это:", "type": "single", "options": ["Закрывающий тег.", "Обязательное содержание элемента.", "Дополнительная характеристика, которая задает свойство элемента.", "Тег, используемый только в заголовке."], "correct": 2},
+                {"question": "Какой из тегов используется для создания **самого крупного** заголовка на web-странице?", "type": "single", "options": ["<head>", "<h6
+                    >", "<h1>", "<p>"], "correct": 2},
+                {"question": "Для чего используется тег **`<br>`**?", "type": "single", "options": ["Для создания горизонтальной линии.", "Для переноса текста на новую строку.", "Для выделения текста жирным.", "Для вставки изображения."], "correct": 1},
+                {"question": "Тег **`<img>`** используется для вставки изображения. Какой атрибут является обязательным для указания **пути** к файлу изображения?", "type": "single", "options": ["alt", "title", "src", "border"], "correct": 2},
+                {"question": "Какой атрибут используется для задания **цвета** текста или фона?", "type": "single", "options": ["size", "color", "align", "border"], "correct": 1},
+                {"question": "Полный HTML-документ всегда заключается в парный тег:", "type": "single", "options": ["<body>", "<html>", "<head>", "<p>"], "correct": 1},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
+16.

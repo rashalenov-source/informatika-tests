@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 25: Использование скриптов - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 25: Использование скриптов",
+            questions: [
+                {"question": "Для добавления **скриптов** (например, на JavaScript) в HTML-документ используется тег:", "type": "single", "options": ["<script>", "<js>", "<style>", "<link>"], "correct": 0},
+                {"question": "Скрипты обычно используются для добавления на web-страницу:", "type": "single", "options": ["Только текста.", "Статических изображений.", "Интерактивности и динамического контента.", "Таблиц."], "correct": 2},
+                {"question": "Какой атрибут тега `<script>` используется для указания **внешнего файла скрипта**?", "type": "single", "options": ["href", "link", "src", "path"], "correct": 2},
+                {"question": "Скрипты могут быть вставлены в HTML-документ в области (несколько ответов):", "type": "multiple", "options": ["Внутри <head>", "Внутри <body>", "Внутри <table>", "Внутри <p>"], "correct": [0, 1]},
+                {"question": "Что представляет собой **Скрипт**?", "type": "single", "options": ["Программа, написанная на языке сценариев и предназначенная для автоматизации задач.", "Статический HTML-файл.", "Файл CSS.", "Реляционная база данных."], "correct": 0},
+                {"question": "Для чего используется метод **`alert()`** в JavaScript?", "type": "single", "options": ["Для вывода текста в консоль.", "Для отображения всплывающего диалогового окна с сообщением.", "Для перехода на другую страницу.", "Для создания гиперссылки."], "correct": 1},
+                {"question": "Какой язык чаще всего используется для написания скриптов на стороне клиента (в браузере)?", "type": "single", "options": ["Python", "PHP", "Java", "JavaScript"], "correct": 3},
+                {"question": "Почему рекомендуется размещать тег `<script>` с внешним файлом в конце тега `<body>`?", "type": "single", "options": ["Чтобы его было легче найти.", "Чтобы скрипт загружался первым.", "Чтобы обеспечить быструю загрузку HTML-контента перед выполнением скрипта.", "Чтобы его не видели пользователи."], "correct": 2},
+                {"question": "Пример готового скрипта, который может использоваться на web-странице:", "type": "single", "options": ["Скрипт для вывода текущей даты.", "Скрипт для создания базы данных.", "Скрипт для перевода чисел из двоичной системы.", "Скрипт для шифрования данных."], "correct": 0},
+                {"question": "Какой тег используется для определения **встроенных** стилей CSS в разделе `<head>`?", "type": "single", "options": ["<link>", "<script>", "<style>", "<meta>"], "correct": 2},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
+24.

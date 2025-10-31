@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 19: Форматирование текста (шрифт, абзац, списки) - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 19: Форматирование текста (шрифт, абзац, списки)",
+            questions: [
+                {"question": "Какой HTML-тег используется для выделения текста **жирным** шрифтом?", "type": "single", "options": ["<i>", "<u>", "<b>", "<p>"], "correct": 2},
+                {"question": "Какой HTML-тег используется для выделения текста **курсивом**?", "type": "single", "options": ["<b>", "<u>", "<i>", "<tt>"], "correct": 2},
+                {"question": "Какая комбинация тегов создает **ненумерованный (маркированный)** список?", "type": "single", "options": ["<ol> и <li>", "<ul> и <li>", "<dl> и <dt>", "<list> и <item>"], "correct": 1},
+                {"question": "Какая комбинация тегов создает **нумерованный (упорядоченный)** список?", "type": "single", "options": ["<ul> и <li>", "<ol> и <li>", "<dl> и <dt>", "<table> и <tr>"], "correct": 1},
+                {"question": "Тег **`<li>`** используется для:", "type": "single", "options": ["Определения заголовка списка.", "Определения отдельного элемента списка.", "Создания абзаца.", "Разделения страницы."], "correct": 1},
+                {"question": "Атрибут **`ALIGN`** в теге `<p>` используется для:", "type": "single", "options": ["Изменения цвета.", "Выравнивания текста.", "Изменения размера шрифта.", "Вставки ссылки."], "correct": 1},
+                {"question": "Какой тег используется для создания **подчеркнутого** текста?", "type": "single", "options": ["<b>", "<i>", "<u>", "<sub>"], "correct": 2},
+                {"question": "Тег `<tt>` используется для форматирования текста в виде:", "type": "single", "options": ["Жирного шрифта.", "Телетайпного (моноширинного) шрифта.", "Скрытого текста.", "Надстрочного текста."], "correct": 1},
+                {"question": "Какое значение атрибута `ALIGN` используется для выравнивания текста **по центру**?", "type": "single", "options": ["right", "justify", "center", "left"], "correct": 2},
+                {"question": "Какой из тегов является тегом **физического** форматирования текста?", "type": "single", "options": ["<em>", "<strong>", "<b>", "<dfn>"], "correct": 2},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
+18.

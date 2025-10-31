@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 32: Запросы (SQL) - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 32: Запросы (SQL)",
+            questions: [
+                {"question": "Какой основной SQL-оператор используется для **выборки (извлечения)** данных из базы?", "type": "single", "options": ["INSERT", "UPDATE", "SELECT", "DELETE"], "correct": 2},
+                {"question": "Какое ключевое слово используется для указания **условия** выборки данных?", "type": "single", "options": ["FROM", "WHERE", "GROUP BY", "ORDER BY"], "correct": 1},
+                {"question": "SQL-запрос `SELECT * FROM Customers;` выполняет:", "type": "single", "options": ["Выборку только одной записи.", "Выборку всех записей и всех полей из таблицы Customers.", "Удаление таблицы Customers.", "Создание новой таблицы Customers."], "correct": 1},
+                {"question": "Ключевое слово **`FROM`** используется для указания:", "type": "single", "options": ["Полей для выборки.", "Условий фильтрации.", "Таблицы, из которой выбираются данные.", "Порядка сортировки."], "correct": 2},
+                {"question": "Оператор **`ORDER BY`** используется для:", "type": "single", "options": ["Группировки данных.", "Сортировки результатов запроса.", "Фильтрации данных.", "Вставки данных."], "correct": 1},
+                {"question": "Для сортировки результатов по убыванию (от большего к меньшему) используется ключевое слово:", "type": "single", "options": ["ASC", "DESC", "UP", "DOWN"], "correct": 1},
+                {"question": "Какой оператор используется для **объединения** строк с одинаковыми значениями в одно целое (например, для подсчета количества)?", "type": "single", "options": ["GROUP BY", "WHERE", "JOIN", "HAVING"], "correct": 0},
+                {"question": "Что представляет собой **Запрос** в базе данных?", "type": "single", "options": ["Схема таблицы.", "Инструкция, которая извлекает или манипулирует данными в базе.", "Отчет о данных.", "Файл HTML."], "correct": 1},
+                {"question": "Для чего используется **Конструктор запросов** в СУБД (например, MS Access)?", "type": "single", "options": ["Для написания скриптов на Python.", "Для визуального создания SQL-запросов без необходимости писать код вручную.", "Для создания таблиц.", "Для создания отчетов."], "correct": 1},
+                {"question": "Какие из операторов являются агрегатными функциями в SQL (несколько ответов)?", "type": "multiple", "options": ["AVG (среднее)", "COUNT (подсчет)", "SELECT", "SUM (сумма)", "MAX (максимум)"], "correct": [0, 1, 3, 4]},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
+31.

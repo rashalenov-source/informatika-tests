@@ -1,0 +1,44 @@
+(Урок 21)
+
+HTML
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 21: Таблицы в HTML - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 21: Таблицы в HTML",
+            questions: [
+                {"question": "Какой тег используется для создания **Таблицы** в HTML?", "type": "single", "options": ["<list>", "<table>", "<row>", "<cell>"], "correct": 1},
+                {"question": "Какой тег используется для определения **Строки** таблицы?", "type": "single", "options": ["<td>", "<th>", "<tr>", "<row>"], "correct": 2},
+                {"question": "Какой тег используется для определения **Ячейки данных** (обычной ячейки) в таблице?", "type": "single", "options": ["<tr>", "<th>", "<td>", "<cell>"], "correct": 2},
+                {"question": "Какой тег используется для определения **Ячейки-заголовка** в таблице?", "type": "single", "options": ["<td>", "<th>", "<tr>", "<caption>"], "correct": 1},
+                {"question": "Атрибут **`border`** в теге `<table>` используется для:", "type": "single", "options": ["Задания ширины таблицы.", "Задания цвета фона.", "Установки толщины рамки таблицы.", "Выравнивания текста."], "correct": 2},
+                {"question": "Атрибут **`colspan`** в теге `<td>` используется для:", "type": "single", "options": ["Объединения ячеек по вертикали (столбцы).", "Объединения ячеек по горизонтали (строки).", "Выравнивания содержимого ячейки.", "Задания высоты ячейки."], "correct": 1},
+                {"question": "Атрибут **`rowspan`** в теге `<td>` используется для:", "type": "single", "options": ["Объединения ячеек по горизонтали (строки).", "Объединения ячеек по вертикали (столбцы).", "Задания ширины таблицы.", "Установки цвета рамки."], "correct": 1},
+                {"question": "Тег **`<caption>`** используется для:", "type": "single", "options": ["Создания строки.", "Создания заголовка таблицы (названия).", "Определения тела таблицы.", "Определения ячейки."], "correct": 1},
+                {"question": "Какое значение атрибута **`align`** используется для горизонтального выравнивания содержимого ячейки?", "type": "single", "options": ["top", "center", "middle", "bottom"], "correct": 1},
+                {"question": "Для чего используется атрибут **`width`** в теге `<table>`?", "type": "single", "options": ["Задания высоты таблицы.", "Задания ширины таблицы.", "Установки толщины рамки.", "Объединения ячеек."], "correct": 1},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
+20.

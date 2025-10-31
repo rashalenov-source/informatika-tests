@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 27: Bigdata (Большие данные) - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 27: Bigdata (Большие данные)",
+            questions: [
+                {"question": "**Big Data (Большие данные)** — это:", "type": "single", "options": ["Очень большой список файлов.", "Термин для обозначения огромных массивов данных, которые требуют специальных методов обработки.", "Технология, используемая только для шифрования.", "Виртуальная частная сеть."], "correct": 1},
+                {"question": "Какие характеристики определяют Большие данные (т.н. 3 V) (несколько ответов)?", "type": "multiple", "options": ["Velocity (Скорость)", "Volume (Объём)", "Value (Ценность)", "Variety (Разнообразие)", "Vulnerability (Уязвимость)"], "correct": [0, 1, 3]},
+                {"question": "Характеристика Больших данных, указывающая на **скорость, с которой данные генерируются и обрабатываются**:", "type": "single", "options": ["Volume", "Variety", "Velocity", "Value"], "correct": 2},
+                {"question": "Характеристика Больших данных, указывающая на **огромный размер** данных, часто превышающий возможности традиционных СУБД:", "type": "single", "options": ["Volume", "Variety", "Velocity", "Veracity"], "correct": 0},
+                {"question": "Характеристика Больших данных, указывающая на **разнообразие** форматов и типов данных (структурированные, неструктурированные):", "type": "single", "options": ["Volume", "Variety", "Velocity", "Value"], "correct": 1},
+                {"question": "Какие технологии используются для обработки и анализа Больших данных (несколько ответов)?", "type": "multiple", "options": ["Машинное обучение", "Искусственный интеллект", "Microsoft Word", "Облачные вычисления"], "correct": [0, 1, 3]},
+                {"question": "Какие из перечисленных областей могут генерировать Большие данные (несколько ответов)?", "type": "multiple", "options": ["Социальные сети", "Интернет вещей (IoT)", "Квадратное уравнение", "Финансовые транзакции"], "correct": [0, 1, 3]},
+                {"question": "Какова **основная цель** использования Big Data?", "type": "single", "options": ["Шифрование всей информации.", "Создание виртуальной частной сети.", "Извлечение ценной информации, закономерностей и знаний для принятия решений.", "Увеличение числа логических элементов в процессоре."], "correct": 2},
+                {"question": "Положительная сторона использования Big Data:", "type": "single", "options": ["Увеличение сложности системы.", "Затрудненный доступ.", "Прогнозирование тенденций и персонализация услуг.", "Высокая стоимость обработки."], "correct": 2},
+                {"question": "Отрицательная сторона использования Big Data:", "type": "single", "options": ["Низкая скорость обработки.", "Нарушение конфиденциальности и проблемы этики.", "Только структурированные данные.", "Малый объем данных."], "correct": 1},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
+26.

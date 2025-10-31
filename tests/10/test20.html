@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 20: Практикум «Форматирование текста» - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 20: Практикум «Форматирование текста»",
+            questions: [
+                {"question": "Какой HTML-тег делает текст **Надстрочным** (например, в формуле $a^2$)?", "type": "single", "options": ["<sub>", "<tt>", "<sup>", "<b>"], "correct": 2},
+                {"question": "Какой HTML-тег используется для создания **Подстрочного** текста (например, в формуле $\text{H}_2\text{O}$)?", "type": "single", "options": ["<sup>", "<sub>", "<p>", "<br>"], "correct": 1},
+                {"question": "Какой атрибут используется для установки цвета текста в теге `<body>` (устаревший, но может быть в тестах)?", "type": "single", "options": ["color", "text", "bgcolor", "style"], "correct": 1},
+                {"question": "Какой HTML-тег используется для создания **заголовка 3-го уровня**?", "type": "single", "options": ["<h1>", "<h2>", "<h3>", "<h4>"], "correct": 2},
+                {"question": "Какой тег HTML относится к **логическому** форматированию (указывает на важность или акцент)?", "type": "single", "options": ["<b>", "<i>", "<strong>", "<u>"], "correct": 2},
+                {"question": "Что означает тег **`<ol>`** в HTML?", "type": "single", "options": ["Неупорядоченный список.", "Упорядоченный список.", "Элемент списка.", "Список определений."], "correct": 1},
+                {"question": "Какой из тегов является **одиночным**?", "type": "single", "options": ["<p>", "<img>", "<body>", "<a>"], "correct": 1},
+                {"question": "Что произойдет, если в абзаце использовать атрибут `ALIGN=\"justify\"`?", "type": "single", "options": ["Текст выровняется по левому краю.", "Текст выровняется по правому краю.", "Текст будет выровнен по ширине.", "Текст будет по центру."], "correct": 2},
+                {"question": "Для создания HTML-документа достаточно использовать **любой** текстовый редактор, например:", "type": "single", "options": ["Microsoft Word", "Adobe Photoshop", "Notepad (Блокнот)", "Excel"], "correct": 2},
+                {"question": "Что представляет собой **HTML-разметка**?", "type": "single", "options": ["Программа, управляющая логикой сайта.", "Набор элементов, определяющих структуру и внешний вид web-страницы.", "База данных с адресами сайтов.", "Сетевой протокол."], "correct": 1},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
+19.

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 18: Практикум «Разработка веб-сайтов» - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 18: Практикум «Разработка веб-сайтов»",
+            questions: [
+                {"question": "В HTML-документе, что из перечисленного должно находиться внутри тега **`<head>`** (несколько ответов)?", "type": "multiple", "options": ["<title>", "<h1>", "<meta>", "<p>", "<body>"], "correct": [0, 2]},
+                {"question": "Какой тег используется для определения **абзаца** текста?", "type": "single", "options": ["<br>", "<p>", "<div>", "<a>"], "correct": 1},
+                {"question": "Как называется характеристика, которая задает свойство HTML-элемента (например, `color` в теге `<body>`)?", "type": "single", "options": ["Тег", "Атрибут", "Значение", "Свойство CSS"], "correct": 1},
+                {"question": "Какое расширение файла должен иметь HTML-документ?", "type": "single", "options": [".doc", ".txt", ".html", ".css"], "correct": 2},
+                {"question": "Для вставки **горизонтальной разделительной линии** используется тег:", "type": "single", "options": ["<hr>", "<br>", "<tr>", "<td>"], "correct": 0},
+                {"question": "Как называется тег, который **не требует** закрывающего тега?", "type": "single", "options": ["Парный", "Корневой", "Одиночный", "Базовый"], "correct": 2},
+                {"question": "Какой тег используется для создания **гиперссылки**?", "type": "single", "options": ["<link>", "<a>", "<meta>", "<img>"], "correct": 1},
+                {"question": "Атрибут **`href`** в теге `<a>` указывает на:", "type": "single", "options": ["Размер шрифта.", "Текст ссылки.", "Адрес, на который осуществляется переход.", "Тип кодировки."], "correct": 2},
+                {"question": "Что представляет собой **Web-страница**?", "type": "single", "options": ["Текстовый файл.", "Файл, содержащий элементы, разметка которых определяется HTML.", "Сетевой протокол.", "База данных."], "correct": 1},
+                {"question": "Какие символы используются для записи HTML-тегов?", "type": "single", "options": ["()", "{}", "<>", "[]"], "correct": 2},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
+17.

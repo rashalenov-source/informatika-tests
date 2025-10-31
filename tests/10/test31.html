@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 31: Формы для ввода данных (SQL) - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 31: Формы для ввода данных (SQL)",
+            questions: [
+                {"question": "Что такое **Форма** в контексте базы данных?", "type": "single", "options": ["Инструмент для отображения и ввода данных, обычно основанный на структуре таблицы.", "Отчет с результатами запроса.", "Внешний скрипт.", "Метод сортировки."], "correct": 0},
+                {"question": "Основное назначение форм:", "type": "single", "options": ["Удаление базы данных.", "Создание таблиц.", "Обеспечение удобного и контролируемого интерфейса для ввода, просмотра и редактирования данных.", "Выполнение сложных запросов."], "correct": 2},
+                {"question": "В HTML-разметке для создания формы используется тег:", "type": "single", "options": ["<form>", "<input>", "<submit>", "<tableform>"], "correct": 0},
+                {"question": "Какой HTML-тег используется для создания поля ввода (текстового поля, кнопки, переключателя) внутри формы?", "type": "single", "options": ["<form>", "<input>", "<label>", "<area>"], "correct": 1},
+                {"question": "Атрибут **`type=\"submit\"`** в теге `<input>` используется для создания:", "type": "single", "options": ["Текстового поля.", "Кнопки для отправки данных формы на сервер.", "Поля для ввода пароля.", "Кнопки для сброса данных."], "correct": 1},
+                {"question": "Какой атрибут тега `<form>` указывает, куда отправлять данные после заполнения формы?", "type": "single", "options": ["method", "action", "name", "target"], "correct": 1},
+                {"question": "Какой **метод** HTML-формы используется для отправки данных, которые могут содержать конфиденциальную информацию (не отображаются в URL)?", "type": "single", "options": ["GET", "POST", "SUBMIT", "PUT"], "correct": 1},
+                {"question": "Какой HTML-тег используется для создания **многострочного** поля ввода текста?", "type": "single", "options": ["<input type=\"text\">", "<textarea>", "<select>", "<input type=\"longtext\">"], "correct": 1},
+                {"question": "В контексте базы данных, поля формы, как правило, соответствуют:", "type": "single", "options": ["Отчетам.", "Полям (столбцам) таблицы.", "Другим таблицам.", "Индексам."], "correct": 1},
+                {"question": "Для чего в формах часто используются **скрипты**?", "type": "single", "options": ["Для создания отчетов.", "Для установки связи с Web-страницей.", "Для клиентской валидации (проверки) данных до отправки на сервер.", "Для удаления таблиц."], "correct": 2},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
+30.

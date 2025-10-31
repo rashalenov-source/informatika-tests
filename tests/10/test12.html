@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 12: Работа с файлами (чтение и запись)_2 - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 12: Работа с файлами (чтение и запись)_2",
+            questions: [
+                {"question": "Для чего используется оператор **`with open(...)`** в Python при работе с файлами?", "type": "single", "options": ["Для шифрования файла.", "Для автоматического закрытия файла после завершения работы.", "Для изменения типа файла.", "Для проверки ошибок ввода."], "correct": 1},
+                {"question": "Какая конструкция используется в Python для **проверки ошибок выполнения файловых операций**?", "type": "single", "options": ["if/else", "for/in", "try/except", "while/break"], "correct": 2},
+                {"question": "Для записи в файл последовательности строк (например, из списка) используется метод:", "type": "single", "options": ["write()", "writeline()", "writelines()", "print()"], "correct": 2},
+                {"question": "Что означает символ **`\\n`** при записи текстовой информации в файл?", "type": "single", "options": ["Знак табуляции.", "Конец файла.", "Переход на новую строку.", "Пробел."], "correct": 2},
+                {"question": "Чтобы **избежать** появления пустых строк при записи в файл с использованием `print()`, необходимо использовать параметр:", "type": "single", "options": ["sep=' '", "end=''", "file=my_file", "flush=True"], "correct": 1},
+                {"question": "При чтении текстового файла, как определить, что достигнут его **конец**?", "type": "single", "options": ["Метод `read()` вернет 1.", "Метод `readline()` вернет пустую строку `''`.", "Метод `close()` вернет `True`.", "Сработает исключение `EOF`."], "correct": 1},
+                {"question": "Что произойдет, если открыть существующий файл в режиме **`'w'`** (запись)?", "type": "single", "options": ["Данные добавятся в конец.", "Будет вызвано исключение.", "Файл будет удален и создан новый (данные потеряны).", "Файл откроется для чтения."], "correct": 2},
+                {"question": "Что произойдет, если попытаться открыть файл, которого не существует, в режиме **`'r'`** (чтение)?", "type": "single", "options": ["Файл будет создан.", "Будет вызвано исключение `FileNotFoundError`.", "Файл откроется пустым.", "Начнется автоматический поиск."], "correct": 1},
+                {"question": "Какие из объектов являются **итерируемыми** (несколько ответов)?", "type": "multiple", "options": ["Строка", "Целое число", "Список", "Словарь"], "correct": [0, 2, 3]},
+                {"question": "Фрагмент `my_file.readline().replace('\\n', '').replace('\\r', '')` используется для:", "type": "single", "options": ["Добавления данных.", "Чтения строки с удалением символов конца строки.", "Записи числа в файл.", "Переименования файла."], "correct": 1},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
+11.

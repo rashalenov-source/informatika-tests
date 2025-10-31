@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 30: Разработка однотабличной базы данных (SQL)_2 - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 30: Разработка однотабличной базы данных (SQL)_2",
+            questions: [
+                {"question": "Какая SQL-команда используется для **удаления** всей таблицы из базы данных?", "type": "single", "options": ["DELETE TABLE", "REMOVE TABLE", "DROP TABLE", "TRUNCATE TABLE"], "correct": 2},
+                {"question": "Какая SQL-команда используется для **изменения** структуры существующей таблицы (например, добавление нового поля)?", "type": "single", "options": ["UPDATE TABLE", "MODIFY TABLE", "ALTER TABLE", "CHANGE TABLE"], "correct": 2},
+                {"question": "Какой оператор используется для **удаления записей (строк)** из таблицы?", "type": "single", "options": ["REMOVE FROM", "DELETE FROM", "DROP FROM", "TRUNCATE"], "correct": 1},
+                {"question": "Оператор **`UPDATE`** используется для:", "type": "single", "options": ["Добавления новых записей.", "Изменения существующих записей.", "Удаления всей таблицы.", "Выборки данных."], "correct": 1},
+                {"question": "Что такое **Реляционная база данных**?", "type": "single", "options": ["База данных, в которой данные представлены в виде таблиц с определенными связями.", "База данных без таблиц.", "Набор файлов HTML.", "Сетевой протокол."], "correct": 0},
+                {"question": "Какие типы данных используются в SQL для хранения **чисел с плавающей точкой** (дробных чисел)?", "type": "single", "options": ["INT", "VARCHAR", "FLOAT", "BOOLEAN"], "correct": 2},
+                {"question": "Что такое **PRIMARY KEY** (Первичный ключ)?", "type": "single", "options": ["Поле с уникальными значениями, однозначно идентифицирующее запись.", "Поле, которое всегда содержит NULL.", "Поле для хранения паролей.", "Поле, используемое только для сортировки."], "correct": 0},
+                {"question": "Какой SQL-оператор используется для **выборки данных** из таблицы?", "type": "single", "options": ["INSERT", "UPDATE", "SELECT", "DELETE"], "correct": 2},
+                {"question": "Что такое **Индекс** в контексте базы данных?", "type": "single", "options": ["Название таблицы.", "Механизм для ускорения операций поиска и сортировки.", "Поле для хранения изображений.", "Первичный ключ."], "correct": 1},
+                {"question": "Какое ключевое слово используется в команде `DELETE` для указания, **какие именно** записи нужно удалить?", "type": "single", "options": ["ONLY", "WHILE", "WHERE", "FROM"], "correct": 2},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
+29.

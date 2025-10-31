@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 9: Пользовательские функции и процедуры - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 9: Пользовательские функции и процедуры",
+            questions: [
+                {"question": "Как называется именованная группа операторов, выполняющих некоторую задачу?", "type": "single", "options": ["Алгоритм", "Подпрограмма", "Оператор", "Модуль"], "correct": 1},
+                {"question": "Подпрограмма, которая **возвращает** конкретный результат в виде значения, называется:", "type": "single", "options": ["Процедура", "Оператор", "Функция", "Модуль"], "correct": 2},
+                {"question": "В Python процедура (функция) начинается с ключевого слова:", "type": "single", "options": ["return", "print", "def", "while"], "correct": 2},
+                {"question": "Обращение к подпрограмме по имени с целью её использования называется:", "type": "single", "options": ["Аргумент", "Описание", "Вызов подпрограммы", "Инициализация"], "correct": 2},
+                {"question": "Какая из подпрограмм **не может** обратиться к основной программе?", "type": "single", "options": ["Функция", "Процедура", "Ни одна подпрограмма", "Все могут"], "correct": 2},
+                {"question": "Переменная, объявленная **внутри** тела функции (процедуры) и доступная только там, называется:", "type": "single", "options": ["Глобальная", "Системная", "Внешняя", "Локальная"], "correct": 3},
+                {"question": "Для того чтобы изменить содержимое **глобальной** переменной внутри функции в Python, необходимо использовать ключевое слово:", "type": "single", "options": ["local", "public", "global", "def"], "correct": 2},
+                {"question": "Значение, которое передается подпрограмме из основной программы при её вызове, называется:", "type": "single", "options": ["Ключ", "Идентификатор", "Аргумент (Параметр)", "Результат"], "correct": 2},
+                {"question": "Если параметров несколько, в заголовке процедуры они перечисляются:", "type": "single", "options": ["Через точку", "Через пробел", "Через двоеточие", "Через запятую"], "correct": 3},
+                {"question": "Пользовательские функции/процедуры — это подпрограммы, которые:", "type": "single", "options": ["Встроены в язык программирования.", "Написаны пользователем самостоятельно.", "Используются только для ввода данных.", "Используются только для вывода данных."], "correct": 1},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
+8.

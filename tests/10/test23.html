@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 23: Практикум «Каскадные таблицы стилей CSS» - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 23: Практикум «Каскадные таблицы стилей CSS»",
+            questions: [
+                {"question": "Какой селектор используется в CSS для обращения к элементу по его **уникальному идентификатору** (атрибут `id`)?", "type": "single", "options": [".класс", "#идентификатор", "тег", "*"], "correct": 1},
+                {"question": "Какой селектор используется в CSS для обращения к элементам по их **общему классу** (атрибут `class`)?", "type": "single", "options": ["#идентификатор", ".класс", "тег", "()"], "correct": 1},
+                {"question": "Свойство CSS, используемое для задания **фона** элемента (например, цвета фона):", "type": "single", "options": ["color", "font-family", "background-color", "border"], "correct": 2},
+                {"question": "Для задания **границы (рамки)** элемента используется свойство CSS:", "type": "single", "options": ["border", "margin", "padding", "outline"], "correct": 0},
+                {"question": "Что определяет свойство **`margin`**?", "type": "single", "options": ["Внутренний отступ (от содержимого до границы).", "Внешний отступ (вокруг элемента).", "Толщину рамки.", "Цвет шрифта."], "correct": 1},
+                {"question": "Что определяет свойство **`padding`**?", "type": "single", "options": ["Внешний отступ (вокруг элемента).", "Внутренний отступ (от содержимого до границы).", "Радиус скругления.", "Выравнивание текста."], "correct": 1},
+                {"question": "Какое свойство используется для выравнивания текста **по центру** внутри элемента?", "type": "single", "options": ["align", "vertical-align", "text-align", "float"], "correct": 2},
+                {"question": "Какое свойство CSS используется для установки **типа шрифта**?", "type": "single", "options": ["font-weight", "font-style", "font-size", "font-family"], "correct": 3},
+                {"question": "Правило, которое может быть использовано для задания стилей для всех элементов на странице:", "type": "single", "options": ["* {}", "body {}", "html {}", ".all {}"], "correct": 0},
+                {"question": "При использовании нескольких таблиц стилей, какой фактор определяет, какой стиль будет применен к элементу?", "type": "single", "options": ["Порядок в HTML.", "Размер файла CSS.", "Специфичность и Каскадность (приоритет).", "Название файла CSS."], "correct": 2},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
+22.

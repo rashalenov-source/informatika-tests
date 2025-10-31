@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 11: Работа с файлами (чтение и запись)_1 - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 11: Работа с файлами (чтение и запись)_1",
+            questions: [
+                {"question": "Для **открытия** файла в Python используется функция:", "type": "single", "options": ["close()", "open()", "read()", "write()"], "correct": 1},
+                {"question": "Какой параметр режима доступа используется для **чтения** информации из файла?", "type": "single", "options": ["'w' (write)", "'r' (read)", "'a' (append)", "'x' (create)"], "correct": 1},
+                {"question": "Какой параметр режима доступа используется для **записи** информации, при этом файл **пересоздается** (старое содержимое удаляется)?", "type": "single", "options": ["'r'", "'a'", "'w'", "'r+'"], "correct": 2},
+                {"question": "Какой параметр режима доступа используется для **добавления** информации в конец существующего файла?", "type": "single", "options": ["'w'", "'a'", "'r'", "'w+'"], "correct": 1},
+                {"question": "Метод, используемый для **закрытия** файла после работы с ним:", "type": "single", "options": ["exit()", "close()", "delete()", "finish()"], "correct": 1},
+                {"question": "Какой метод используется для **чтения одной строки** из файла?", "type": "single", "options": ["read()", "readall()", "readline()", "readlines()"], "correct": 2},
+                {"question": "Какой метод используется для **чтения всего файла** целиком в одну строку?", "type": "single", "options": ["readline()", "readall()", "read()", "split()"], "correct": 2},
+                {"question": "Какой метод используется для **чтения всех строк** файла и возвращения их в виде списка строк?", "type": "single", "options": ["readline()", "read()", "readlines()", "split()"], "correct": 2},
+                {"question": "Для записи информации в файл используется метод:", "type": "single", "options": ["write()", "read()", "append()", "print()"], "correct": 0},
+                {"question": "Что представляет собой **Текстовый файл**?", "type": "single", "options": ["Содержит только числа.", "Содержит последовательность байтов, не разделенных на строки.", "Содержит текст, разбитый на строки с помощью символа конца строки.", "Содержит только двоичный код."], "correct": 2},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
+10.

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 28: Основные понятия баз данных. Первичный ключ - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 28: Основные понятия баз данных. Первичный ключ",
+            questions: [
+                {"question": "**Реляционная база данных** представляет собой:", "type": "single", "options": ["Набор скриптов.", "Набор таблиц, связанных между собой.", "Один большой текстовый файл.", "Программу для создания сайтов."], "correct": 1},
+                {"question": "В реляционной базе данных **Столбец** таблицы соответствует:", "type": "single", "options": ["Записи", "Полю (Атрибуту)", "Первичному ключу", "Индексу"], "correct": 1},
+                {"question": "В реляционной базе данных **Строка** таблицы соответствует:", "type": "single", "options": ["Полю", "Записи (Кортежу)", "Типу данных", "Схеме"], "correct": 1},
+                {"question": "Что такое **Первичный ключ (Primary Key)** в базе данных?", "type": "single", "options": ["Поле, которое может содержать повторяющиеся значения.", "Поле, которое однозначно идентифицирует каждую запись в таблице.", "Поле, которое используется для связи с другими таблицами.", "Поле, содержащее только текстовые данные."], "correct": 1},
+                {"question": "Какие требования предъявляются к **Первичному ключу** (несколько ответов)?", "type": "multiple", "options": ["Значение должно быть уникальным.", "Значение может быть пустым (NULL).", "Должен быть определен для каждой таблицы.", "Должен быть числовым."], "correct": [0, 2]},
+                {"question": "Что такое **Индекс** в базе данных?", "type": "single", "options": ["Имя таблицы.", "Специальная структура, ускоряющая поиск и сортировку данных.", "Тип данных.", "Связь между таблицами."], "correct": 1},
+                {"question": "Для работы с базами данных используется язык **SQL**, что расшифровывается как:", "type": "single", "options": ["Simple Query Language", "Structured Quality Logic", "Structured Query Language", "Standard Query Limit"], "correct": 2},
+                {"question": "Что является основным понятием при работе с реляционными базами данных (несколько ответов)?", "type": "multiple", "options": ["Таблица", "Скрипт", "Поле (Атрибут)", "Запись (Кортеж)"], "correct": [0, 2, 3]},
+                {"question": "Тип данных, который должен использоваться для хранения текста большой длины (например, описание) в SQL:", "type": "single", "options": ["INT", "VARCHAR(255)", "TEXT", "BOOLEAN"], "correct": 2},
+                {"question": "Цель определения **Первичного ключа**:", "type": "single", "options": ["Ускорение записи.", "Надежная идентификация каждой записи.", "Защита от SQL-инъекций.", "Ограничение объема данных."], "correct": 1},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
+27.

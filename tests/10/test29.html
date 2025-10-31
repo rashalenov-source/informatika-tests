@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 29: Разработка однотабличной базы данных (SQL)_1 - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 29: Разработка однотабличной базы данных (SQL)_1",
+            questions: [
+                {"question": "Какая SQL-команда используется для **создания** новой таблицы?", "type": "single", "options": ["INSERT TABLE", "CREATE DATABASE", "CREATE TABLE", "NEW TABLE"], "correct": 2},
+                {"question": "Какая SQL-команда используется для **добавления** новой записи (строки) в таблицу?", "type": "single", "options": ["CREATE ROW", "INSERT INTO", "ADD RECORD", "UPDATE TABLE"], "correct": 1},
+                {"question": "Какой тип данных в SQL используется для хранения **целых чисел**?", "type": "single", "options": ["FLOAT", "VARCHAR", "INT", "DATE"], "correct": 2},
+                {"question": "Какой тип данных в SQL используется для хранения **текстовых строк переменной длины**?", "type": "single", "options": ["CHAR", "INT", "BOOLEAN", "VARCHAR"], "correct": 3},
+                {"question": "Какое ключевое слово в SQL используется для указания того, что поле является **первичным ключом**?", "type": "single", "options": ["UNIQUE", "KEY", "PRIMARY KEY", "NOT NULL"], "correct": 2},
+                {"question": "Фрагмент SQL-кода: `CREATE TABLE Students (...)` выполняет:", "type": "single", "options": ["Удаление таблицы Students.", "Создание базы данных Students.", "Создание новой таблицы с именем Students.", "Изменение структуры таблицы Students."], "correct": 2},
+                {"question": "Что представляет собой **Однотабличная база данных**?", "type": "single", "options": ["База данных с множеством связей.", "База данных, состоящая из одной таблицы.", "База данных без записей.", "База данных только для чтения."], "correct": 1},
+                {"question": "Для чего используется оператор **`NOT NULL`** при определении поля в SQL?", "type": "single", "options": ["Поле должно содержать только числа.", "Поле не может быть первичным ключом.", "Поле не может содержать пустое значение (NULL).", "Поле должно быть уникальным."], "correct": 2},
+                {"question": "Какой SQL-командой можно задать значение поля по **умолчанию**?", "type": "single", "options": ["SET DEFAULT", "DEFAULT VALUE", "DEFAULT", "VALUE"], "correct": 2},
+                {"question": "Что из перечисленного является типом данных в SQL для хранения **даты**?", "type": "single", "options": ["STRING", "DATE", "INT", "TIME"], "correct": 1},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
+28.
