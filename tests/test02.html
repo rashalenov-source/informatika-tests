@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 2: IP-адрес, DNS, Частная виртуальная сеть (VPN) - 10 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 2: IP-адрес, DNS, Частная виртуальная сеть (VPN)",
+            questions: [
+                {"question": "Что такое **IP-адрес**?", "type": "single", "options": ["Физический адрес компьютера.", "Имя web-сайта.", "Уникальный 32-разрядный адрес в сети для нахождения и передачи информации.", "Набор правил для обмена данными."], "correct": 2},
+                {"question": "Из скольких **разрядов** состоит IP-адрес?", "type": "single", "options": ["8", "16", "32", "64"], "correct": 2},
+                {"question": "Как называется группа из **восьми двоичных разрядов** в структуре IP-адреса?", "type": "single", "options": ["Бит", "Байт", "Октет", "Тетрада"], "correct": 2},
+                {"question": "Что обозначают первые биты IP-адреса?", "type": "single", "options": ["Номер компьютера в сети.", "Принадлежность к классу IP-адресов.", "Номер маршрутизатора.", "MAC-адрес."], "correct": 1},
+                {"question": "Какие из перечисленных являются стандартными **классами** IP-адресов (несколько ответов)?", "type": "multiple", "options": ["A", "B", "C", "F", "Z"], "correct": [0, 1, 2]},
+                {"question": "Что такое **Маска подсети**?", "type": "single", "options": ["Программа для скрытия IP-адреса.", "Число, которое применяется в паре с IP-адресом для разделения его на номер сети и номер узла.", "MAC-адрес в двоичной записи.", "Доменное имя."], "correct": 1},
+                {"question": "Выберите стандартные маски подсети (несколько ответов):", "type": "multiple", "options": ["255.0.0.0", "192.168.1.1", "255.255.0.0", "255.255.255.0", "1.1.1.1"], "correct": [0, 2, 3]},
+                {"question": "IP-адрес, присваиваемый устройству **на время** при подключении к сети, называется:", "type": "single", "options": ["Статический", "Внутренний", "Динамический", "Внешний"], "correct": 2},
+                {"question": "Для чего создана **Доменная система имен (DNS)**?", "type": "single", "options": ["Для шифрования данных.", "Для преобразования IP-адреса в более понятное символьное имя (домен).", "Для хранения MAC-адресов.", "Для передачи пакетов данных."], "correct": 1},
+                {"question": "Полное имя домена, например `www.smk.edu.kz`, состоит из имен всех доменов, разделенных:", "type": "single", "options": ["Запятыми", "Тире", "Пробелами", "Точками"], "correct": 3},
+            ]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
