@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 10: Встроенные функции: текстовые и логические функции - 8 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 10: Встроенные функции: текстовые и логические функции",
+            questions: [
+                {
+                                "question": "Для чего используется функция ЕСЛИ (IF) в Excel?",
+                                "type": "single",
+                                "options": [
+                                                "Для суммирования",
+                                                "Для проверки условия",
+                                                "Для умножения",
+                                                "Для сортировки"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Какой результат вернет функция =ЕСЛИ(5>3; 'Да'; 'Нет')?",
+                                "type": "single",
+                                "options": [
+                                                "Нет",
+                                                "Да",
+                                                "5",
+                                                "3"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Функция СУММ (SUM) используется для:",
+                                "type": "single",
+                                "options": [
+                                                "Вычисления среднего",
+                                                "Суммирования чисел",
+                                                "Подсчета ячеек",
+                                                "Умножения"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что делает функция СЧЁТ (COUNT)?",
+                                "type": "single",
+                                "options": [
+                                                "Суммирует",
+                                                "Подсчитывает количество ячеек с числами",
+                                                "Находит максимум",
+                                                "Сортирует"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что вернет функция =МАКС(1,5,3,9,2)?",
+                                "type": "single",
+                                "options": [
+                                                "1",
+                                                "9",
+                                                "20",
+                                                "3"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Функция МИН используется для:",
+                                "type": "single",
+                                "options": [
+                                                "Нахождения минимального значения",
+                                                "Нахождения суммы",
+                                                "Подсчета ячеек",
+                                                "Среднего значения"
+                                ],
+                                "correct": 0
+                },
+                {
+                                "question": "Что делает функция СРЗНАЧ (AVERAGE)?",
+                                "type": "single",
+                                "options": [
+                                                "Находит максимум",
+                                                "Вычисляет среднее значение",
+                                                "Суммирует",
+                                                "Подсчитывает"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Синтаксис функции ЕСЛИ: =ЕСЛИ(условие; значение_если_истина; ...)?",
+                                "type": "single",
+                                "options": [
+                                                "значение_если_ложь",
+                                                "значение_если_ошибка",
+                                                "значение_по_умолчанию",
+                                                "нет продолжения"
+                                ],
+                                "correct": 0
+                },
+                {
+                                "question": "Что вернет =ЕСЛИ(10<5; 'Меньше'; 'Больше')?",
+                                "type": "single",
+                                "options": [
+                                                "Меньше",
+                                                "Больше",
+                                                "10",
+                                                "5"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Функция СТЕПЕНЬ(2;3) вернет:",
+                                "type": "single",
+                                "options": [
+                                                "5",
+                                                "6",
+                                                "8",
+                                                "9"
+                                ],
+                                "correct": 2
+                }
+]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

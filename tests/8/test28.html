@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 28: Разработка алгоритма - 8 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 28: Разработка алгоритма",
+            questions: [
+                {
+                                "question": "Что такое постановка задачи?",
+                                "type": "single",
+                                "options": [
+                                                "Написание кода",
+                                                "Формулировка проблемы и требований",
+                                                "Тестирование",
+                                                "Компиляция"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что такое алгоритм?",
+                                "type": "single",
+                                "options": [
+                                                "Программа",
+                                                "Последовательность шагов для решения задачи",
+                                                "Ошибка",
+                                                "Переменная"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Какие основные этапы решения задачи программирования?",
+                                "type": "single",
+                                "options": [
+                                                "Только написание кода",
+                                                "Постановка, разработка, программирование, тестирование",
+                                                "Только тестирование",
+                                                "Нет этапов"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что такое тестирование программы?",
+                                "type": "single",
+                                "options": [
+                                                "Написание кода",
+                                                "Проверка корректности работы",
+                                                "Удаление программы",
+                                                "Компиляция"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что делать, если программа выдает ошибку?",
+                                "type": "single",
+                                "options": [
+                                                "Удалить программу",
+                                                "Найти и исправить ошибку",
+                                                "Игнорировать",
+                                                "Переписать все"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что такое синтаксическая ошибка?",
+                                "type": "single",
+                                "options": [
+                                                "Ошибка логики",
+                                                "Нарушение правил языка",
+                                                "Медленная работа",
+                                                "Правильный код"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что такое логическая ошибка?",
+                                "type": "single",
+                                "options": [
+                                                "Правильный синтаксис, но неверный результат",
+                                                "Нарушение синтаксиса",
+                                                "Нет ошибки",
+                                                "Ошибка компилятора"
+                                ],
+                                "correct": 0
+                },
+                {
+                                "question": "Как называется процесс написания кода?",
+                                "type": "single",
+                                "options": [
+                                                "Тестирование",
+                                                "Программирование",
+                                                "Постановка",
+                                                "Компиляция"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Зачем нужна документация кода?",
+                                "type": "single",
+                                "options": [
+                                                "Не нужна",
+                                                "Для понимания кода другими",
+                                                "Для замедления",
+                                                "Для ошибок"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что такое отладочная печать?",
+                                "type": "single",
+                                "options": [
+                                                "Удаление print",
+                                                "Вывод значений для проверки",
+                                                "Ошибка",
+                                                "Комментарий"
+                                ],
+                                "correct": 1
+                }
+]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 16: Практикум. Обработка информации в электронных таблицах - 8 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 16: Практикум. Обработка информации в электронных таблицах",
+            questions: [
+                {
+                                "question": "Какой результат формулы =10+5*2?",
+                                "type": "single",
+                                "options": [
+                                                "30",
+                                                "20",
+                                                "15",
+                                                "25"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что вернет формула =СТЕПЕНЬ(3;2)?",
+                                "type": "single",
+                                "options": [
+                                                "5",
+                                                "6",
+                                                "9",
+                                                "8"
+                                ],
+                                "correct": 2
+                },
+                {
+                                "question": "Функция =ПРОИЗВЕД(2;3;4) вернет:",
+                                "type": "single",
+                                "options": [
+                                                "9",
+                                                "24",
+                                                "14",
+                                                "10"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что делает функция =КОРЕНЬ(16)?",
+                                "type": "single",
+                                "options": [
+                                                "8",
+                                                "4",
+                                                "256",
+                                                "2"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Результат =ОКРУГЛ(3.7;0)?",
+                                "type": "single",
+                                "options": [
+                                                "3",
+                                                "4",
+                                                "3.7",
+                                                "3.5"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Функция =ПИ() возвращает:",
+                                "type": "single",
+                                "options": [
+                                                "3",
+                                                "3.14159...",
+                                                "180",
+                                                "360"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что вернет =ABS(-5)?",
+                                "type": "single",
+                                "options": [
+                                                "-5",
+                                                "5",
+                                                "0",
+                                                "10"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Функция =ОСТАТ(10;3) вернет:",
+                                "type": "single",
+                                "options": [
+                                                "3",
+                                                "1",
+                                                "10",
+                                                "0"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что делает =ЦЕЛОЕ(5.9)?",
+                                "type": "single",
+                                "options": [
+                                                "6",
+                                                "5",
+                                                "5.9",
+                                                "0"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Результат =ЕСЛИ(СРЗНАЧ(2;4;6)>3; 'Да'; 'Нет')?",
+                                "type": "single",
+                                "options": [
+                                                "Нет",
+                                                "Да",
+                                                "2",
+                                                "4"
+                                ],
+                                "correct": 1
+                }
+]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

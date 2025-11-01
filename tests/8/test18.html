@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 18: Цикл while - 8 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 18: Цикл while",
+            questions: [
+                {
+                                "question": "Для чего используется цикл while?",
+                                "type": "single",
+                                "options": [
+                                                "Для ветвления",
+                                                "Для повторения действий",
+                                                "Для ввода данных",
+                                                "Для вывода"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Какое условие должно быть у while для выполнения?",
+                                "type": "single",
+                                "options": [
+                                                "False",
+                                                "True",
+                                                "0",
+                                                "None"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что произойдет, если условие while всегда True?",
+                                "type": "single",
+                                "options": [
+                                                "Цикл не выполнится",
+                                                "Бесконечный цикл",
+                                                "Ошибка",
+                                                "Выполнится 1 раз"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Синтаксис цикла while:",
+                                "type": "single",
+                                "options": [
+                                                "while условие:",
+                                                "while(условие)",
+                                                "while условие then",
+                                                "do while условие"
+                                ],
+                                "correct": 0
+                },
+                {
+                                "question": "Что выведет: i=1; while i<=3: print(i); i+=1",
+                                "type": "single",
+                                "options": [
+                                                "1",
+                                                "123",
+                                                "1 2 3",
+                                                "3"
+                                ],
+                                "correct": 2
+                },
+                {
+                                "question": "Что такое счетчик цикла?",
+                                "type": "single",
+                                "options": [
+                                                "Константа",
+                                                "Переменная для подсчета итераций",
+                                                "Условие",
+                                                "Оператор"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что нужно изменять в теле while, чтобы избежать бесконечного цикла?",
+                                "type": "single",
+                                "options": [
+                                                "Условие или счетчик",
+                                                "Ничего",
+                                                "Имя переменной",
+                                                "Комментарии"
+                                ],
+                                "correct": 0
+                },
+                {
+                                "question": "Когда цикл while прекращает работу?",
+                                "type": "single",
+                                "options": [
+                                                "Когда условие True",
+                                                "Когда условие False",
+                                                "Никогда",
+                                                "После первой итерации"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Можно ли использовать несколько условий в while?",
+                                "type": "single",
+                                "options": [
+                                                "Нет",
+                                                "Да",
+                                                "Только два",
+                                                "Только одно"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что означает i+=1?",
+                                "type": "single",
+                                "options": [
+                                                "i=i-1",
+                                                "i=i+1",
+                                                "i=1",
+                                                "i=i*1"
+                                ],
+                                "correct": 1
+                }
+]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

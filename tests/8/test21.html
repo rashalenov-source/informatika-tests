@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 21: Управление циклом continue - 8 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 21: Управление циклом continue",
+            questions: [
+                {
+                                "question": "Что делает оператор continue?",
+                                "type": "single",
+                                "options": [
+                                                "Прерывает цикл",
+                                                "Пропускает текущую итерацию и переходит к следующей",
+                                                "Завершает программу",
+                                                "Ничего"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "В каком месте пишется continue?",
+                                "type": "single",
+                                "options": [
+                                                "Вне цикла",
+                                                "Внутри цикла",
+                                                "В начале программы",
+                                                "В конце"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что выведет: for i in range(5): if i==2: continue; print(i)",
+                                "type": "single",
+                                "options": [
+                                                "0 1 2 3 4",
+                                                "0 1 3 4",
+                                                "0 1",
+                                                "1 2 3 4"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Можно ли использовать continue в while?",
+                                "type": "single",
+                                "options": [
+                                                "Нет",
+                                                "Да",
+                                                "Только в for",
+                                                "Никогда"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что происходит после continue?",
+                                "type": "single",
+                                "options": [
+                                                "Цикл завершается",
+                                                "Переход к следующей итерации",
+                                                "Выход из программы",
+                                                "Ошибка"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Чем continue отличается от break?",
+                                "type": "single",
+                                "options": [
+                                                "Ничем",
+                                                "continue пропускает итерацию, break прерывает цикл",
+                                                "continue медленнее",
+                                                "break не работает"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Можно ли использовать несколько continue в цикле?",
+                                "type": "single",
+                                "options": [
+                                                "Нет",
+                                                "Да",
+                                                "Только два",
+                                                "Только один"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что выведет: for i in [1,2,3]: if i%2==0: continue; print(i)",
+                                "type": "single",
+                                "options": [
+                                                "1 2 3",
+                                                "1 3",
+                                                "2",
+                                                "3"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Когда полезен continue?",
+                                "type": "single",
+                                "options": [
+                                                "Никогда",
+                                                "Когда нужно пропустить определенные элементы",
+                                                "Всегда",
+                                                "Для завершения"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Выполнится ли код после continue в текущей итерации?",
+                                "type": "single",
+                                "options": [
+                                                "Да",
+                                                "Нет",
+                                                "Иногда",
+                                                "Всегда"
+                                ],
+                                "correct": 1
+                }
+]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

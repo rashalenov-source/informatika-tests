@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 19: Цикл for - 8 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 19: Цикл for",
+            questions: [
+                {
+                                "question": "Для чего используется цикл for?",
+                                "type": "single",
+                                "options": [
+                                                "Для ветвления",
+                                                "Для перебора последовательности",
+                                                "Для ввода",
+                                                "Для вывода"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Синтаксис цикла for:",
+                                "type": "single",
+                                "options": [
+                                                "for i in range():",
+                                                "for(i=0;i<10;i++)",
+                                                "for i while",
+                                                "for i then"
+                                ],
+                                "correct": 0
+                },
+                {
+                                "question": "Что выведет: for i in range(3): print(i)",
+                                "type": "single",
+                                "options": [
+                                                "123",
+                                                "0 1 2",
+                                                "1 2 3",
+                                                "0 1 2 3"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что делает range(5)?",
+                                "type": "single",
+                                "options": [
+                                                "Создает список [0,1,2,3,4]",
+                                                "Создает [1,2,3,4,5]",
+                                                "Ничего",
+                                                "Ошибка"
+                                ],
+                                "correct": 0
+                },
+                {
+                                "question": "range(1, 5) создаст:",
+                                "type": "single",
+                                "options": [
+                                                "[0,1,2,3,4]",
+                                                "[1,2,3,4]",
+                                                "[1,2,3,4,5]",
+                                                "[0,1,2,3,4,5]"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что означает range(0, 10, 2)?",
+                                "type": "single",
+                                "options": [
+                                                "Четные числа от 0 до 10",
+                                                "Нечетные",
+                                                "Все числа до 10",
+                                                "Ошибка"
+                                ],
+                                "correct": 0
+                },
+                {
+                                "question": "Можно ли использовать for для строк?",
+                                "type": "single",
+                                "options": [
+                                                "Нет",
+                                                "Да",
+                                                "Только для списков",
+                                                "Только для чисел"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что выведет: for i in 'Hi': print(i)",
+                                "type": "single",
+                                "options": [
+                                                "Hi",
+                                                "H i",
+                                                "Ошибку",
+                                                "H I"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "В чем разница for от while?",
+                                "type": "single",
+                                "options": [
+                                                "Нет разницы",
+                                                "for для известного числа итераций",
+                                                "for быстрее",
+                                                "while не работает"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что выведет: for i in range(2, 5): print(i)",
+                                "type": "single",
+                                "options": [
+                                                "0 1 2 3 4",
+                                                "2 3 4",
+                                                "2 3 4 5",
+                                                "1 2 3 4"
+                                ],
+                                "correct": 1
+                }
+]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

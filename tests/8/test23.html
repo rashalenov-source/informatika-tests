@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 23: Управление циклом else - 8 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 23: Управление циклом else",
+            questions: [
+                {
+                                "question": "Что делает else после цикла for/while?",
+                                "type": "single",
+                                "options": [
+                                                "Ничего",
+                                                "Выполняется, если цикл завершился без break",
+                                                "Выполняется всегда",
+                                                "Заменяет цикл"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Когда выполняется else после цикла?",
+                                "type": "single",
+                                "options": [
+                                                "При break",
+                                                "При нормальном завершении цикла",
+                                                "Никогда",
+                                                "Всегда"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что выведет: for i in range(2): print(i); else: print('Done')",
+                                "type": "single",
+                                "options": [
+                                                "0 1",
+                                                "Done",
+                                                "0 1 Done",
+                                                "Ошибка"
+                                ],
+                                "correct": 2
+                },
+                {
+                                "question": "Выполнится ли else, если сработал break?",
+                                "type": "single",
+                                "options": [
+                                                "Да",
+                                                "Нет",
+                                                "Иногда",
+                                                "Всегда"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Можно ли использовать else с while?",
+                                "type": "single",
+                                "options": [
+                                                "Нет",
+                                                "Да",
+                                                "Только с for",
+                                                "Нельзя"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "В чем смысл else после цикла?",
+                                "type": "single",
+                                "options": [
+                                                "Нет смысла",
+                                                "Выполнить код при успешном завершении",
+                                                "Всегда выполнять",
+                                                "Заменить break"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что выведет: for i in range(3): if i==1: break; else: print('End')",
+                                "type": "single",
+                                "options": [
+                                                "End",
+                                                "Ничего",
+                                                "0 1 2 End",
+                                                "Ошибка"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Обязателен ли else после цикла?",
+                                "type": "single",
+                                "options": [
+                                                "Да",
+                                                "Нет",
+                                                "Всегда нужен",
+                                                "Иногда"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Чем else после цикла отличается от обычного else?",
+                                "type": "single",
+                                "options": [
+                                                "Ничем",
+                                                "Зависит от break",
+                                                "Не отличается",
+                                                "Работает по-другому"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Когда полезен else после цикла?",
+                                "type": "single",
+                                "options": [
+                                                "Никогда",
+                                                "Для проверки успешного выполнения",
+                                                "Всегда",
+                                                "Не нужен"
+                                ],
+                                "correct": 1
+                }
+]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

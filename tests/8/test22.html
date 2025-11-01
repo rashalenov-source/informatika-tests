@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 22: Управление циклом break - 8 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 22: Управление циклом break",
+            questions: [
+                {
+                                "question": "Что делает оператор break?",
+                                "type": "single",
+                                "options": [
+                                                "Пропускает итерацию",
+                                                "Полностью прерывает цикл",
+                                                "Продолжает цикл",
+                                                "Ничего"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Где используется break?",
+                                "type": "single",
+                                "options": [
+                                                "Вне циклов",
+                                                "Внутри циклов",
+                                                "В функциях",
+                                                "В условиях без циклов"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что произойдет после break?",
+                                "type": "single",
+                                "options": [
+                                                "Цикл продолжится",
+                                                "Выход из цикла",
+                                                "Переход к следующей итерации",
+                                                "Ошибка"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что выведет: for i in range(5): if i==3: break; print(i)",
+                                "type": "single",
+                                "options": [
+                                                "0 1 2 3 4",
+                                                "0 1 2",
+                                                "0 1 2 3",
+                                                "3 4"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Можно ли использовать break в while?",
+                                "type": "single",
+                                "options": [
+                                                "Нет",
+                                                "Да",
+                                                "Только в for",
+                                                "Нельзя"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Чем break отличается от continue?",
+                                "type": "single",
+                                "options": [
+                                                "Ничем",
+                                                "break прерывает цикл, continue пропускает итерацию",
+                                                "break быстрее",
+                                                "continue не работает"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что выведет: i=0; while True: print(i); i+=1; if i==2: break",
+                                "type": "single",
+                                "options": [
+                                                "0 1",
+                                                "0 1 2",
+                                                "Бесконечно",
+                                                "Ошибка"
+                                ],
+                                "correct": 0
+                },
+                {
+                                "question": "Прервет ли break внешний цикл при вложенных циклах?",
+                                "type": "single",
+                                "options": [
+                                                "Да, все циклы",
+                                                "Нет, только текущий",
+                                                "Иногда",
+                                                "Всегда внешний"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Когда полезен break?",
+                                "type": "single",
+                                "options": [
+                                                "Никогда",
+                                                "Для выхода при выполнении условия",
+                                                "Всегда",
+                                                "Для пропуска"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Можно ли использовать несколько break в цикле?",
+                                "type": "single",
+                                "options": [
+                                                "Нет",
+                                                "Да",
+                                                "Только два",
+                                                "Только один"
+                                ],
+                                "correct": 1
+                }
+]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

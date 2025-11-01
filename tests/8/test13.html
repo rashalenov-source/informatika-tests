@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 13: Анализ данных на основе имеющейся информации - 8 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 13: Анализ данных на основе имеющейся информации",
+            questions: [
+                {
+                                "question": "Что такое электронная таблица?",
+                                "type": "single",
+                                "options": [
+                                                "Текстовый документ",
+                                                "Программа для работы с данными в таблицах",
+                                                "Презентация",
+                                                "База данных"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Как называется пересечение строки и столбца?",
+                                "type": "single",
+                                "options": [
+                                                "Ячейка",
+                                                "Поле",
+                                                "Строка",
+                                                "Столбец"
+                                ],
+                                "correct": 0
+                },
+                {
+                                "question": "Что такое диапазон ячеек A1:C3?",
+                                "type": "single",
+                                "options": [
+                                                "Одна ячейка",
+                                                "Прямоугольная область от A1 до C3",
+                                                "Столбец A",
+                                                "Строка 1"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Какой символ начинает формулу в Excel?",
+                                "type": "single",
+                                "options": [
+                                                "#",
+                                                "=",
+                                                "*",
+                                                "/"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что делает функция =СУММ(A1:A10)?",
+                                "type": "single",
+                                "options": [
+                                                "Умножает",
+                                                "Суммирует значения от A1 до A10",
+                                                "Находит среднее",
+                                                "Подсчитывает ячейки"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Для чего используются графики в Excel?",
+                                "type": "single",
+                                "options": [
+                                                "Для ввода данных",
+                                                "Для визуализации данных",
+                                                "Для форматирования",
+                                                "Для печати"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что такое фильтр в Excel?",
+                                "type": "single",
+                                "options": [
+                                                "Удаление данных",
+                                                "Отбор данных по условию",
+                                                "Сортировка",
+                                                "Форматирование"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Как быстро выделить весь столбец?",
+                                "type": "single",
+                                "options": [
+                                                "Ctrl+A",
+                                                "Щелкнуть по заголовку столбца",
+                                                "Выделить все ячейки",
+                                                "Нажать Delete"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что делает автозаполнение в Excel?",
+                                "type": "single",
+                                "options": [
+                                                "Удаляет данные",
+                                                "Автоматически продолжает последовательность",
+                                                "Форматирует",
+                                                "Сортирует"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Как закрепить верхнюю строку?",
+                                "type": "single",
+                                "options": [
+                                                "Формат-Закрепить",
+                                                "Вид-Закрепить области",
+                                                "Правка-Закрепить",
+                                                "Нельзя закрепить"
+                                ],
+                                "correct": 1
+                }
+]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 26: Практикум. Ошибки, возникающие в программировании - 8 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 26: Практикум. Ошибки, возникающие в программировании",
+            questions: [
+                {
+                                "question": "Что такое трассировка алгоритма?",
+                                "type": "single",
+                                "options": [
+                                                "Написание кода",
+                                                "Пошаговое выполнение с отслеживанием значений",
+                                                "Компиляция",
+                                                "Удаление кода"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Для чего нужна трассировка?",
+                                "type": "single",
+                                "options": [
+                                                "Для ускорения",
+                                                "Для поиска ошибок и понимания работы",
+                                                "Для удаления",
+                                                "Не нужна"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что показывает трассировочная таблица?",
+                                "type": "single",
+                                "options": [
+                                                "Только ошибки",
+                                                "Изменение переменных на каждом шаге",
+                                                "Скорость программы",
+                                                "Размер файла"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "x=5; x=x+2; Чему равен x?",
+                                "type": "single",
+                                "options": [
+                                                "5",
+                                                "7",
+                                                "2",
+                                                "3"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "a=10; b=a; a=5; Чему равно b?",
+                                "type": "single",
+                                "options": [
+                                                "5",
+                                                "10",
+                                                "15",
+                                                "0"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что делает оператор a, b = b, a?",
+                                "type": "single",
+                                "options": [
+                                                "Ошибка",
+                                                "Меняет значения местами",
+                                                "Складывает",
+                                                "Удаляет"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "i=0; i+=3; i*=2; Чему равно i?",
+                                "type": "single",
+                                "options": [
+                                                "3",
+                                                "6",
+                                                "0",
+                                                "5"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Как найти ошибку в программе?",
+                                "type": "single",
+                                "options": [
+                                                "Удалить все",
+                                                "Трассировка и отладка",
+                                                "Переписать заново",
+                                                "Игнорировать"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что такое отладка?",
+                                "type": "single",
+                                "options": [
+                                                "Написание кода",
+                                                "Поиск и исправление ошибок",
+                                                "Компиляция",
+                                                "Сохранение"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "x=1; while x<4: print(x); x+=1; Что выведет?",
+                                "type": "single",
+                                "options": [
+                                                "1",
+                                                "1 2 3",
+                                                "1 2 3 4",
+                                                "0 1 2"
+                                ],
+                                "correct": 1
+                }
+]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

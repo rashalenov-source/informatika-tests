@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 04: Компьютерные сети - 8 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 04: Компьютерные сети",
+            questions: [
+                {
+                                "question": "Что такое пропускная способность сети?",
+                                "type": "single",
+                                "options": [
+                                                "Количество компьютеров в сети",
+                                                "Объем данных, передаваемых за единицу времени",
+                                                "Расстояние между компьютерами",
+                                                "Тип кабеля"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "В каких единицах измеряется пропускная способность?",
+                                "type": "single",
+                                "options": [
+                                                "байт/сек",
+                                                "бит/сек (бит/с, Мбит/с, Гбит/с)",
+                                                "км/час",
+                                                "Гц"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Чем отличается скорость 100 Мбит/с от 1 Гбит/с?",
+                                "type": "single",
+                                "options": [
+                                                "100 Мбит/с быстрее",
+                                                "1 Гбит/с в 10 раз быстрее",
+                                                "Одинаковые",
+                                                "1 Гбит/с в 100 раз быстрее"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что влияет на пропускную способность сети?",
+                                "type": "single",
+                                "options": [
+                                                "Цвет кабеля",
+                                                "Тип соединения и качество оборудования",
+                                                "Количество мониторов",
+                                                "Яркость экрана"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Какой тип соединения обеспечивает наибольшую пропускную способность?",
+                                "type": "single",
+                                "options": [
+                                                "Dial-up",
+                                                "ADSL",
+                                                "Оптоволокно",
+                                                "Спутниковое"
+                                ],
+                                "correct": 2
+                },
+                {
+                                "question": "Сколько байт можно передать за 1 секунду при скорости 8 Мбит/с?",
+                                "type": "single",
+                                "options": [
+                                                "1 Мбайт",
+                                                "8 Мбайт",
+                                                "800 Кбайт",
+                                                "80 Кбайт"
+                                ],
+                                "correct": 0
+                },
+                {
+                                "question": "Что такое задержка (ping) в сети?",
+                                "type": "single",
+                                "options": [
+                                                "Скорость загрузки",
+                                                "Время передачи пакета данных",
+                                                "Объем трафика",
+                                                "Количество устройств"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Какое значение ping считается хорошим для онлайн-игр?",
+                                "type": "single",
+                                "options": [
+                                                "200-300 мс",
+                                                "100-200 мс",
+                                                "50-100 мс",
+                                                "менее 50 мс"
+                                ],
+                                "correct": 3
+                },
+                {
+                                "question": "Что происходит при перегрузке сети?",
+                                "type": "single",
+                                "options": [
+                                                "Увеличивается скорость",
+                                                "Снижается пропускная способность",
+                                                "Сеть отключается",
+                                                "Увеличивается безопасность"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Какой протокол используется для проверки доступности узла в сети?",
+                                "type": "single",
+                                "options": [
+                                                "HTTP",
+                                                "FTP",
+                                                "PING",
+                                                "SMTP"
+                                ],
+                                "correct": 2
+                }
+]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

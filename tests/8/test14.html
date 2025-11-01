@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 14: Построение графика функций, заданных в таблице - 8 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 14: Построение графика функций, заданных в таблице",
+            questions: [
+                {
+                                "question": "Для чего используются графики в Excel?",
+                                "type": "single",
+                                "options": [
+                                                "Для ввода текста",
+                                                "Для наглядного представления данных",
+                                                "Для печати",
+                                                "Для сохранения"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Какой тип графика подходит для отображения изменения во времени?",
+                                "type": "single",
+                                "options": [
+                                                "Круговая диаграмма",
+                                                "Линейный график",
+                                                "Гистограмма",
+                                                "Точечная диаграмма"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что такое ось X на графике?",
+                                "type": "single",
+                                "options": [
+                                                "Вертикальная ось",
+                                                "Горизонтальная ось",
+                                                "Название графика",
+                                                "Легенда"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что отображает ось Y?",
+                                "type": "single",
+                                "options": [
+                                                "Категории",
+                                                "Значения данных",
+                                                "Время",
+                                                "Подписи"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Как называется график для отображения частей целого?",
+                                "type": "single",
+                                "options": [
+                                                "Линейный",
+                                                "Круговая диаграмма",
+                                                "Точечная",
+                                                "Гистограмма"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Какой первый шаг при создании графика в Excel?",
+                                "type": "single",
+                                "options": [
+                                                "Форматирование",
+                                                "Выделение данных",
+                                                "Печать",
+                                                "Сохранение"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Где находится команда для вставки графика в Excel?",
+                                "type": "single",
+                                "options": [
+                                                "Главная",
+                                                "Вставка",
+                                                "Разметка страницы",
+                                                "Данные"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что такое легенда графика?",
+                                "type": "single",
+                                "options": [
+                                                "Ось X",
+                                                "Пояснение к элементам графика",
+                                                "Заголовок",
+                                                "Ось Y"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Можно ли изменить тип графика после создания?",
+                                "type": "single",
+                                "options": [
+                                                "Нет",
+                                                "Да",
+                                                "Только цвет",
+                                                "Только размер"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Для чего нужны подписи данных на графике?",
+                                "type": "single",
+                                "options": [
+                                                "Для красоты",
+                                                "Для отображения точных значений",
+                                                "Для печати",
+                                                "Не нужны"
+                                ],
+                                "correct": 1
+                }
+]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 17: Язык программирования Python - 8 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 17: Язык программирования Python",
+            questions: [
+                {
+                                "question": "Кто создал язык Python?",
+                                "type": "single",
+                                "options": [
+                                                "Билл Гейтс",
+                                                "Гвидо ван Россум",
+                                                "Стив Джобс",
+                                                "Линус Торвальдс"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "В каком году был создан Python?",
+                                "type": "single",
+                                "options": [
+                                                "1980",
+                                                "1991",
+                                                "2000",
+                                                "2010"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Какое расширение имеют файлы Python?",
+                                "type": "single",
+                                "options": [
+                                                ".txt",
+                                                ".py",
+                                                ".java",
+                                                ".cpp"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что используется для вывода текста в Python?",
+                                "type": "single",
+                                "options": [
+                                                "write()",
+                                                "print()",
+                                                "output()",
+                                                "display()"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Какой оператор используется для ввода данных?",
+                                "type": "single",
+                                "options": [
+                                                "input()",
+                                                "read()",
+                                                "get()",
+                                                "scan()"
+                                ],
+                                "correct": 0
+                },
+                {
+                                "question": "Что выведет print('Hello')?",
+                                "type": "single",
+                                "options": [
+                                                "Ничего",
+                                                "Hello",
+                                                "Ошибку",
+                                                "print"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Как объявить переменную в Python?",
+                                "type": "single",
+                                "options": [
+                                                "var x = 5",
+                                                "x = 5",
+                                                "int x = 5",
+                                                "x := 5"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что такое переменная?",
+                                "type": "single",
+                                "options": [
+                                                "Постоянное значение",
+                                                "Контейнер для хранения данных",
+                                                "Функция",
+                                                "Оператор"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Какой тип данных у значения 'Hello'?",
+                                "type": "single",
+                                "options": [
+                                                "int",
+                                                "str",
+                                                "float",
+                                                "bool"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что выведет print(2+3)?",
+                                "type": "single",
+                                "options": [
+                                                "23",
+                                                "5",
+                                                "Ошибку",
+                                                "2+3"
+                                ],
+                                "correct": 1
+                }
+]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

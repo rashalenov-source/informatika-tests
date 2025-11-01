@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 09: Статистические данные - 8 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 09: Статистические данные",
+            questions: [
+                {
+                                "question": "Что такое абсолютная ссылка в Excel?",
+                                "type": "single",
+                                "options": [
+                                                "Ссылка, которая изменяется",
+                                                "Ссылка, которая не изменяется при копировании",
+                                                "Ссылка на другой файл",
+                                                "Ссылка на сайт"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Как обозначается абсолютная ссылка в Excel?",
+                                "type": "single",
+                                "options": [
+                                                "Кавычками",
+                                                "Знаком доллара $",
+                                                "Звездочкой *",
+                                                "Решеткой #"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что произойдет с ссылкой $A$1 при копировании?",
+                                "type": "single",
+                                "options": [
+                                                "Изменится",
+                                                "Останется неизменной",
+                                                "Удалится",
+                                                "Станет относительной"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что такое относительная ссылка?",
+                                "type": "single",
+                                "options": [
+                                                "Ссылка с $",
+                                                "Ссылка, изменяющаяся при копировании",
+                                                "Ссылка на интернет",
+                                                "Неизменная ссылка"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Как записать смешанную ссылку, где столбец абсолютный, а строка относительная?",
+                                "type": "single",
+                                "options": [
+                                                "A$1",
+                                                "$A1",
+                                                "$$A1",
+                                                "A1$"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Для чего используют абсолютные ссылки?",
+                                "type": "single",
+                                "options": [
+                                                "Для изменения данных",
+                                                "Для фиксации ячейки при копировании формул",
+                                                "Для удаления ячеек",
+                                                "Для форматирования"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Если ссылка A1 скопирована на одну ячейку вниз, во что она превратится?",
+                                "type": "single",
+                                "options": [
+                                                "A1",
+                                                "A2",
+                                                "B1",
+                                                "$A$1"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что означает ссылка $B2?",
+                                "type": "single",
+                                "options": [
+                                                "Абсолютная по столбцу, относительная по строке",
+                                                "Абсолютная по строке",
+                                                "Полностью абсолютная",
+                                                "Относительная"
+                                ],
+                                "correct": 0
+                },
+                {
+                                "question": "В какой ситуации нужна абсолютная ссылка?",
+                                "type": "single",
+                                "options": [
+                                                "При вводе текста",
+                                                "При расчете с фиксированным значением",
+                                                "При удалении ячеек",
+                                                "При печати"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Как сделать ссылку абсолютной?",
+                                "type": "single",
+                                "options": [
+                                                "Нажать F2",
+                                                "Нажать F4",
+                                                "Нажать F5",
+                                                "Нажать Delete"
+                                ],
+                                "correct": 1
+                }
+]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>

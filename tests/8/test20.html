@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест 20: Практикум. Программирование циклических алгоритмов - 8 класс</title>
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/test.css">
+</head>
+<body>
+    <div class="container">
+        <div id="app"></div>
+    </div>
+
+    <script src="../../config.js"></script>
+    <script src="../../js/sheets-api.js"></script>
+    <script src="../../js/test-engine.js"></script>
+    <script>
+        const testData = {
+            title: "Тест 20: Практикум. Программирование циклических алгоритмов",
+            questions: [
+                {
+                                "question": "Какой цикл лучше использовать, если количество итераций известно?",
+                                "type": "single",
+                                "options": [
+                                                "while",
+                                                "for",
+                                                "if",
+                                                "def"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что выведет: for i in range(1,4): print(i*2)",
+                                "type": "single",
+                                "options": [
+                                                "2 4 6",
+                                                "1 2 3",
+                                                "0 2 4",
+                                                "2 3 4"
+                                ],
+                                "correct": 0
+                },
+                {
+                                "question": "Как вывести числа от 10 до 1?",
+                                "type": "single",
+                                "options": [
+                                                "range(10, 0, -1)",
+                                                "range(1, 10)",
+                                                "range(10, 1)",
+                                                "range(10)"
+                                ],
+                                "correct": 0
+                },
+                {
+                                "question": "Что делает break в цикле?",
+                                "type": "single",
+                                "options": [
+                                                "Продолжает",
+                                                "Прерывает цикл",
+                                                "Пропускает итерацию",
+                                                "Ничего"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что делает continue?",
+                                "type": "single",
+                                "options": [
+                                                "Прерывает цикл",
+                                                "Пропускает текущую итерацию",
+                                                "Ничего",
+                                                "Запускает заново"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Можно ли вкладывать циклы друг в друга?",
+                                "type": "single",
+                                "options": [
+                                                "Нет",
+                                                "Да",
+                                                "Только for",
+                                                "Только while"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Что выведет: i=0; while i<2: print('A'); i+=1",
+                                "type": "single",
+                                "options": [
+                                                "A",
+                                                "AA",
+                                                "AAA",
+                                                "Бесконечно A"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Как выйти из бесконечного цикла?",
+                                "type": "single",
+                                "options": [
+                                                "Ctrl+C",
+                                                "Закрыть программу",
+                                                "break",
+                                                "Все варианты"
+                                ],
+                                "correct": 3
+                },
+                {
+                                "question": "Что такое итерация?",
+                                "type": "single",
+                                "options": [
+                                                "Цикл",
+                                                "Одно повторение цикла",
+                                                "Условие",
+                                                "Переменная"
+                                ],
+                                "correct": 1
+                },
+                {
+                                "question": "Какой результат: for i in range(5): if i==2: break; print(i)",
+                                "type": "single",
+                                "options": [
+                                                "0 1",
+                                                "0 1 2",
+                                                "0 1 2 3 4",
+                                                "Ошибка"
+                                ],
+                                "correct": 0
+                }
+]
+        };
+
+        const sheets = new SheetsAPI(SHEETS_CONFIG);
+        const test = new TestEngine(testData, sheets);
+        test.init();
+    </script>
+</body>
+</html>
