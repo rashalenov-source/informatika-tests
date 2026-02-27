@@ -1,0 +1,1368 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS — Рабочий лист | BilimHub</title>
+<link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0f1117;
+    --surface: #1a1d27;
+    --surface2: #22263a;
+    --border: #2e334d;
+    --accent: #6c63ff;
+    --accent2: #ff6584;
+    --accent3: #43e97b;
+    --accent4: #f7971e;
+    --text: #e8eaf6;
+    --text-dim: #8b90b8;
+    --correct: #43e97b;
+    --wrong: #ff6584;
+    --mono: 'JetBrains Mono', monospace;
+    --sans: 'Nunito', sans-serif;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: var(--sans);
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    overflow-x: hidden;
+  }
+
+  /* ── STARS BG ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 20% 30%, rgba(255,255,255,.4) 0%, transparent 100%),
+      radial-gradient(1px 1px at 80% 10%, rgba(255,255,255,.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 60% 70%, rgba(255,255,255,.2) 0%, transparent 100%),
+      radial-gradient(1px 1px at 10% 80%, rgba(255,255,255,.3) 0%, transparent 100%),
+      radial-gradient(1px 1px at 90% 50%, rgba(255,255,255,.2) 0%, transparent 100%),
+      radial-gradient(2px 2px at 40% 20%, rgba(108,99,255,.4) 0%, transparent 100%),
+      radial-gradient(2px 2px at 70% 90%, rgba(67,233,123,.3) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── LOGIN SCREEN ── */
+  #login-screen {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 100;
+    background: radial-gradient(ellipse at 50% 50%, #1a1040 0%, #0f1117 70%);
+  }
+
+  .login-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 48px 40px;
+    width: 100%;
+    max-width: 440px;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 0 60px rgba(108,99,255,.2), 0 20px 60px rgba(0,0,0,.5);
+    animation: floatIn .6s cubic-bezier(.34,1.56,.64,1) both;
+  }
+
+  @keyframes floatIn {
+    from { opacity:0; transform: translateY(30px) scale(.95); }
+    to   { opacity:1; transform: translateY(0) scale(1); }
+  }
+
+  .login-logo {
+    font-size: 48px;
+    margin-bottom: 8px;
+    display: block;
+    animation: spin 20s linear infinite;
+  }
+
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+
+  .login-card h1 {
+    font-size: 1.8rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 6px;
+  }
+
+  .login-card .subtitle {
+    color: var(--text-dim);
+    font-size: .9rem;
+    margin-bottom: 32px;
+  }
+
+  .login-field {
+    margin-bottom: 16px;
+    text-align: left;
+  }
+
+  .login-field label {
+    display: block;
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-bottom: 8px;
+  }
+
+  .login-field input {
+    width: 100%;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-family: var(--sans);
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text);
+    outline: none;
+    transition: border-color .2s, box-shadow .2s;
+  }
+
+  .login-field input:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(108,99,255,.2);
+  }
+
+  .login-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    border: none;
+    border-radius: 12px;
+    font-family: var(--sans);
+    font-size: 1rem;
+    font-weight: 800;
+    color: #fff;
+    cursor: pointer;
+    transition: transform .15s, box-shadow .15s;
+    margin-top: 8px;
+  }
+
+  .login-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(108,99,255,.4); }
+  .login-btn:active { transform: translateY(0); }
+
+  .login-error {
+    color: var(--wrong);
+    font-size: .85rem;
+    margin-top: 10px;
+    display: none;
+  }
+
+  /* ── MAIN WORKSHEET ── */
+  #worksheet {
+    display: none;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 40px 20px 60px;
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── HEADER ── */
+  .ws-header {
+    text-align: center;
+    margin-bottom: 48px;
+    padding: 40px 32px;
+    background: var(--surface);
+    border-radius: 24px;
+    border: 1px solid var(--border);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .ws-header::before {
+    content: '';
+    position: absolute;
+    top: -40px; right: -40px;
+    width: 180px; height: 180px;
+    background: radial-gradient(circle, rgba(108,99,255,.3) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .ws-header::after {
+    content: '';
+    position: absolute;
+    bottom: -30px; left: -30px;
+    width: 140px; height: 140px;
+    background: radial-gradient(circle, rgba(255,101,132,.2) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .ws-badge {
+    display: inline-block;
+    background: rgba(108,99,255,.15);
+    border: 1px solid rgba(108,99,255,.3);
+    border-radius: 100px;
+    padding: 6px 18px;
+    font-size: .8rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    margin-bottom: 16px;
+  }
+
+  .ws-header h1 {
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    font-weight: 900;
+    line-height: 1.2;
+    margin-bottom: 12px;
+  }
+
+  .ws-header h1 span {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .student-info {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 100px;
+    padding: 8px 20px;
+    font-size: .9rem;
+    color: var(--text-dim);
+    margin-top: 16px;
+  }
+
+  .student-info strong { color: var(--accent); }
+
+  /* ── SECTION ── */
+  .section {
+    margin-bottom: 36px;
+  }
+
+  .section-header {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 20px;
+  }
+
+  .section-num {
+    width: 42px; height: 42px;
+    background: linear-gradient(135deg, var(--accent), #8b5cf6);
+    border-radius: 12px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 1.1rem;
+    font-weight: 900;
+    color: white;
+    flex-shrink: 0;
+  }
+
+  .section-header h2 {
+    font-size: 1.25rem;
+    font-weight: 800;
+  }
+
+  /* ── THEORY CARD ── */
+  .theory-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    line-height: 1.7;
+    color: var(--text-dim);
+  }
+
+  .theory-card p { margin-bottom: 12px; }
+  .theory-card p:last-child { margin-bottom: 0; }
+
+  .code-block {
+    background: #0d1117;
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--accent);
+    border-radius: 12px;
+    padding: 16px 20px;
+    font-family: var(--mono);
+    font-size: .85rem;
+    line-height: 1.8;
+    color: #a9b1d6;
+    overflow-x: auto;
+    margin: 12px 0;
+    white-space: pre;
+  }
+
+  .code-block .kw  { color: #bb9af7; }
+  .code-block .sel { color: #7dcfff; }
+  .code-block .prop{ color: #73daca; }
+  .code-block .val { color: #e0af68; }
+  .code-block .str { color: #9ece6a; }
+  .code-block .tag { color: #f7768e; }
+  .code-block .attr{ color: #e0af68; }
+  .code-block .cmt { color: #565f89; font-style: italic; }
+
+  .note {
+    display: flex;
+    gap: 10px;
+    padding: 12px 16px;
+    border-radius: 10px;
+    font-size: .9rem;
+    font-weight: 600;
+    margin: 10px 0;
+  }
+
+  .note.green  { background: rgba(67,233,123,.08);  border: 1px solid rgba(67,233,123,.2);  color: #43e97b; }
+  .note.red    { background: rgba(255,101,132,.08); border: 1px solid rgba(255,101,132,.2); color: #ff6584; }
+  .note.yellow { background: rgba(247,151,30,.08);  border: 1px solid rgba(247,151,30,.2);  color: #f7971e; }
+  .note.blue   { background: rgba(108,99,255,.08);  border: 1px solid rgba(108,99,255,.2);  color: #818cf8; }
+
+  /* ── TASK ── */
+  .task-card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    padding: 24px;
+    margin-bottom: 16px;
+    transition: border-color .3s;
+  }
+
+  .task-card.answered-correct { border-color: var(--correct); }
+  .task-card.answered-wrong   { border-color: var(--wrong); }
+
+  .task-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: rgba(108,99,255,.15);
+    border: 1px solid rgba(108,99,255,.25);
+    border-radius: 8px;
+    padding: 4px 12px;
+    font-size: .78rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-transform: uppercase;
+    letter-spacing: .08em;
+    margin-bottom: 14px;
+  }
+
+  .task-q {
+    font-weight: 700;
+    font-size: 1rem;
+    margin-bottom: 16px;
+    line-height: 1.5;
+    color: var(--text);
+  }
+
+  /* ── SELECT ── */
+  .answer-select {
+    width: 100%;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 11px 14px;
+    font-family: var(--sans);
+    font-size: .95rem;
+    font-weight: 600;
+    color: var(--text);
+    outline: none;
+    cursor: pointer;
+    transition: border-color .2s;
+    appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%238b90b8' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 14px center;
+    padding-right: 36px;
+  }
+
+  .answer-select:focus { border-color: var(--accent); }
+
+  .answer-select option { background: #1a1d27; color: var(--text); }
+
+  /* ── TEXT INPUT ── */
+  .answer-input {
+    width: 100%;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 11px 14px;
+    font-family: var(--mono);
+    font-size: .9rem;
+    font-weight: 600;
+    color: var(--text);
+    outline: none;
+    transition: border-color .2s;
+  }
+
+  .answer-input:focus { border-color: var(--accent); }
+  .answer-input::placeholder { color: var(--text-dim); font-style: italic; }
+
+  /* radio options */
+  .radio-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .radio-opt {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--bg);
+    border: 2px solid var(--border);
+    border-radius: 10px;
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: border-color .2s, background .2s;
+    font-weight: 600;
+  }
+
+  .radio-opt:hover { border-color: var(--accent); background: rgba(108,99,255,.05); }
+  .radio-opt input { accent-color: var(--accent); width: 18px; height: 18px; }
+  .radio-opt.selected { border-color: var(--accent); background: rgba(108,99,255,.1); }
+  .radio-opt.correct-opt { border-color: var(--correct)!important; background: rgba(67,233,123,.08)!important; }
+  .radio-opt.wrong-opt   { border-color: var(--wrong)!important;   background: rgba(255,101,132,.08)!important; }
+
+  /* feedback */
+  .feedback {
+    display: none;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: .9rem;
+    font-weight: 700;
+    margin-top: 12px;
+  }
+
+  .feedback.show { display: flex; animation: fadeUp .3s ease both; }
+  .feedback.ok  { background: rgba(67,233,123,.1);  color: var(--correct); border: 1px solid rgba(67,233,123,.3); }
+  .feedback.err { background: rgba(255,101,132,.1); color: var(--wrong);   border: 1px solid rgba(255,101,132,.3); }
+
+  @keyframes fadeUp { from { opacity:0; transform: translateY(6px); } to { opacity:1; transform: translateY(0); } }
+
+  /* ── COMPARISON TABLE ── */
+  .compare-table {
+    width: 100%;
+    border-collapse: collapse;
+    border-radius: 12px;
+    overflow: hidden;
+    font-size: .88rem;
+    margin: 16px 0;
+  }
+
+  .compare-table th {
+    background: var(--surface2);
+    padding: 12px 14px;
+    text-align: left;
+    font-weight: 800;
+    font-size: .8rem;
+    text-transform: uppercase;
+    letter-spacing: .06em;
+    color: var(--text-dim);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .compare-table td {
+    padding: 11px 14px;
+    border-bottom: 1px solid var(--border);
+    vertical-align: top;
+    line-height: 1.5;
+  }
+
+  .compare-table tr:last-child td { border-bottom: none; }
+  .compare-table tr:nth-child(even) td { background: rgba(255,255,255,.02); }
+  .compare-table .mono { font-family: var(--mono); font-size: .82rem; color: #e0af68; }
+  .compare-table .plus  { color: var(--correct); font-weight: 600; }
+  .compare-table .minus { color: var(--wrong);   font-weight: 600; }
+  .compare-table th:first-child { border-radius: 0; }
+
+  /* selector demo */
+  .selector-demo {
+    display: grid;
+    gap: 12px;
+    margin: 16px 0;
+  }
+
+  .sel-row {
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 110px 1fr 1fr;
+    gap: 12px;
+    align-items: start;
+    font-size: .88rem;
+  }
+
+  .sel-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-family: var(--mono);
+    font-size: .82rem;
+    font-weight: 600;
+    background: rgba(108,99,255,.15);
+    color: #bb9af7;
+    border: 1px solid rgba(108,99,255,.25);
+    text-align: center;
+  }
+
+  .sel-code { font-family: var(--mono); font-size: .8rem; color: #73daca; line-height: 1.7; }
+  .sel-result { line-height: 1.7; color: var(--text-dim); }
+  .sel-result .h { font-weight: 800; }
+  .sel-result .h.blue   { color: #7dcfff; }
+  .sel-result .h.orange { color: #e0af68; }
+  .sel-result .h.red    { color: #f7768e; }
+  .sel-result .h.purple { color: #bb9af7; }
+  .sel-result .h.gray   { color: #565f89; }
+  .sel-result .h.teal   { color: #73daca; }
+
+  /* ── SUBMIT BUTTON ── */
+  .submit-btn {
+    display: block;
+    width: 100%;
+    padding: 18px;
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    border: none;
+    border-radius: 14px;
+    font-family: var(--sans);
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #fff;
+    cursor: pointer;
+    margin: 40px 0 20px;
+    transition: transform .15s, box-shadow .15s, opacity .2s;
+    letter-spacing: .02em;
+  }
+
+  .submit-btn:hover { transform: translateY(-3px); box-shadow: 0 12px 32px rgba(108,99,255,.4); }
+  .submit-btn:active { transform: translateY(0); }
+  .submit-btn:disabled { opacity: .5; cursor: not-allowed; transform: none; }
+
+  /* ── RESULT ── */
+  #result-panel {
+    display: none;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    padding: 40px 32px;
+    text-align: center;
+    margin-top: 24px;
+    animation: floatIn .6s cubic-bezier(.34,1.56,.64,1) both;
+  }
+
+  .result-emoji { font-size: 64px; display: block; margin-bottom: 16px; }
+  .result-name  { font-size: .95rem; color: var(--text-dim); margin-bottom: 8px; }
+
+  .result-score {
+    font-size: 5rem;
+    font-weight: 900;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  .result-score.grade-5 { background: linear-gradient(135deg, #43e97b, #38f9d7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .result-score.grade-4 { background: linear-gradient(135deg, #f7971e, #ffd200); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .result-score.grade-3 { background: linear-gradient(135deg, #f093fb, #f5576c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+  .result-score.grade-2 { background: linear-gradient(135deg, #ff6584, #ff4f4f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
+
+  .result-label { font-size: 1.1rem; font-weight: 700; color: var(--text-dim); margin-bottom: 24px; }
+
+  .result-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+
+  .rb-item {
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 14px;
+    text-align: center;
+  }
+
+  .rb-item .rb-q { font-size: .75rem; color: var(--text-dim); font-weight: 700; text-transform: uppercase; letter-spacing: .06em; margin-bottom: 6px; }
+  .rb-item .rb-v { font-size: 1.4rem; font-weight: 900; }
+  .rb-item .rb-v.ok  { color: var(--correct); }
+  .rb-item .rb-v.err { color: var(--wrong); }
+
+  .result-comment {
+    font-size: 1rem;
+    color: var(--text-dim);
+    line-height: 1.6;
+    padding: 16px 20px;
+    background: rgba(108,99,255,.06);
+    border: 1px solid rgba(108,99,255,.15);
+    border-radius: 12px;
+    margin-bottom: 24px;
+  }
+
+  .result-grade-badge {
+    display: inline-block;
+    padding: 10px 32px;
+    border-radius: 100px;
+    font-size: 1rem;
+    font-weight: 800;
+    margin-bottom: 8px;
+    letter-spacing: .04em;
+  }
+
+  .grade-5 .result-grade-badge { background: rgba(67,233,123,.15); color: #43e97b; border: 1px solid rgba(67,233,123,.3); }
+  .grade-4 .result-grade-badge { background: rgba(247,151,30,.15); color: #f7971e; border: 1px solid rgba(247,151,30,.3); }
+  .grade-3 .result-grade-badge { background: rgba(240,147,251,.15); color: #f093fb; border: 1px solid rgba(240,147,251,.3); }
+  .grade-2 .result-grade-badge { background: rgba(255,101,132,.15); color: #ff6584; border: 1px solid rgba(255,101,132,.3); }
+
+  .retry-btn {
+    background: transparent;
+    border: 2px solid var(--border);
+    border-radius: 12px;
+    padding: 12px 28px;
+    font-family: var(--sans);
+    font-size: .9rem;
+    font-weight: 700;
+    color: var(--text-dim);
+    cursor: pointer;
+    transition: border-color .2s, color .2s;
+    margin-top: 8px;
+  }
+  .retry-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  /* progress bar */
+  .progress-bar-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: rgba(15,17,23,.85);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--border);
+    padding: 10px 20px;
+    margin: 0 -20px 32px;
+  }
+
+  .progress-inner {
+    max-width: 820px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+  }
+
+  .prog-label { font-size: .8rem; font-weight: 700; color: var(--text-dim); white-space: nowrap; }
+  .prog-bar   { flex: 1; height: 6px; background: var(--surface2); border-radius: 100px; overflow: hidden; }
+  .prog-fill  { height: 100%; background: linear-gradient(90deg, var(--accent), var(--accent2)); border-radius: 100px; width: 0%; transition: width .4s ease; }
+  .prog-count { font-size: .8rem; font-weight: 800; color: var(--accent); white-space: nowrap; }
+
+  @media (max-width: 600px) {
+    .sel-row { grid-template-columns: 1fr; }
+    .ws-header { padding: 28px 20px; }
+    .task-card, .theory-card { padding: 18px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- LOGIN -->
+<div id="login-screen">
+  <div class="login-card">
+    <span class="login-logo">🎨</span>
+    <h1>CSS Рабочий лист</h1>
+    <p class="subtitle">10 класс · Информатика · BilimHub</p>
+    <div class="login-field">
+      <label>Имя</label>
+      <input type="text" id="inp-name" placeholder="Например: Айгерим" autocomplete="off">
+    </div>
+    <div class="login-field">
+      <label>Фамилия</label>
+      <input type="text" id="inp-surname" placeholder="Например: Сейткали" autocomplete="off">
+    </div>
+    <button class="login-btn" onclick="startWorksheet()">Начать работу →</button>
+    <p class="login-error" id="login-error">Пожалуйста, введи имя и фамилию!</p>
+  </div>
+</div>
+
+<!-- WORKSHEET -->
+<div id="worksheet">
+
+  <div class="progress-bar-wrap">
+    <div class="progress-inner">
+      <span class="prog-label">Прогресс:</span>
+      <div class="prog-bar"><div class="prog-fill" id="prog-fill"></div></div>
+      <span class="prog-count" id="prog-count">0 / 10</span>
+    </div>
+  </div>
+
+  <div class="ws-header">
+    <div class="ws-badge">🎨 Рабочий лист</div>
+    <h1>Стили для веб-страниц — <span>CSS</span></h1>
+    <p style="color:var(--text-dim);margin-top:8px;">Прочитай теорию и ответь на вопросы</p>
+    <div class="student-info">
+      👤 <strong id="student-name-display"></strong>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- PART 1 — ЧТО ТАКОЕ CSS -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">1</div>
+      <h2>Что такое CSS?</h2>
+    </div>
+
+    <div class="theory-card">
+      <p><strong>CSS</strong> (Cascading Style Sheets — каскадные таблицы стилей) — это язык, который описывает внешний вид HTML-страницы. HTML отвечает за структуру, а CSS — за красоту и оформление.</p>
+      <p>💡 <em>Аналогия: HTML — это скелет, а CSS — одежда. Один скелет может выглядеть совершенно по-разному!</em></p>
+      <p>Правило CSS состоит из <strong>селектора</strong>, <strong>свойства</strong> и <strong>значения</strong>:</p>
+      <div class="code-block"><span class="sel">p</span> {
+  <span class="prop">color</span>: <span class="val">red</span>;
+  <span class="prop">font-size</span>: <span class="val">16px</span>;
+}</div>
+    </div>
+
+    <!-- TASK 1 -->
+    <div class="task-card" id="tc-1">
+      <div class="task-label">📝 Задание 1</div>
+      <p class="task-q">Что такое CSS? Выбери правильное определение:</p>
+      <div class="radio-options" id="t1-opts">
+        <label class="radio-opt" onclick="selectRadio('t1', 0)"><input type="radio" name="t1"> Язык программирования для создания игр</label>
+        <label class="radio-opt" onclick="selectRadio('t1', 1)"><input type="radio" name="t1"> Язык описания внешнего вида HTML-страницы</label>
+        <label class="radio-opt" onclick="selectRadio('t1', 2)"><input type="radio" name="t1"> База данных для хранения картинок</label>
+        <label class="radio-opt" onclick="selectRadio('t1', 3)"><input type="radio" name="t1"> Фреймворк для создания мобильных приложений</label>
+      </div>
+      <div class="feedback" id="fb-1"></div>
+    </div>
+
+    <!-- TASK 2 -->
+    <div class="task-card" id="tc-2">
+      <div class="task-label">📝 Задание 2</div>
+      <p class="task-q">Посмотри на правило CSS. Что является <strong>селектором</strong>?</p>
+      <div class="code-block"><span class="sel">h1</span> { <span class="prop">color</span>: <span class="val">blue</span>; }</div>
+      <select class="answer-select" id="t2" onchange="checkSelect('t2', 'h1')">
+        <option value="">— Выбери ответ —</option>
+        <option value="color">color</option>
+        <option value="blue">blue</option>
+        <option value="h1">h1</option>
+        <option value="{}">{ }</option>
+      </select>
+      <div class="feedback" id="fb-2"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- PART 2 — СПОСОБЫ ПОДКЛЮЧЕНИЯ -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">2</div>
+      <h2>Способы подключения CSS</h2>
+    </div>
+
+    <div class="theory-card">
+      <p><strong>Способ 1 — Встроенный (inline):</strong> CSS прямо в атрибуте <code style="color:#73daca;font-family:var(--mono)">style</code> тега.</p>
+      <div class="code-block"><span class="tag">&lt;p</span> <span class="attr">style</span>=<span class="str">"color: blue; font-size: 20px;"</span><span class="tag">&gt;</span>Привет!<span class="tag">&lt;/p&gt;</span></div>
+
+      <p><strong>Способ 2 — Внутренний (internal):</strong> В теге <code style="color:#73daca;font-family:var(--mono)">&lt;style&gt;</code> внутри <code style="color:#73daca;font-family:var(--mono)">&lt;head&gt;</code>.</p>
+      <div class="code-block"><span class="tag">&lt;style&gt;</span>
+  <span class="sel">p</span> { <span class="prop">color</span>: <span class="val">green</span>; }
+<span class="tag">&lt;/style&gt;</span></div>
+
+      <p><strong>Способ 3 — Внешний (external):</strong> Отдельный файл <code style="color:#73daca;font-family:var(--mono)">.css</code>, подключается через <code style="color:#73daca;font-family:var(--mono)">&lt;link&gt;</code>.</p>
+      <div class="code-block"><span class="tag">&lt;link</span> <span class="attr">rel</span>=<span class="str">"stylesheet"</span> <span class="attr">href</span>=<span class="str">"style.css"</span><span class="tag">&gt;</span></div>
+
+      <p><strong>Способ 4 — @import:</strong> Подключение одного CSS-файла внутри другого CSS-файла.</p>
+      <div class="code-block"><span class="cmt">/* style.css */</span>
+<span class="kw">@import</span> <span class="val">url</span>(<span class="str">'colors.css'</span>);
+<span class="kw">@import</span> <span class="val">url</span>(<span class="str">'fonts.css'</span>);</div>
+
+      <div class="note yellow">⚠️ @import всегда пишется в самом НАЧАЛЕ CSS-файла, до всех правил!</div>
+      <div class="note red">❌ Минус @import: каждый файл — отдельный запрос к серверу, страница грузится медленнее.</div>
+    </div>
+
+    <table class="compare-table">
+      <thead>
+        <tr>
+          <th>Способ</th>
+          <th>Где пишется</th>
+          <th>Плюс</th>
+          <th>Минус</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td><strong>inline</strong></td><td class="mono">style=""</td><td class="plus">Быстро</td><td class="minus">Не масштабируется</td></tr>
+        <tr><td><strong>internal</strong></td><td class="mono">&lt;style&gt;</td><td class="plus">Одна страница</td><td class="minus">Не для сайтов</td></tr>
+        <tr><td><strong>external</strong></td><td class="mono">&lt;link&gt;</td><td class="plus">Масштабируемость</td><td class="minus">Нужен файл</td></tr>
+        <tr><td><strong>@import</strong></td><td class="mono">в .css файле</td><td class="plus">Разбивка на части</td><td class="minus">Медленнее &lt;link&gt;</td></tr>
+      </tbody>
+    </table>
+
+    <!-- TASK 3 -->
+    <div class="task-card" id="tc-3">
+      <div class="task-label">📝 Задание 3</div>
+      <p class="task-q">Ты делаешь большой сайт из 20 страниц. Какой способ подключения CSS лучше всего подходит?</p>
+      <select class="answer-select" id="t3" onchange="checkSelect('t3', 'external')">
+        <option value="">— Выбери ответ —</option>
+        <option value="inline">Встроенный (inline)</option>
+        <option value="internal">Внутренний (internal)</option>
+        <option value="external">Внешний (external)</option>
+        <option value="import">@import</option>
+      </select>
+      <div class="feedback" id="fb-3"></div>
+    </div>
+
+    <!-- TASK 4 -->
+    <div class="task-card" id="tc-4">
+      <div class="task-label">📝 Задание 4</div>
+      <p class="task-q">Где пишется директива <code style="color:#73daca;font-family:var(--mono)">@import</code>?</p>
+      <div class="radio-options" id="t4-opts">
+        <label class="radio-opt" onclick="selectRadio('t4', 0)"><input type="radio" name="t4"> В теге &lt;body&gt; HTML-файла</label>
+        <label class="radio-opt" onclick="selectRadio('t4', 1)"><input type="radio" name="t4"> В конце CSS-файла, после всех правил</label>
+        <label class="radio-opt" onclick="selectRadio('t4', 2)"><input type="radio" name="t4"> В начале CSS-файла, до всех правил</label>
+        <label class="radio-opt" onclick="selectRadio('t4', 3)"><input type="radio" name="t4"> В атрибуте style HTML-тега</label>
+      </div>
+      <div class="feedback" id="fb-4"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- PART 3 — СЕЛЕКТОРЫ -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">3</div>
+      <h2>Селекторы CSS</h2>
+    </div>
+
+    <div class="theory-card">
+      <p><strong>Селектор</strong> — это «указатель» на элемент, который нужно оформить.</p>
+      <p>Разберём на примере трёх заголовков:</p>
+      <div class="code-block"><span class="tag">&lt;h1</span> <span class="attr">id</span>=<span class="str">"main-title"</span> <span class="attr">class</span>=<span class="str">"highlight"</span><span class="tag">&gt;</span>Добро пожаловать!<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;h1</span> <span class="attr">class</span>=<span class="str">"highlight"</span><span class="tag">&gt;</span>Второй заголовок<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;h1&gt;</span>Третий заголовок<span class="tag">&lt;/h1&gt;</span></div>
+    </div>
+
+    <div class="selector-demo">
+
+      <div class="sel-row">
+        <div>
+          <div class="sel-badge">h1</div>
+          <div style="font-size:.75rem;color:var(--text-dim);margin-top:6px;">Тег</div>
+        </div>
+        <div class="sel-code">h1 {
+  color: blue;
+}</div>
+        <div class="sel-result">
+          <div class="h blue">Добро пожаловать!</div>
+          <div class="h blue">Второй заголовок</div>
+          <div class="h blue">Третий заголовок</div>
+          <div style="font-size:.78rem;color:var(--text-dim);margin-top:4px;">← Все три синие</div>
+        </div>
+      </div>
+
+      <div class="sel-row">
+        <div>
+          <div class="sel-badge">.highlight</div>
+          <div style="font-size:.75rem;color:var(--text-dim);margin-top:6px;">Класс</div>
+        </div>
+        <div class="sel-code">.highlight {
+  color: orange;
+}</div>
+        <div class="sel-result">
+          <div class="h orange">Добро пожаловать!</div>
+          <div class="h orange">Второй заголовок</div>
+          <div class="h gray">Третий заголовок</div>
+          <div style="font-size:.78rem;color:var(--text-dim);margin-top:4px;">← Только первые два</div>
+        </div>
+      </div>
+
+      <div class="sel-row">
+        <div>
+          <div class="sel-badge">#main-title</div>
+          <div style="font-size:.75rem;color:var(--text-dim);margin-top:6px;">ID</div>
+        </div>
+        <div class="sel-code">#main-title {
+  color: red;
+  font-size: 36px;
+}</div>
+        <div class="sel-result">
+          <div class="h red" style="font-size:1.1rem;">Добро пожаловать!</div>
+          <div class="h gray">Второй заголовок</div>
+          <div class="h gray">Третий заголовок</div>
+          <div style="font-size:.78rem;color:var(--text-dim);margin-top:4px;">← Только первый</div>
+        </div>
+      </div>
+
+      <div class="sel-row">
+        <div>
+          <div class="sel-badge">*</div>
+          <div style="font-size:.75rem;color:var(--text-dim);margin-top:6px;">Все</div>
+        </div>
+        <div class="sel-code">* {
+  font-family: Arial;
+  margin: 0;
+}</div>
+        <div class="sel-result">
+          <div style="color:var(--text-dim);font-size:.88rem;">Все элементы страницы получат Arial и нулевые отступы: и h1, и p, и div, и span...</div>
+        </div>
+      </div>
+
+      <div class="sel-row">
+        <div>
+          <div class="sel-badge">h1, p</div>
+          <div style="font-size:.75rem;color:var(--text-dim);margin-top:6px;">Группа</div>
+        </div>
+        <div class="sel-code">h1, p {
+  color: purple;
+}</div>
+        <div class="sel-result">
+          <div class="h purple">Добро пожаловать!</div>
+          <div class="h purple">Второй заголовок</div>
+          <div class="h purple">Третий заголовок</div>
+          <div class="h purple" style="font-size:.9rem;font-weight:600;">Абзац тоже!</div>
+          <div style="font-size:.78rem;color:var(--text-dim);margin-top:4px;">← И h1, и p сразу</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="note blue">🔑 Приоритет: ID (#) &gt; Класс (.) &gt; Тег. Чем точнее — тем сильнее!</div>
+
+    <!-- TASK 5 -->
+    <div class="task-card" id="tc-5">
+      <div class="task-label">📝 Задание 5</div>
+      <p class="task-q">Какой селектор выберет <strong>только один уникальный элемент</strong> на странице?</p>
+      <select class="answer-select" id="t5" onchange="checkSelect('t5', 'id')">
+        <option value="">— Выбери ответ —</option>
+        <option value="tag">Тег (например: h1)</option>
+        <option value="class">Класс (например: .title)</option>
+        <option value="id">ID (например: #logo)</option>
+        <option value="star">Универсальный (*)</option>
+      </select>
+      <div class="feedback" id="fb-5"></div>
+    </div>
+
+    <!-- TASK 6 -->
+    <div class="task-card" id="tc-6">
+      <div class="task-label">📝 Задание 6</div>
+      <p class="task-q">На странице 5 тегов <code style="color:#73daca;font-family:var(--mono)">&lt;p&gt;</code> с классом <code style="color:#73daca;font-family:var(--mono)">highlight</code>. Ты написал стиль <code style="color:#73daca;font-family:var(--mono)">.highlight { color: red; }</code>. Сколько абзацев станут красными?</p>
+      <div class="radio-options" id="t6-opts">
+        <label class="radio-opt" onclick="selectRadio('t6', 0)"><input type="radio" name="t6"> Только первый</label>
+        <label class="radio-opt" onclick="selectRadio('t6', 1)"><input type="radio" name="t6"> Только последний</label>
+        <label class="radio-opt" onclick="selectRadio('t6', 2)"><input type="radio" name="t6"> Все 5</label>
+        <label class="radio-opt" onclick="selectRadio('t6', 3)"><input type="radio" name="t6"> Ни одного</label>
+      </div>
+      <div class="feedback" id="fb-6"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- PART 4 — СВОЙСТВА CSS -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">4</div>
+      <h2>Основные свойства CSS</h2>
+    </div>
+
+    <div class="theory-card">
+      <p><strong>Цвет и фон:</strong></p>
+      <div class="code-block"><span class="sel">div</span> {
+  <span class="prop">color</span>: <span class="val">red</span>;               <span class="cmt">/* цвет текста */</span>
+  <span class="prop">background-color</span>: <span class="val">#f0f0f0</span>;   <span class="cmt">/* цвет фона */</span>
+  <span class="prop">opacity</span>: <span class="val">0.8</span>;             <span class="cmt">/* прозрачность 0–1 */</span>
+}</div>
+      <p><strong>Текст и шрифт:</strong></p>
+      <div class="code-block"><span class="sel">p</span> {
+  <span class="prop">font-size</span>: <span class="val">16px</span>;           <span class="cmt">/* размер шрифта */</span>
+  <span class="prop">font-family</span>: <span class="val">Arial</span>;        <span class="cmt">/* тип шрифта */</span>
+  <span class="prop">font-weight</span>: <span class="val">bold</span>;         <span class="cmt">/* жирность */</span>
+  <span class="prop">text-align</span>: <span class="val">center</span>;       <span class="cmt">/* выравнивание */</span>
+  <span class="prop">text-decoration</span>: <span class="val">underline</span>; <span class="cmt">/* подчёркивание */</span>
+}</div>
+      <p><strong>Размеры и отступы:</strong></p>
+      <div class="code-block"><span class="sel">div</span> {
+  <span class="prop">width</span>: <span class="val">300px</span>;             <span class="cmt">/* ширина */</span>
+  <span class="prop">margin</span>: <span class="val">10px</span>;             <span class="cmt">/* внешний отступ */</span>
+  <span class="prop">padding</span>: <span class="val">15px</span>;            <span class="cmt">/* внутренний отступ */</span>
+  <span class="prop">border</span>: <span class="val">1px solid black</span>;  <span class="cmt">/* рамка */</span>
+  <span class="prop">border-radius</span>: <span class="val">10px</span>;      <span class="cmt">/* скругление */</span>
+}</div>
+    </div>
+
+    <!-- TASK 7 -->
+    <div class="task-card" id="tc-7">
+      <div class="task-label">📝 Задание 7</div>
+      <p class="task-q">Какое свойство CSS отвечает за <strong>цвет текста</strong>?</p>
+      <select class="answer-select" id="t7" onchange="checkSelect('t7', 'color')">
+        <option value="">— Выбери ответ —</option>
+        <option value="background-color">background-color</option>
+        <option value="color">color</option>
+        <option value="font-color">font-color</option>
+        <option value="text-color">text-color</option>
+      </select>
+      <div class="feedback" id="fb-7"></div>
+    </div>
+
+    <!-- TASK 8 -->
+    <div class="task-card" id="tc-8">
+      <div class="task-label">📝 Задание 8</div>
+      <p class="task-q">Соотнеси: какое свойство скругляет углы блока?</p>
+      <div class="radio-options" id="t8-opts">
+        <label class="radio-opt" onclick="selectRadio('t8', 0)"><input type="radio" name="t8"> border</label>
+        <label class="radio-opt" onclick="selectRadio('t8', 1)"><input type="radio" name="t8"> padding</label>
+        <label class="radio-opt" onclick="selectRadio('t8', 2)"><input type="radio" name="t8"> border-radius</label>
+        <label class="radio-opt" onclick="selectRadio('t8', 3)"><input type="radio" name="t8"> margin</label>
+      </div>
+      <div class="feedback" id="fb-8"></div>
+    </div>
+  </div>
+
+  <!-- ══════════════════════════════════════════ -->
+  <!-- PART 5 — БЫЛО / СТАЛО -->
+  <!-- ══════════════════════════════════════════ -->
+  <div class="section">
+    <div class="section-header">
+      <div class="section-num">5</div>
+      <h2>Было / Стало</h2>
+    </div>
+
+    <div class="theory-card">
+      <p>Посмотри, как CSS меняет страницу. Слева — без CSS, справа — с CSS:</p>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px;">
+        <div style="background:#0d1117;border:1px solid var(--border);border-left:3px solid var(--wrong);border-radius:12px;padding:16px;">
+          <div style="font-size:.75rem;font-weight:700;color:var(--wrong);margin-bottom:10px;text-transform:uppercase;">БЕЗ CSS</div>
+          <div style="font-size:1.1rem;font-weight:bold;margin-bottom:6px;">Мой блог</div>
+          <div style="font-size:.9rem;margin-bottom:4px;">Первая запись.</div>
+          <div style="font-size:.9rem;">Вторая запись.</div>
+        </div>
+        <div style="background:linear-gradient(135deg,#1a1d27,#22263a);border:1px solid rgba(108,99,255,.3);border-left:3px solid var(--correct);border-radius:12px;padding:16px;">
+          <div style="font-size:.75rem;font-weight:700;color:var(--correct);margin-bottom:10px;text-transform:uppercase;">С CSS</div>
+          <div style="font-size:1.1rem;font-weight:900;text-align:center;color:#7dcfff;border-bottom:2px solid rgba(108,99,255,.4);padding-bottom:8px;margin-bottom:8px;">Мой блог</div>
+          <div style="font-size:.88rem;color:#a9b1d6;background:rgba(255,255,255,.04);border-radius:6px;padding:6px 10px;margin-bottom:5px;">Первая запись.</div>
+          <div style="font-size:.88rem;color:#a9b1d6;background:rgba(255,255,255,.04);border-radius:6px;padding:6px 10px;">Вторая запись.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TASK 9 -->
+    <div class="task-card" id="tc-9">
+      <div class="task-label">📝 Задание 9</div>
+      <p class="task-q">Сколько CSS-свойств было использовано для оформления заголовка в примере выше? (выравнивание по центру, цвет, жирность, рамка снизу)</p>
+      <select class="answer-select" id="t9" onchange="checkSelect('t9', '4')">
+        <option value="">— Выбери ответ —</option>
+        <option value="1">1 свойство</option>
+        <option value="2">2 свойства</option>
+        <option value="3">3 свойства</option>
+        <option value="4">4 свойства</option>
+        <option value="5">5 свойств</option>
+      </select>
+      <div class="feedback" id="fb-9"></div>
+    </div>
+
+    <!-- TASK 10 -->
+    <div class="task-card" id="tc-10">
+      <div class="task-label">📝 Задание 10</div>
+      <p class="task-q">Напиши CSS-правило, которое сделает все кнопки <strong>синими</strong> с <strong>белым</strong> текстом. Заполни пропуски:</p>
+      <div style="display:grid;gap:10px;margin-top:4px;">
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;">
+          <span style="font-family:var(--mono);color:#73daca;">button {</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-left:20px;">
+          <span style="font-family:var(--mono);color:#73daca;">background-color:</span>
+          <select class="answer-select" id="t10a" style="width:auto;flex:1;min-width:140px;" onchange="checkTask10()">
+            <option value="">выбери...</option>
+            <option value="red">red</option>
+            <option value="blue">blue</option>
+            <option value="green">green</option>
+            <option value="yellow">yellow</option>
+          </select>
+          <span style="font-family:var(--mono);color:#73daca;">;</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:10px;flex-wrap:wrap;padding-left:20px;">
+          <span style="font-family:var(--mono);color:#73daca;">color:</span>
+          <select class="answer-select" id="t10b" style="width:auto;flex:1;min-width:140px;" onchange="checkTask10()">
+            <option value="">выбери...</option>
+            <option value="black">black</option>
+            <option value="white">white</option>
+            <option value="blue">blue</option>
+            <option value="red">red</option>
+          </select>
+          <span style="font-family:var(--mono);color:#73daca;">;</span>
+        </div>
+        <div style="font-family:var(--mono);color:#73daca;">}</div>
+      </div>
+      <div class="feedback" id="fb-10"></div>
+    </div>
+  </div>
+
+  <!-- SUBMIT -->
+  <button class="submit-btn" id="submit-btn" onclick="submitWorksheet()">
+    ✅ Завершить работу и получить оценку
+  </button>
+
+  <!-- RESULT PANEL -->
+  <div id="result-panel">
+    <span class="result-emoji" id="result-emoji"></span>
+    <p class="result-name" id="result-stname"></p>
+    <div class="result-score" id="result-score"></div>
+    <p class="result-label" id="result-label"></p>
+
+    <div class="result-breakdown" id="result-breakdown"></div>
+
+    <div class="result-comment" id="result-comment"></div>
+
+    <div id="result-grade-wrap">
+      <div class="result-grade-badge" id="result-grade-badge"></div>
+    </div>
+
+    <br>
+    <button class="retry-btn" onclick="retryWorksheet()">🔄 Попробовать ещё раз</button>
+  </div>
+
+</div>
+
+<script>
+// ── STATE ──
+let studentName = '';
+let answers = {};
+let totalTasks = 10;
+let answeredCount = 0;
+
+const correctAnswers = {
+  t1: 1,      // radio index
+  t2: 'h1',
+  t3: 'external',
+  t4: 2,      // radio index
+  t5: 'id',
+  t6: 2,      // radio index (all 5)
+  t7: 'color',
+  t8: 2,      // radio index (border-radius)
+  t9: '4',
+  t10: 'both' // special
+};
+
+// ── LOGIN ──
+function startWorksheet() {
+  const name    = document.getElementById('inp-name').value.trim();
+  const surname = document.getElementById('inp-surname').value.trim();
+  if (!name || !surname) {
+    document.getElementById('login-error').style.display = 'block';
+    return;
+  }
+  studentName = `${name} ${surname}`;
+  document.getElementById('student-name-display').textContent = studentName;
+  document.getElementById('login-screen').style.display = 'none';
+  document.getElementById('worksheet').style.display = 'block';
+  updateProgress();
+}
+
+// Enter key on login
+document.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && document.getElementById('login-screen').style.display !== 'none') {
+    startWorksheet();
+  }
+});
+
+// ── PROGRESS ──
+function updateProgress() {
+  answeredCount = Object.keys(answers).length;
+  document.getElementById('prog-count').textContent = `${answeredCount} / ${totalTasks}`;
+  const pct = (answeredCount / totalTasks) * 100;
+  document.getElementById('prog-fill').style.width = pct + '%';
+}
+
+// ── RADIO ──
+function selectRadio(taskId, idx) {
+  if (answers[taskId] !== undefined) return; // already answered
+  const opts = document.querySelectorAll(`#${taskId}-opts .radio-opt`);
+  opts.forEach((o, i) => {
+    o.classList.remove('selected');
+    if (i === idx) o.classList.add('selected');
+  });
+  const correct = correctAnswers[taskId];
+  const isCorrect = idx === correct;
+
+  opts.forEach((o, i) => {
+    if (i === correct) o.classList.add('correct-opt');
+    else if (i === idx && !isCorrect) o.classList.add('wrong-opt');
+    o.style.pointerEvents = 'none';
+    o.style.cursor = 'default';
+  });
+
+  answers[taskId] = isCorrect;
+  showFeedback(taskId.replace('t',''), isCorrect);
+  updateProgress();
+}
+
+// ── SELECT ──
+function checkSelect(taskId, correctVal) {
+  if (answers[taskId] !== undefined) return;
+  const sel = document.getElementById(taskId);
+  const val = sel.value;
+  if (!val) return;
+  sel.disabled = true;
+
+  const isCorrect = val === correctVal;
+  answers[taskId] = isCorrect;
+  sel.style.borderColor = isCorrect ? 'var(--correct)' : 'var(--wrong)';
+  showFeedback(taskId.replace('t',''), isCorrect);
+  updateProgress();
+}
+
+// ── TASK 10 SPECIAL ──
+function checkTask10() {
+  if (answers['t10'] !== undefined) return;
+  const a = document.getElementById('t10a').value;
+  const b = document.getElementById('t10b').value;
+  if (!a || !b) return;
+
+  const isCorrect = a === 'blue' && b === 'white';
+  answers['t10'] = isCorrect;
+
+  document.getElementById('t10a').disabled = true;
+  document.getElementById('t10b').disabled = true;
+  document.getElementById('t10a').style.borderColor = a === 'blue' ? 'var(--correct)' : 'var(--wrong)';
+  document.getElementById('t10b').style.borderColor = b === 'white' ? 'var(--correct)' : 'var(--wrong)';
+
+  showFeedback('10', isCorrect);
+  updateProgress();
+}
+
+// ── FEEDBACK ──
+const feedbackTexts = {
+  ok: [
+    '✅ Отлично! Правильно!',
+    '✅ Верно! Молодец!',
+    '✅ Правильно! Так держать!',
+    '✅ Точно! Ты всё понял(а)!',
+    '✅ Супер! Правильный ответ!'
+  ],
+  err: [
+    '❌ Не совсем. Посмотри теорию выше.',
+    '❌ Неверно. Правильный ответ выделен зелёным.',
+    '❌ Попробуй перечитать теорию.',
+    '❌ Ошибка. Обрати внимание на правильный ответ.',
+    '❌ Неправильно. Смотри выделение.'
+  ]
+};
+
+function showFeedback(num, isCorrect) {
+  const fb = document.getElementById(`fb-${num}`);
+  const tc = document.getElementById(`tc-${num}`);
+  const pool = isCorrect ? feedbackTexts.ok : feedbackTexts.err;
+  fb.textContent = pool[Math.floor(Math.random() * pool.length)];
+  fb.className = `feedback show ${isCorrect ? 'ok' : 'err'}`;
+  tc.classList.add(isCorrect ? 'answered-correct' : 'answered-wrong');
+}
+
+// ── SUBMIT ──
+function submitWorksheet() {
+  if (Object.keys(answers).length < totalTasks) {
+    alert('Ответь на все 10 вопросов перед завершением!');
+    return;
+  }
+
+  const correct = Object.values(answers).filter(Boolean).length;
+  const wrong   = totalTasks - correct;
+  const pct     = Math.round((correct / totalTasks) * 100);
+
+  let grade, emoji, comment, gradeClass;
+
+  if (pct >= 90) {
+    grade = '5'; emoji = '🏆'; gradeClass = 'grade-5';
+    comment = `Превосходно, ${studentName.split(' ')[0]}! Ты отлично усвоил(а) тему CSS. Все основные концепции поняты: способы подключения, селекторы, свойства. Ты готов(а) к следующей теме!`;
+  } else if (pct >= 75) {
+    grade = '4'; emoji = '⭐'; gradeClass = 'grade-4';
+    comment = `Хорошая работа, ${studentName.split(' ')[0]}! Ты хорошо разбираешься в CSS. Небольшие пробелы есть, но это легко исправить — перечитай раздел, где ошибся(лась).`;
+  } else if (pct >= 50) {
+    grade = '3'; emoji = '📚'; gradeClass = 'grade-3';
+    comment = `Ты справился(лась) с базовыми вопросами, ${studentName.split(' ')[0]}, но тема усвоена не полностью. Рекомендую перечитать теорию и попробовать ещё раз.`;
+  } else {
+    grade = '2'; emoji = '💪'; gradeClass = 'grade-2';
+    comment = `Тема пока усвоена слабо, ${studentName.split(' ')[0]}. Не сдавайся! Перечитай всю теорию сначала и попробуй снова — у тебя всё получится!`;
+  }
+
+  const panel = document.getElementById('result-panel');
+  panel.className = `${gradeClass}`;
+  panel.style.display = 'block';
+
+  document.getElementById('result-emoji').textContent = emoji;
+  document.getElementById('result-stname').textContent = studentName;
+  document.getElementById('result-score').textContent = `${pct}%`;
+  document.getElementById('result-score').className = `result-score ${gradeClass}`;
+  document.getElementById('result-label').textContent = `${correct} правильных из ${totalTasks}`;
+  document.getElementById('result-comment').textContent = comment;
+  document.getElementById('result-grade-badge').textContent = `Оценка: ${grade}`;
+  document.getElementById('result-grade-badge').className = `result-grade-badge`;
+  document.getElementById('result-grade-wrap').className = gradeClass;
+
+  // breakdown
+  const bd = document.getElementById('result-breakdown');
+  bd.innerHTML = '';
+  Object.entries(answers).forEach(([key, val]) => {
+    const num = key.replace('t','');
+    const item = document.createElement('div');
+    item.className = 'rb-item';
+    item.innerHTML = `<div class="rb-q">Задание ${num}</div><div class="rb-v ${val ? 'ok' : 'err'}">${val ? '✓' : '✗'}</div>`;
+    bd.appendChild(item);
+  });
+
+  document.getElementById('submit-btn').disabled = true;
+  panel.scrollIntoView({ behavior: 'smooth', block: 'start' });
+}
+
+// ── RETRY ──
+function retryWorksheet() {
+  answers = {};
+  answeredCount = 0;
+
+  // reset selects
+  ['t2','t3','t5','t7','t9','t10a','t10b'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) { el.value = ''; el.disabled = false; el.style.borderColor = ''; }
+  });
+
+  // reset radios
+  ['t1','t4','t6','t8'].forEach(taskId => {
+    const opts = document.querySelectorAll(`#${taskId}-opts .radio-opt`);
+    opts.forEach(o => {
+      o.classList.remove('selected','correct-opt','wrong-opt');
+      o.style.pointerEvents = '';
+      o.style.cursor = '';
+      const inp = o.querySelector('input');
+      if (inp) inp.checked = false;
+    });
+  });
+
+  // reset feedback & task cards
+  for (let i = 1; i <= 10; i++) {
+    const fb = document.getElementById(`fb-${i}`);
+    if (fb) { fb.className = 'feedback'; fb.textContent = ''; }
+    const tc = document.getElementById(`tc-${i}`);
+    if (tc) { tc.classList.remove('answered-correct','answered-wrong'); }
+  }
+
+  document.getElementById('result-panel').style.display = 'none';
+  document.getElementById('submit-btn').disabled = false;
+  updateProgress();
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+</script>
+</body>
+</html>
